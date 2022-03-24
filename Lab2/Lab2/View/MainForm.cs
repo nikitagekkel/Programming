@@ -21,63 +21,105 @@ namespace Lab2
             {
                 EnumsListBox.Items.Add(item);
             }
-            
-        }
-        private void MainForm_Load(object sender, EventArgs e)
-        {
+            EnumsListBox.SelectedIndex = 0;
 
+            var itemsbox = Enum.GetValues(typeof(Season));
+            foreach (var item in itemsbox)
+            {
+                comboBox1.Items.Add(item);
+            }
         }
-        private void Enums_Click(object sender, EventArgs e)
+
+        private void MainForm_Load(object sender, EventArgs e)
         {
 
         }
 
         private void EnumsListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ValuesListBox.Items.Clear();
-            string selected = EnumsListBox.SelectedItem.ToString();
-            string[] colour = Enum.GetNames(typeof(Colour));
-            string[] company = Enum.GetNames(typeof(Company));
-            string[] education = Enum.GetNames(typeof(Education));
-            string[] genre = Enum.GetNames(typeof(Genre));
-            string[] season = Enum.GetNames(typeof(Season));
-            string[] weekday = Enum.GetNames(typeof(Weekday));
-            switch (selected)
+            labelparse.Text = "";
+            switch ((MyEnums)EnumsListBox.SelectedItem)
             {
-                case "Colour":
-                    ValuesListBox.Items.Clear();
-                    ValuesListBox.Items.AddRange(colour);
+                case MyEnums.Colour:
+                    ValuesListBox.DataSource = Enum.GetValues(typeof(Colour));
+                    ValuesListBox.SelectedIndex = 0;
                     break;
-                case "Company":
-                    ValuesListBox.Items.Clear();
-                    ValuesListBox.Items.AddRange(company);
+                case MyEnums.Company:
+                    ValuesListBox.DataSource = Enum.GetValues(typeof(Company));
                     break;
-                case "Education":
-                    ValuesListBox.Items.Clear();
-                    ValuesListBox.Items.AddRange(education);
+                case MyEnums.Education:
+                    ValuesListBox.DataSource = Enum.GetValues(typeof(Education));
                     break;
-                case "Genre":
-                    ValuesListBox.Items.Clear();
-                    ValuesListBox.Items.AddRange(genre);
+                case MyEnums.Genre:
+                    ValuesListBox.DataSource = Enum.GetValues(typeof(Genre));
                     break;
-                case "Season":
-                    ValuesListBox.Items.Clear();
-                    ValuesListBox.Items.AddRange(season);
+                case MyEnums.Season:
+                    ValuesListBox.DataSource = Enum.GetValues(typeof(Season));
                     break;
-                case "Weekday":
-                    ValuesListBox.Items.Clear();
-                    ValuesListBox.Items.AddRange(weekday);
+                case MyEnums.Weekday:
+                    ValuesListBox.DataSource = Enum.GetValues(typeof(Weekday));
                     break;
             }
         }
         private void ValuesListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            var item = ValuesListBox.SelectedItem;
+            textBox1.Text = ((int)item).ToString();
+        }
+
+        private void Parse_Click(object sender, EventArgs e)
+        {
+            Weekday weekday;
+            if (Enum.TryParse(textBox2.Text, out weekday))
+            {
+                labelparse.Text = $"Это день недели ({weekday} = {(int)weekday})";
+            }
+            else
+            {
+                labelparse.Text = "Нет такого дня недели";
+            }
+            textBox2.Text = "";
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch ((Season)comboBox1.SelectedItem)
+            {
+                case Season.Весна:
+                    BackColor = System.Drawing.ColorTranslator.FromHtml("#559c45");
+                    break;
+                case Season.Зима:
+                    MessageBox.Show("Бррр! Холодно!");
+                    break;
+                case Season.Лето:
+                    MessageBox.Show("Ура! Солнце!");
+                    break;
+                case Season.Осень:
+                    BackColor = System.Drawing.ColorTranslator.FromHtml("#e29c45");
+                    break;
+            }
+        }
+        private void Enums_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelparse_Click(object sender, EventArgs e)
+        {
 
         }
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            
+
         }
 
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
