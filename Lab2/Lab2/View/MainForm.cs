@@ -30,11 +30,6 @@ namespace Lab2
             }
         }
 
-        private void MainForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void EnumsListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             labelparse.Text = "";
