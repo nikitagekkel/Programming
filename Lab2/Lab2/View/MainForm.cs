@@ -38,11 +38,11 @@ namespace Lab2
         private void EnumsListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             labelparse.Text = "";
+            ValuesListBox.SelectedIndex = 0;
             switch ((MyEnums)EnumsListBox.SelectedItem)
             {
                 case MyEnums.Colour:
                     ValuesListBox.DataSource = Enum.GetValues(typeof(Colour));
-                    ValuesListBox.SelectedIndex = 0;
                     break;
                 case MyEnums.Company:
                     ValuesListBox.DataSource = Enum.GetValues(typeof(Company));
