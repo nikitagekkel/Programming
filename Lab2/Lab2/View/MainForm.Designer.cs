@@ -37,10 +37,10 @@ namespace Lab2
             this.ValuesListBox = new System.Windows.Forms.ListBox();
             this.EnumsListBox = new System.Windows.Forms.ListBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.labelparse = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.tabControl2.SuspendLayout();
             this.Enums.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -71,7 +71,6 @@ namespace Lab2
             this.Enums.TabIndex = 0;
             this.Enums.Text = "Enums";
             this.Enums.UseVisualStyleBackColor = true;
-            this.Enums.Click += new System.EventHandler(this.Enums_Click);
             // 
             // comboBox1
             // 
@@ -99,7 +98,6 @@ namespace Lab2
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(125, 27);
             this.textBox2.TabIndex = 1;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // ValuesListBox
             // 
@@ -132,16 +130,14 @@ namespace Lab2
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Enuminations";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // groupBox3
+            // textBox1
             // 
-            this.groupBox3.Location = new System.Drawing.Point(422, 262);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(346, 125);
-            this.groupBox3.TabIndex = 2;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Season Handle";
+            this.textBox1.Location = new System.Drawing.Point(439, 42);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(85, 27);
+            this.textBox1.TabIndex = 2;
             // 
             // groupBox2
             // 
@@ -160,16 +156,15 @@ namespace Lab2
             this.labelparse.Name = "labelparse";
             this.labelparse.Size = new System.Drawing.Size(0, 20);
             this.labelparse.TabIndex = 0;
-            this.labelparse.Click += new System.EventHandler(this.labelparse_Click);
             // 
-            // textBox1
+            // groupBox3
             // 
-            this.textBox1.Location = new System.Drawing.Point(439, 42);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(85, 27);
-            this.textBox1.TabIndex = 2;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.groupBox3.Location = new System.Drawing.Point(422, 262);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(346, 125);
+            this.groupBox3.TabIndex = 2;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Season Handle";
             // 
             // MainForm
             // 

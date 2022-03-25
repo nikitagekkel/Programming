@@ -38,7 +38,6 @@ namespace Lab2
         private void EnumsListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             labelparse.Text = "";
-            
             switch ((MyEnums)EnumsListBox.SelectedItem)
             {
                 case MyEnums.Colour:
@@ -98,28 +97,6 @@ namespace Lab2
                     BackColor = System.Drawing.ColorTranslator.FromHtml("#e29c45");
                     break;
             }
-        }
-        private void Enums_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelparse_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
         }
     }
 }
