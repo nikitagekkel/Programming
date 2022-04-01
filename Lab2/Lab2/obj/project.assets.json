@@ -14,9 +14,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Jett\\source\\repos\\Programming\\Lab2\\Lab2\\Lab2.csproj",
-      "projectName": "Lab2",
-      "projectPath": "C:\\Users\\Jett\\source\\repos\\Programming\\Lab2\\Lab2\\Lab2.csproj",
+      "projectUniqueName": "C:\\Users\\Jett\\source\\repos\\Programming\\Lab2\\Lab2\\Programming.csproj",
+      "projectName": "Programming",
+      "projectPath": "C:\\Users\\Jett\\source\\repos\\Programming\\Lab2\\Lab2\\Programming.csproj",
       "packagesPath": "C:\\Users\\Jett\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Jett\\source\\repos\\Programming\\Lab2\\Lab2\\obj\\",
       "projectStyle": "PackageReference",

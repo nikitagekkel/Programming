@@ -8,11 +8,10 @@ namespace Lab2.Model
 {
     public enum Genre
     {
-        Комедия,
-        Драма,
-        Триллер,
-        Боевик,
-        Ужасы,
-        Блокбастер
+        Comedy,
+        Drama,
+        Thriller,
+        Action,
+        Horror
     }
 }

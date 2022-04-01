@@ -21,12 +21,13 @@ namespace Lab2
             {
                 EnumsListBox.Items.Add(item);
             }
+
             EnumsListBox.SelectedIndex = 0;
 
             var itemsbox = Enum.GetValues(typeof(Season));
             foreach (var item in itemsbox)
             {
-                comboBox1.Items.Add(item);
+                comboBoxSeason.Items.Add(item);
             }
         }
 
@@ -55,16 +56,17 @@ namespace Lab2
                     break;
             }
         }
+
         private void ValuesListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             var item = ValuesListBox.SelectedItem;
-            textBox1.Text = ((int)item).ToString();
+            textBoxIntValue.Text = ((int)item).ToString();
         }
 
-        private void Parse_Click(object sender, EventArgs e)
+        private void Button_parse_Click(object sender, EventArgs e)
         {
             Weekday weekday;
-            if (Enum.TryParse(textBox2.Text, out weekday))
+            if (Enum.TryParse(textBoxParsing.Text, out weekday))
             {
                 labelparse.Text = $"Это день недели ({weekday} = {(int)weekday})";
             }
@@ -72,23 +74,23 @@ namespace Lab2
             {
                 labelparse.Text = "Нет такого дня недели";
             }
-            textBox2.Text = "";
+            textBoxParsing.Text = "";
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void Button_season_handle_Click(object sender, EventArgs e)
         {
-            switch ((Season)comboBox1.SelectedItem)
+            switch ((Season)comboBoxSeason.SelectedItem)
             {
-                case Season.Весна:
+                case Season.Spring:
                     BackColor = System.Drawing.ColorTranslator.FromHtml("#559c45");
                     break;
-                case Season.Зима:
+                case Season.Winter:
                     MessageBox.Show("Бррр! Холодно!");
                     break;
-                case Season.Лето:
+                case Season.Summer:
                     MessageBox.Show("Ура! Солнце!");
                     break;
-                case Season.Осень:
+                case Season.Autumn:
                     BackColor = System.Drawing.ColorTranslator.FromHtml("#e29c45");
                     break;
             }

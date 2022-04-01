@@ -8,9 +8,9 @@ namespace Lab2.Model
 {
     public enum Season
     {
-        Лето,
-        Осень,
-        Зима,
-        Весна
+        Summer,
+        Autumn,
+        Winter,
+        Spring
     }
 }

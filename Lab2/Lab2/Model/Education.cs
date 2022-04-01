@@ -8,9 +8,9 @@ namespace Lab2.Model
 {
     public enum Education
     {
-        Очная,
-        Заочная,
-        Дистанционная,
-        Смешанная
+        Fulltime,
+        Correspondence,
+        Distance,
+        Mixed
     }
 }
