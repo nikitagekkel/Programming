@@ -112,7 +112,7 @@ namespace Lab2
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(203, 33);
+            this.label2.Location = new System.Drawing.Point(182, 33);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(100, 20);
             this.label2.TabIndex = 4;
@@ -139,9 +139,9 @@ namespace Lab2
             // 
             this.ValuesListBox.FormattingEnabled = true;
             this.ValuesListBox.ItemHeight = 20;
-            this.ValuesListBox.Location = new System.Drawing.Point(203, 56);
+            this.ValuesListBox.Location = new System.Drawing.Point(182, 56);
             this.ValuesListBox.Name = "ValuesListBox";
-            this.ValuesListBox.Size = new System.Drawing.Size(148, 164);
+            this.ValuesListBox.Size = new System.Drawing.Size(163, 164);
             this.ValuesListBox.TabIndex = 1;
             this.ValuesListBox.SelectedIndexChanged += new System.EventHandler(this.ValuesListBox_SelectedIndexChanged);
             // 
@@ -158,7 +158,7 @@ namespace Lab2
             // 
             // Button_season_handle
             // 
-            this.Button_season_handle.Location = new System.Drawing.Point(255, 41);
+            this.Button_season_handle.Location = new System.Drawing.Point(255, 42);
             this.Button_season_handle.Name = "Button_season_handle";
             this.Button_season_handle.Size = new System.Drawing.Size(105, 29);
             this.Button_season_handle.TabIndex = 5;
@@ -197,16 +197,16 @@ namespace Lab2
             // 
             // textBoxParsing
             // 
-            this.textBoxParsing.Location = new System.Drawing.Point(12, 41);
+            this.textBoxParsing.Location = new System.Drawing.Point(6, 41);
             this.textBoxParsing.Name = "textBoxParsing";
-            this.textBoxParsing.Size = new System.Drawing.Size(210, 27);
+            this.textBoxParsing.Size = new System.Drawing.Size(222, 27);
             this.textBoxParsing.TabIndex = 1;
             // 
             // Button_parse
             // 
-            this.Button_parse.Location = new System.Drawing.Point(228, 41);
+            this.Button_parse.Location = new System.Drawing.Point(234, 39);
             this.Button_parse.Name = "Button_parse";
-            this.Button_parse.Size = new System.Drawing.Size(117, 29);
+            this.Button_parse.Size = new System.Drawing.Size(111, 29);
             this.Button_parse.TabIndex = 3;
             this.Button_parse.Text = "Parse";
             this.Button_parse.UseVisualStyleBackColor = true;
