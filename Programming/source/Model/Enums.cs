@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lab2.Model
 {
-    public enum MyEnums
+    public enum Enums
     {
         Colour,
         Company,

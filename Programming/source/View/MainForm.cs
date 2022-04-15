@@ -11,18 +11,18 @@ using Lab2.Model;
 
 namespace Lab2
 {
-    public partial class MainForm : Form
+    public partial class mainForm : Form
     {
-        public MainForm()
+        public mainForm()
         {
             InitializeComponent();
-            var items = Enum.GetValues(typeof(MyEnums));
+            var items = Enum.GetValues(typeof(Enums));
             foreach (var item in items)
             {
-                EnumsListBox.Items.Add(item);
+                listBoxEnums.Items.Add(item);
             }
 
-            EnumsListBox.SelectedIndex = 0;
+            listBoxEnums.SelectedIndex = 0;
 
             var itemsbox = Enum.GetValues(typeof(Season));
             foreach (var item in itemsbox)
@@ -33,33 +33,33 @@ namespace Lab2
 
         private void EnumsListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            labelparse.Text = "";
-            switch ((MyEnums)EnumsListBox.SelectedItem)
+            labelParse.Text = "";
+            switch ((Enums)listBoxEnums.SelectedItem)
             {
-                case MyEnums.Colour:
-                    ValuesListBox.DataSource = Enum.GetValues(typeof(Colour));
+                case Model.Enums.Colour:
+                    listBoxValues.DataSource = Enum.GetValues(typeof(Colour));
                     break;
-                case MyEnums.Company:
-                    ValuesListBox.DataSource = Enum.GetValues(typeof(Company));
+                case Model.Enums.Company:
+                    listBoxValues.DataSource = Enum.GetValues(typeof(Company));
                     break;
-                case MyEnums.Education:
-                    ValuesListBox.DataSource = Enum.GetValues(typeof(Education));
+                case Model.Enums.Education:
+                    listBoxValues.DataSource = Enum.GetValues(typeof(Education));
                     break;
-                case MyEnums.Genre:
-                    ValuesListBox.DataSource = Enum.GetValues(typeof(Genre));
+                case Model.Enums.Genre:
+                    listBoxValues.DataSource = Enum.GetValues(typeof(Genre));
                     break;
-                case MyEnums.Season:
-                    ValuesListBox.DataSource = Enum.GetValues(typeof(Season));
+                case Model.Enums.Season:
+                    listBoxValues.DataSource = Enum.GetValues(typeof(Season));
                     break;
-                case MyEnums.Weekday:
-                    ValuesListBox.DataSource = Enum.GetValues(typeof(Weekday));
+                case Model.Enums.Weekday:
+                    listBoxValues.DataSource = Enum.GetValues(typeof(Weekday));
                     break;
             }
         }
 
         private void ValuesListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var item = ValuesListBox.SelectedItem;
+            var item = listBoxValues.SelectedItem;
             textBoxIntValue.Text = ((int)item).ToString();
         }
 
@@ -68,11 +68,11 @@ namespace Lab2
             Weekday weekday;
             if (Enum.TryParse(textBoxParsing.Text, out weekday))
             {
-                labelparse.Text = $"Это день недели ({weekday} = {(int)weekday})";
+                labelParse.Text = $"Это день недели ({weekday} = {(int)weekday})";
             }
             else
             {
-                labelparse.Text = "Нет такого дня недели";
+                labelParse.Text = "Нет такого дня недели";
             }
             textBoxParsing.Text = "";
         }
