@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Lab2.Model;
 
@@ -61,6 +55,8 @@ namespace Lab2
         {
             var item = listBoxValues.SelectedItem;
             textBoxIntValue.Text = ((int)item).ToString();
+
+
         }
 
         private void Button_parse_Click(object sender, EventArgs e)

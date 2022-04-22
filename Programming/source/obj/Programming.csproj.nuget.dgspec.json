@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Jett\\source\\repos\\MyLabFromGit\\Programming\\source\\Programming.csproj": {}
+    "C:\\Users\\Jett\\source\\repos\\Programming\\12321\\Programming\\source\\Programming.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Jett\\source\\repos\\MyLabFromGit\\Programming\\source\\Programming.csproj": {
+    "C:\\Users\\Jett\\source\\repos\\Programming\\12321\\Programming\\source\\Programming.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Jett\\source\\repos\\MyLabFromGit\\Programming\\source\\Programming.csproj",
+        "projectUniqueName": "C:\\Users\\Jett\\source\\repos\\Programming\\12321\\Programming\\source\\Programming.csproj",
         "projectName": "Programming",
-        "projectPath": "C:\\Users\\Jett\\source\\repos\\MyLabFromGit\\Programming\\source\\Programming.csproj",
+        "projectPath": "C:\\Users\\Jett\\source\\repos\\Programming\\12321\\Programming\\source\\Programming.csproj",
         "packagesPath": "C:\\Users\\Jett\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Jett\\source\\repos\\MyLabFromGit\\Programming\\source\\obj\\",
+        "outputPath": "C:\\Users\\Jett\\source\\repos\\Programming\\12321\\Programming\\source\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -61,7 +61,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.406\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.407\\RuntimeIdentifierGraph.json"
         }
       }
     }
