@@ -8,6 +8,7 @@ namespace Programming.Model.Clases
         private double _width;
         
         public string Color { get; set; }
+        public string Name { get; set; }
 
         public double Lenght
         {
@@ -41,11 +42,12 @@ namespace Programming.Model.Clases
                 _lenght = value;
             }
         }
-        public Rectangle (double height, double width, string color)
+        public Rectangle (double height, double width, string color, string name)
         {
             _width = width;
             _lenght = height;
             Color = color;
+            Name = name;
         }
     }
 }

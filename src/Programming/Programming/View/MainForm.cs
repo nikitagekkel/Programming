@@ -10,6 +10,7 @@ namespace Programming
     {
         private List<Rectangle> _rectangles = new List<Rectangle>();
         private Rectangle _currentRectangle;
+        private Rectangle _generatedRectangle;
         
         public MainForm()
         {
@@ -36,10 +37,14 @@ namespace Programming
                 double newWidth = rnd.Next(1, 10);
                 Array colors = Enum.GetValues(typeof(Colour));
                 Colour randomColor = (Colour)colors.GetValue(rnd.Next(colors.Length));
-                _currentRectangle = new Rectangle(newHeight, newWidth, randomColor.ToString());
-                _rectangles.Add(_currentRectangle);
+                string newName = string.Format("Rectangle {0}", (i+1));
+                _generatedRectangle = new Rectangle(newHeight, newWidth, randomColor.ToString(), newName);
+                _rectangles.Add(_generatedRectangle);
             }
-            
+            foreach (Rectangle rectangle in _rectangles)
+            {
+                rectanglesListBox.Items.Add(rectangle.Name);
+            }
         }
 
         private void EnumsListBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -107,9 +112,10 @@ namespace Programming
             }
         }
 
-        private void RectanglesListBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void rectanglesListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            RectanglesListBox.DataSource = _rectangles;
+            _currentRectangle = (Rectangle)rectanglesListBox.SelectedItem;
+
         }
     }
 }
