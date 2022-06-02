@@ -71,6 +71,10 @@ namespace Programming
             this.widthTextBox = new System.Windows.Forms.TextBox();
             this.colorTextBox = new System.Windows.Forms.TextBox();
             this.rectanglesListBox = new System.Windows.Forms.ListBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.coordinateXTextBox = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.coordinateYTextBox = new System.Windows.Forms.TextBox();
             this.MainTabControl.SuspendLayout();
             this.enumsTabPage.SuspendLayout();
             this.EnumsGroupBox.SuspendLayout();
@@ -371,9 +375,9 @@ namespace Programming
             this.TimingLabel.AutoSize = true;
             this.TimingLabel.Location = new System.Drawing.Point(196, 129);
             this.TimingLabel.Name = "TimingLabel";
-            this.TimingLabel.Size = new System.Drawing.Size(58, 20);
+            this.TimingLabel.Size = new System.Drawing.Size(123, 20);
             this.TimingLabel.TabIndex = 6;
-            this.TimingLabel.Text = "Timing:";
+            this.TimingLabel.Text = "Timing(Seconds):";
             // 
             // timingTextBox
             // 
@@ -398,6 +402,10 @@ namespace Programming
             // 
             // ClassesGroupBox
             // 
+            this.ClassesGroupBox.Controls.Add(this.label2);
+            this.ClassesGroupBox.Controls.Add(this.coordinateYTextBox);
+            this.ClassesGroupBox.Controls.Add(this.label1);
+            this.ClassesGroupBox.Controls.Add(this.coordinateXTextBox);
             this.ClassesGroupBox.Controls.Add(this.FindRectanglesButton);
             this.ClassesGroupBox.Controls.Add(this.ColorLabel);
             this.ClassesGroupBox.Controls.Add(this.WidthLabel);
@@ -483,6 +491,38 @@ namespace Programming
             this.rectanglesListBox.TabIndex = 0;
             this.rectanglesListBox.SelectedIndexChanged += new System.EventHandler(this.RectanglesListBox_SelectedIndexChanged);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(187, 184);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(99, 20);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Coorditane X:";
+            // 
+            // coordinateXTextBox
+            // 
+            this.coordinateXTextBox.Location = new System.Drawing.Point(187, 207);
+            this.coordinateXTextBox.Name = "coordinateXTextBox";
+            this.coordinateXTextBox.Size = new System.Drawing.Size(125, 27);
+            this.coordinateXTextBox.TabIndex = 8;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(187, 237);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(98, 20);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "Coordinate Y:";
+            // 
+            // coordinateYTextBox
+            // 
+            this.coordinateYTextBox.Location = new System.Drawing.Point(187, 260);
+            this.coordinateYTextBox.Name = "coordinateYTextBox";
+            this.coordinateYTextBox.Size = new System.Drawing.Size(125, 27);
+            this.coordinateYTextBox.TabIndex = 10;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -554,6 +594,10 @@ namespace Programming
         private System.Windows.Forms.TextBox yearRealseTextBox;
         private System.Windows.Forms.Label RatingLabel;
         private System.Windows.Forms.TextBox ratingTextBox;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox coordinateYTextBox;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox coordinateXTextBox;
     }
 }
 

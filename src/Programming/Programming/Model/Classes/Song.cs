@@ -15,10 +15,7 @@ namespace Programming.Model.Classes
             }
             set
             {
-                if (value < 0)
-                {
-                    throw new ArgumentNullException("Error, duration can't be negative");
-                }
+                Validator.AssertOnPositiveValue(nameof(SongDurationMinutes), value);
                 _songDurationSeconds = value;
             }
         }

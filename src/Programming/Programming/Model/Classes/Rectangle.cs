@@ -9,6 +9,7 @@ namespace Programming.Model.Classes
         
         public string Color { get; set; }
         public string Name { get; set; }
+        public Point2D Center { get; set; }
 
         public double Lenght
         {
@@ -18,10 +19,7 @@ namespace Programming.Model.Classes
             }
             set
             {
-                if (value < 0)
-                {
-                    throw new ArgumentException("Error, lenght can't be negative");
-                }
+                Validator.AssertOnPositiveValue(nameof(Lenght), value);
                 _lenght = value;
             }
         }
@@ -30,19 +28,19 @@ namespace Programming.Model.Classes
         {
             get
             {
-
                 return _width;
             }
             set
             {
-                if (value < 0)
-                {
-                    throw new ArgumentException("Error, width can't be negative");
-                }
+                Validator.AssertOnPositiveValue(nameof(Width), value);
                 _lenght = value;
             }
         }
-        public Rectangle(double height, double width, string color, string name)
+        public Rectangle(
+            double height,
+            double width,
+            string color,
+            string name)
         {
             _width = width;
             _lenght = height;

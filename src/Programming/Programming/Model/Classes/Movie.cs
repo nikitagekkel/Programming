@@ -20,11 +20,8 @@ namespace Programming.Model.Classes
             }
             set
             {
-                if (value < 0)
-                {
-                    throw new ArgumentException("Error, duration can't be negative");
-                }
-                _movieDurationMinutes= value;
+                Validator.AssertOnPositiveValue(nameof(Timing), value);
+                _movieDurationMinutes = value;
             }
         }
 
@@ -36,10 +33,7 @@ namespace Programming.Model.Classes
             }
             set
             {
-                if (value < 1900 ^ value > DateTime.Now.Year)
-                {
-                    throw new ArgumentException("Error, year realise can be only from 1900 to now year");
-                }
+                Validator.AssertValueInRange(nameof(YearRealese), value, 1900, DateTime.Now.Year);
                 _movieYearRealese = value;
             }
         }
@@ -52,10 +46,7 @@ namespace Programming.Model.Classes
             }
             set
             {
-                if (value < 0 ^ value > 10)
-                {
-                    throw new ArgumentException("Error, rating can't be lesser than 0");
-                }
+                Validator.AssertValueInRange(nameof(Rating), value, 0, 10);
                 _movieRating = value;
             }
         }

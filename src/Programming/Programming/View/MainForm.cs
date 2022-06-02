@@ -160,8 +160,8 @@ namespace Programming
         {
             int selectedRectangleIndex = rectanglesListBox.SelectedIndex;
             _currentRectangle = _rectangles[selectedRectangleIndex];
-            widthTextBox.Text = _currentRectangle.Width.ToString();
             lenghtTextBox.Text = _currentRectangle.Lenght.ToString();
+            widthTextBox.Text = _currentRectangle.Width.ToString();
             colorTextBox.Text = _currentRectangle.Color;
         }
 

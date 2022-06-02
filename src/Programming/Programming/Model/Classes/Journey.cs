@@ -18,10 +18,7 @@ namespace Programming.Model.Classes
             }
             set
             {
-                if (value < 0)
-                {
-                    throw new ArgumentException("Error, time can't be negative");
-                }
+                Validator.AssertOnPositiveValue(nameof(FlightTimeMinutes), value);
                 _flightTimeMinutes = value;
             }
         }
