@@ -17,7 +17,7 @@ namespace Programming.Model.Classes
             {
                 if (value < 0)
                 {
-                    throw new ArgumentNullException("Error");
+                    throw new ArgumentNullException("Error, duration can't be negative");
                 }
                 _songDurationSeconds = value;
             }

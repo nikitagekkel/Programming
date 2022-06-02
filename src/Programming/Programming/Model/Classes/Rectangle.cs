@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Programming.Model.Clases
+namespace Programming.Model.Classes
 {
     public class Rectangle
     {
@@ -20,7 +20,7 @@ namespace Programming.Model.Clases
             {
                 if (value < 0)
                 {
-                    throw new ArgumentNullException("Error");
+                    throw new ArgumentException("Error, lenght can't be negative");
                 }
                 _lenght = value;
             }
@@ -37,12 +37,12 @@ namespace Programming.Model.Clases
             {
                 if (value < 0)
                 {
-                    throw new ArgumentNullException("Error");
+                    throw new ArgumentException("Error, width can't be negative");
                 }
                 _lenght = value;
             }
         }
-        public Rectangle (double height, double width, string color, string name)
+        public Rectangle(double height, double width, string color, string name)
         {
             _width = width;
             _lenght = height;

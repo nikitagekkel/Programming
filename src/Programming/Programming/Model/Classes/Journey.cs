@@ -20,7 +20,7 @@ namespace Programming.Model.Classes
             {
                 if (value < 0)
                 {
-                    throw new ArgumentNullException("Error");
+                    throw new ArgumentException("Error, time can't be negative");
                 }
                 _flightTimeMinutes = value;
             }

@@ -1,16 +1,22 @@
 ﻿using System;
 using System.Windows.Forms;
 using Programming.Model.Enums;
-using Programming.Model.Clases;
 using System.Collections.Generic;
+using Programming.Model.Classes;
 
 namespace Programming
 {
     public partial class MainForm : Form
     {
         private List<Rectangle> _rectangles = new List<Rectangle>();
+        private List<Movie> _movies = new List<Movie>();
         private Rectangle _currentRectangle;
         private Rectangle _generatedRectangle;
+        private Movie _movieOne;
+        private Movie _movieSecond;
+        private Movie _currentMovie;
+        private int rectangleIndex = 0;
+        private int movieIndex = 0;
         
         public MainForm()
         {
@@ -45,6 +51,44 @@ namespace Programming
             {
                 rectanglesListBox.Items.Add(rectangle.Name);
             }
+
+            _movieOne = new Movie("Driver", "Action", 140, 2011, 7.8);
+            _movieSecond = new Movie("Snatch", "Action", 144, 2000, 8.3);
+            _movies.Add(_movieOne);
+            _movies.Add(_movieSecond);
+
+            foreach (Movie movie in _movies)
+            {
+                movieListBox.Items.Add(movie.MovieName);
+            }
+        }
+        private int FindRectangleWithMaxWidth()
+        {
+            double maxLenght = 0;
+            int maxIndex = 0;
+            foreach (Rectangle rectangle in _rectangles)
+            {
+                if (rectangle.Lenght > maxLenght)
+                {
+                    maxLenght = rectangle.Lenght;
+                    maxIndex = _rectangles.IndexOf(rectangle);
+                }
+            }
+            rectangleIndex = maxIndex;
+            return rectangleIndex;
+        }
+        
+        private int FindMovieWithMaxRating()
+        {
+            double maxRating = 0;
+            int maxIndex = 0;
+            foreach (Movie movie in _movies)
+            {
+                maxRating = movie.Rating;
+                maxIndex = _movies.IndexOf(movie);
+            }
+            movieIndex = maxIndex;
+            return movieIndex;
         }
 
         private void EnumsListBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -112,10 +156,62 @@ namespace Programming
             }
         }
 
-        private void rectanglesListBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void RectanglesListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            _currentRectangle = (Rectangle)rectanglesListBox.SelectedItem;
+            int selectedRectangleIndex = rectanglesListBox.SelectedIndex;
+            _currentRectangle = _rectangles[selectedRectangleIndex];
+            widthTextBox.Text = _currentRectangle.Width.ToString();
+            lenghtTextBox.Text = _currentRectangle.Lenght.ToString();
+            colorTextBox.Text = _currentRectangle.Color;
+        }
 
+        private void LenghtTextBox_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                _currentRectangle.Lenght = Convert.ToDouble(lenghtTextBox.Text);
+                lenghtTextBox.BackColor = System.Drawing.Color.White;
+            }
+            catch
+            {
+                lenghtTextBox.BackColor = System.Drawing.Color.LightPink;
+            }
+        }
+
+        private void WidthTextBox_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                _currentRectangle.Width = Convert.ToDouble(widthTextBox.Text);
+                widthTextBox.BackColor = System.Drawing.Color.White;
+            }
+            catch
+            {
+                widthTextBox.BackColor = System.Drawing.Color.LightPink;
+            }
+        }
+
+        private void FindButton_Click(object sender, EventArgs e)
+        {
+            FindRectangleWithMaxWidth();
+            rectanglesListBox.SelectedIndex = rectangleIndex;
+        }
+
+        private void MovieListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int selectedMovieIndex = movieListBox.SelectedIndex;
+            _currentMovie = _movies[selectedMovieIndex];
+            nameTextBox.Text = _currentMovie.MovieName;
+            genreTextBox.Text = _currentMovie.MovieGenre;
+            timingTextBox.Text = _currentMovie.Timing.ToString();
+            yearRealseTextBox.Text = _currentMovie.YearRealese.ToString();
+            ratingTextBox.Text = _currentMovie.Rating.ToString();
+        }
+
+        private void FindMoviesButton_Click(object sender, EventArgs e)
+        {
+            FindMovieWithMaxRating();
+            movieListBox.SelectedIndex = movieIndex;
         }
     }
 }

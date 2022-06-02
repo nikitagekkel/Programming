@@ -16,10 +16,7 @@ namespace Programming.Model.Classes
             }
             set
             {
-                if (value < 0)
-                {
-                    throw new ArgumentNullException("Error");
-                }
+                Validator.AssertOnPositiveValue(nameof(EducationSubjectRating), value);
                 _educationSubjectRating = value;
             }
         }

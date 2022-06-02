@@ -1,27 +1,55 @@
 ﻿using System;
+using System.Text.RegularExpressions;
+using Programming.Model.Classes;
 
 namespace Programming.Model.Classes
 {
     public class Contact
     {
-        private int _contactNumber;
-
-        public string ContactName { get; set; }
-        public string ContactSecondName { get; set; }
-        
-        public int ContacttNumber
+        private int _number;
+        private string _name;
+        private string _surname;
+        private static void AssertStringContainsOnlyLetters(string nameProperty, string value)
+        {
+            if (Regex.IsMatch(value, @"^[a-zA-Z]+$") != true)
+            {
+                throw new ArgumentException($"Error, {nameProperty} field can consist only of english characters");
+            }
+        }
+        public int Number
         {
             get
             {
-                return _contactNumber;
+                return _number;
             }
             set
             {
-                if (value < 0)
-                {
-                    throw new ArgumentNullException("Error");
-                }
-                _contactNumber = value;
+                Validator.AssertOnPositiveValue(nameof(Number), value);
+                _number = value;
+            }
+        }
+        public string Name
+        {
+            get
+            {
+                return _name;
+            }
+            set
+            {
+                AssertStringContainsOnlyLetters(nameof(Name), value);
+                _name = value;
+            }
+        }
+        public string Surname
+        {
+            get
+            {
+                return _surname;
+            }
+            set
+            {
+                AssertStringContainsOnlyLetters(nameof(Surname), value);
+                _surname = value;
             }
         }
     }
