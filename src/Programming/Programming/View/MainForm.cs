@@ -41,6 +41,8 @@ namespace Programming
                 Random rnd = new Random();
                 double newHeight = rnd.Next(1, 10);
                 double newWidth = rnd.Next(1, 10);
+                int newX = rnd.Next(1, 10);
+                int newY = rnd.Next(1, 10);
                 Array colors = Enum.GetValues(typeof(Colour));
                 Colour randomColor = (Colour)colors.GetValue(rnd.Next(colors.Length));
                 string newName = string.Format("Rectangle {0}", (i+1));

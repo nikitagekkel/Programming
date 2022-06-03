@@ -1,10 +1,11 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Programming",
-    "\\Programming\\source",
-    "\\Programming\\source\\View"
+    "\\src",
+    "\\src\\Programming",
+    "\\src\\Programming\\Programming",
+    "\\src\\Programming\\Programming\\View"
   ],
-  "SelectedNode": "\\Programming\\source\\View\\MainForm.cs",
+  "SelectedNode": "\\src\\Programming\\Programming\\View\\MainForm.cs",
   "PreviewInSolutionExplorer": false
 }

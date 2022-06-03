@@ -40,12 +40,14 @@ namespace Programming.Model.Classes
             double height,
             double width,
             string color,
-            string name)
+            string name,
+            Point2D center)
         {
             _width = width;
             _lenght = height;
             Color = color;
             Name = name;
+            Center = center;
         }
     }
 }

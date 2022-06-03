@@ -1,0 +1,6 @@
+C:\Users\Jett\Source\Repos\ProgrammingNEW\src\Programming\Programming\obj\Release\net5.0-windows\Programming.MainForm.resources
+C:\Users\Jett\Source\Repos\ProgrammingNEW\src\Programming\Programming\obj\Release\net5.0-windows\Programming.csproj.GenerateResource.cache
+C:\Users\Jett\Source\Repos\ProgrammingNEW\src\Programming\Programming\obj\Release\net5.0-windows\Programming.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Jett\Source\Repos\ProgrammingNEW\src\Programming\Programming\obj\Release\net5.0-windows\Programming.AssemblyInfoInputs.cache
+C:\Users\Jett\Source\Repos\ProgrammingNEW\src\Programming\Programming\obj\Release\net5.0-windows\Programming.AssemblyInfo.cs
+C:\Users\Jett\Source\Repos\ProgrammingNEW\src\Programming\Programming\obj\Release\net5.0-windows\Programming.csproj.CoreCompileInputs.cache

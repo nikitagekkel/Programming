@@ -63,6 +63,9 @@ namespace Programming
             this.genreTextBox = new System.Windows.Forms.TextBox();
             this.yearRealseTextBox = new System.Windows.Forms.TextBox();
             this.ClassesGroupBox = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.coordinateYTextBox = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.FindRectanglesButton = new System.Windows.Forms.Button();
             this.ColorLabel = new System.Windows.Forms.Label();
             this.WidthLabel = new System.Windows.Forms.Label();
@@ -71,10 +74,7 @@ namespace Programming
             this.widthTextBox = new System.Windows.Forms.TextBox();
             this.colorTextBox = new System.Windows.Forms.TextBox();
             this.rectanglesListBox = new System.Windows.Forms.ListBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.coordinateXTextBox = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.coordinateYTextBox = new System.Windows.Forms.TextBox();
             this.MainTabControl.SuspendLayout();
             this.enumsTabPage.SuspendLayout();
             this.EnumsGroupBox.SuspendLayout();
@@ -421,6 +421,31 @@ namespace Programming
             this.ClassesGroupBox.TabStop = false;
             this.ClassesGroupBox.Text = "Rectangles";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(187, 237);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(98, 20);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "Coordinate Y:";
+            // 
+            // coordinateYTextBox
+            // 
+            this.coordinateYTextBox.Location = new System.Drawing.Point(187, 260);
+            this.coordinateYTextBox.Name = "coordinateYTextBox";
+            this.coordinateYTextBox.Size = new System.Drawing.Size(125, 27);
+            this.coordinateYTextBox.TabIndex = 10;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(187, 185);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(99, 20);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Coorditane X:";
+            // 
             // FindRectanglesButton
             // 
             this.FindRectanglesButton.Location = new System.Drawing.Point(187, 301);
@@ -491,37 +516,12 @@ namespace Programming
             this.rectanglesListBox.TabIndex = 0;
             this.rectanglesListBox.SelectedIndexChanged += new System.EventHandler(this.RectanglesListBox_SelectedIndexChanged);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(187, 184);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(99, 20);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Coorditane X:";
-            // 
             // coordinateXTextBox
             // 
             this.coordinateXTextBox.Location = new System.Drawing.Point(187, 207);
             this.coordinateXTextBox.Name = "coordinateXTextBox";
             this.coordinateXTextBox.Size = new System.Drawing.Size(125, 27);
             this.coordinateXTextBox.TabIndex = 8;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(187, 237);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(98, 20);
-            this.label2.TabIndex = 11;
-            this.label2.Text = "Coordinate Y:";
-            // 
-            // coordinateYTextBox
-            // 
-            this.coordinateYTextBox.Location = new System.Drawing.Point(187, 260);
-            this.coordinateYTextBox.Name = "coordinateYTextBox";
-            this.coordinateYTextBox.Size = new System.Drawing.Size(125, 27);
-            this.coordinateYTextBox.TabIndex = 10;
             // 
             // MainForm
             // 
