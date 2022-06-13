@@ -2,7 +2,7 @@
 
 namespace Programming.Model.Classes
 {
-    public class Journey
+    public class Flight
     {
         private int _flightTimeMinutes;
 

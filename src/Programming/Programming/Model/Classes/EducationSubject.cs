@@ -2,7 +2,7 @@
 
 namespace Programming.Model.Classes
 {
-    class EducationSubject
+    public class EducationSubject
     {
         private int _educationSubjectRating;
 

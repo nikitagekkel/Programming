@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Text.RegularExpressions;
-using Programming.Model.Classes;
 
 namespace Programming.Model.Classes
 {
     public class Contact
     {
         private int _number;
+
         private string _name;
         private string _surname;
         private static void AssertStringContainsOnlyLetters(string nameProperty, string value)

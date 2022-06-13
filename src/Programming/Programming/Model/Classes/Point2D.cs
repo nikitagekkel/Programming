@@ -6,6 +6,7 @@ namespace Programming.Model.Classes
     {
         private int _x;
         private int _y;
+
         public int X
         {
             get
@@ -17,6 +18,7 @@ namespace Programming.Model.Classes
                 _x = value;
             }
         }
+
         public int Y
         {
             get
@@ -27,6 +29,12 @@ namespace Programming.Model.Classes
             {
                 _y = value;
             }
+        }
+
+        public Point2D(int x, int y)
+        {
+            X = x;
+            Y = y;
         }
     }
 }

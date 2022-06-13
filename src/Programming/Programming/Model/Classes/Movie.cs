@@ -4,37 +4,39 @@ namespace Programming.Model.Classes
 {
     public class Movie
     {
-        private int _movieDurationMinutes;
-        private int _movieYearRealese;
-        private double _movieRating;
+        private int _duration;
 
-        public string MovieName { get; set; }
+        private int _releaseYear;
 
-        public string MovieGenre { get; set; }
+        private double _rating;
 
-        public int Timing
+        public string Name { get; set; }
+
+        public string Genre { get; set; }
+
+        public int Duration
         {
             get
             {
-                return _movieDurationMinutes;
+                return _duration;
             }
             set
             {
-                Validator.AssertOnPositiveValue(nameof(Timing), value);
-                _movieDurationMinutes = value;
+                Validator.AssertOnPositiveValue(nameof(Duration), value);
+                _duration = value;
             }
         }
 
-        public int YearRealese
+        public int ReleaseYear
         {
             get
             {
-                return _movieYearRealese;
+                return _releaseYear;
             }
             set
             {
-                Validator.AssertValueInRange(nameof(YearRealese), value, 1900, DateTime.Now.Year);
-                _movieYearRealese = value;
+                Validator.AssertValueInRange(nameof(ReleaseYear), value, 1900, DateTime.Now.Year);
+                _releaseYear = value;
             }
         }
 
@@ -42,21 +44,27 @@ namespace Programming.Model.Classes
         {
             get
             {
-                return _movieRating;
+                return _rating;
             }
             set
             {
                 Validator.AssertValueInRange(nameof(Rating), value, 0, 10);
-                _movieRating = value;
+                _rating = value;
             }
         }
-        public Movie(string movieName, string movieGenre, int timing, int yearRealese, double rating)
+
+        public Movie(
+            string name,
+            string genre,
+            int duration,
+            int yearRealese,
+            double rating)
         {
-            MovieName = movieName;
-            MovieGenre = movieGenre;
-            _movieDurationMinutes = timing;
-            _movieYearRealese = yearRealese;
-            _movieRating = rating;
+            Name = name;
+            Genre = genre;
+            _duration = duration;
+            _releaseYear = yearRealese;
+            _rating = rating;
         }
     }
 }
