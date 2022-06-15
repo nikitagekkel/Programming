@@ -18,7 +18,6 @@ namespace Programming
         
         public MainForm()
         {
-
             InitializeComponent();
             var enumEnumeration = Enum.GetValues(typeof(Enums));
             foreach (var item in enumEnumeration)
@@ -39,10 +38,13 @@ namespace Programming
                 Random rnd = new Random();
                 double newHeight = rnd.Next(1, 10);
                 double newWidth = rnd.Next(1, 10);
+                int newX = rnd.Next(1, 10);
+                int newY = rnd.Next(1, 10);
+                Point2D newCenter = new(newX, newY);
                 Array colors = Enum.GetValues(typeof(Colour));
                 Colour randomColor = (Colour)colors.GetValue(rnd.Next(colors.Length));
-                string newName = string.Format("Rectangle {0}", (i + 1));
-                Rectangle _generatedRectangle = new(newHeight, newWidth, randomColor.ToString(), newName);
+                string newName = string.Format("Rectangle {0}", (i +1));
+                Rectangle _generatedRectangle = new(newHeight, newWidth, randomColor.ToString(), newName, newCenter);
                 _rectangles.Add(_generatedRectangle);
             }
 
@@ -161,8 +163,11 @@ namespace Programming
             lenghtTextBox.Text = _currentRectangle.Length.ToString();
             widthTextBox.Text = _currentRectangle.Width.ToString();
             colorTextBox.Text = _currentRectangle.Color;
-            idLabel.Text = _currentRectangle.Id.ToString();
+            idTextBox.Text = _currentRectangle.Id.ToString();
+            coordinateXTextBox.Text = _currentRectangle.Center.X.ToString();
+            coordinateYTextBox.Text = _currentRectangle.Center.Y.ToString();
         }
+
         private void MovieListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             _currentMovie = _movies[movieListBox.SelectedIndex];

@@ -49,17 +49,15 @@ namespace Programming.Model.Classes
             double width,
             string color,
             string name,
-            Point2D center,
-            int id)
+            Point2D center)
         {
-            _length = length;
-            _width = width;
+            Length = length;
+            Width = width;
             Color = color;
             Name = name;
             Center = center;
             _allRectanglesCount++;
             Id = _allRectanglesCount;
-            Id = id;
         }
     }
 }

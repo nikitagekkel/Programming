@@ -63,11 +63,13 @@ namespace Programming
             this.genreTextBox = new System.Windows.Forms.TextBox();
             this.releaseYearTextBox = new System.Windows.Forms.TextBox();
             this.classesGroupBox = new System.Windows.Forms.GroupBox();
+            this.idLabel = new System.Windows.Forms.Label();
+            this.idTextBox = new System.Windows.Forms.TextBox();
+            this.findRectanglesButton = new System.Windows.Forms.Button();
             this.yLabel = new System.Windows.Forms.Label();
             this.coordinateYTextBox = new System.Windows.Forms.TextBox();
             this.xLabel = new System.Windows.Forms.Label();
             this.coordinateXTextBox = new System.Windows.Forms.TextBox();
-            this.findRectanglesButton = new System.Windows.Forms.Button();
             this.colorLabel = new System.Windows.Forms.Label();
             this.widthLabel = new System.Windows.Forms.Label();
             this.lengthLabel = new System.Windows.Forms.Label();
@@ -75,8 +77,6 @@ namespace Programming
             this.widthTextBox = new System.Windows.Forms.TextBox();
             this.colorTextBox = new System.Windows.Forms.TextBox();
             this.rectanglesListBox = new System.Windows.Forms.ListBox();
-            this.idLabel = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.mainTabControl.SuspendLayout();
             this.enumsTabPage.SuspendLayout();
             this.enumsGroupBox.SuspendLayout();
@@ -410,7 +410,7 @@ namespace Programming
             // classesGroupBox
             // 
             this.classesGroupBox.Controls.Add(this.idLabel);
-            this.classesGroupBox.Controls.Add(this.textBox1);
+            this.classesGroupBox.Controls.Add(this.idTextBox);
             this.classesGroupBox.Controls.Add(this.findRectanglesButton);
             this.classesGroupBox.Controls.Add(this.yLabel);
             this.classesGroupBox.Controls.Add(this.coordinateYTextBox);
@@ -429,6 +429,33 @@ namespace Programming
             this.classesGroupBox.TabIndex = 0;
             this.classesGroupBox.TabStop = false;
             this.classesGroupBox.Text = "Rectangles";
+            // 
+            // idLabel
+            // 
+            this.idLabel.AutoSize = true;
+            this.idLabel.Location = new System.Drawing.Point(187, 290);
+            this.idLabel.Name = "idLabel";
+            this.idLabel.Size = new System.Drawing.Size(25, 20);
+            this.idLabel.TabIndex = 13;
+            this.idLabel.Text = "Id:";
+            // 
+            // idTextBox
+            // 
+            this.idTextBox.Location = new System.Drawing.Point(187, 313);
+            this.idTextBox.Name = "idTextBox";
+            this.idTextBox.ReadOnly = true;
+            this.idTextBox.Size = new System.Drawing.Size(125, 27);
+            this.idTextBox.TabIndex = 12;
+            // 
+            // findRectanglesButton
+            // 
+            this.findRectanglesButton.Location = new System.Drawing.Point(187, 363);
+            this.findRectanglesButton.Name = "findRectanglesButton";
+            this.findRectanglesButton.Size = new System.Drawing.Size(125, 27);
+            this.findRectanglesButton.TabIndex = 7;
+            this.findRectanglesButton.Text = "Find";
+            this.findRectanglesButton.UseVisualStyleBackColor = true;
+            this.findRectanglesButton.Click += new System.EventHandler(this.FindRectanglesButton_Click);
             // 
             // yLabel
             // 
@@ -463,16 +490,6 @@ namespace Programming
             this.coordinateXTextBox.ReadOnly = true;
             this.coordinateXTextBox.Size = new System.Drawing.Size(125, 27);
             this.coordinateXTextBox.TabIndex = 8;
-            // 
-            // findRectanglesButton
-            // 
-            this.findRectanglesButton.Location = new System.Drawing.Point(187, 363);
-            this.findRectanglesButton.Name = "findRectanglesButton";
-            this.findRectanglesButton.Size = new System.Drawing.Size(125, 27);
-            this.findRectanglesButton.TabIndex = 7;
-            this.findRectanglesButton.Text = "Find";
-            this.findRectanglesButton.UseVisualStyleBackColor = true;
-            this.findRectanglesButton.Click += new System.EventHandler(this.FindRectanglesButton_Click);
             // 
             // colorLabel
             // 
@@ -533,23 +550,6 @@ namespace Programming
             this.rectanglesListBox.Size = new System.Drawing.Size(156, 364);
             this.rectanglesListBox.TabIndex = 0;
             this.rectanglesListBox.SelectedIndexChanged += new System.EventHandler(this.RectanglesListBox_SelectedIndexChanged);
-            // 
-            // idLabel
-            // 
-            this.idLabel.AutoSize = true;
-            this.idLabel.Location = new System.Drawing.Point(187, 290);
-            this.idLabel.Name = "idLabel";
-            this.idLabel.Size = new System.Drawing.Size(25, 20);
-            this.idLabel.TabIndex = 13;
-            this.idLabel.Text = "Id:";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(187, 313);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(125, 27);
-            this.textBox1.TabIndex = 12;
             // 
             // MainForm
             // 
@@ -627,7 +627,7 @@ namespace Programming
         private System.Windows.Forms.Label xLabel;
         private System.Windows.Forms.TextBox coordinateXTextBox;
         private System.Windows.Forms.Label idLabel;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox idTextBox;
     }
 }
 

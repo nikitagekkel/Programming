@@ -5,8 +5,11 @@ namespace Programming.Model.Classes
     public class Ring
     {
         private double _innerRadius;
+
         private double _outerRadius;
+
         public Point2D Center { get; set; }
+
         public double InnerRadius
         {
             get
@@ -22,6 +25,7 @@ namespace Programming.Model.Classes
                 _innerRadius = value;
             }
         }
+
         public double OuterRadius
         {
             get
@@ -37,6 +41,7 @@ namespace Programming.Model.Classes
                 _outerRadius = value;
             }
         }
+
         public double Area
         {
             get
@@ -44,10 +49,12 @@ namespace Programming.Model.Classes
                 return Math.PI * Math.Pow(OuterRadius, 2) - Math.PI * Math.Pow(InnerRadius, 2);
             }
         }
-        public Ring (double innerRadius, double outerRadius)
+
+        public Ring (double innerRadius, double outerRadius, Point2D center, double Area)
         {
             _innerRadius = innerRadius;
             _outerRadius = outerRadius;
+            Center = center;
         }
     }
 }

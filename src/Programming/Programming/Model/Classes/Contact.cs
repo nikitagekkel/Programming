@@ -8,7 +8,9 @@ namespace Programming.Model.Classes
         private int _number;
 
         private string _name;
+
         private string _surname;
+
         private static void AssertStringContainsOnlyLetters(string nameProperty, string value)
         {
             if (Regex.IsMatch(value, @"^[a-zA-Z]+$") != true)
@@ -16,6 +18,7 @@ namespace Programming.Model.Classes
                 throw new ArgumentException($"Error, {nameProperty} field can consist only of english characters");
             }
         }
+
         public int Number
         {
             get
@@ -28,6 +31,7 @@ namespace Programming.Model.Classes
                 _number = value;
             }
         }
+
         public string Name
         {
             get
@@ -40,6 +44,7 @@ namespace Programming.Model.Classes
                 _name = value;
             }
         }
+
         public string Surname
         {
             get

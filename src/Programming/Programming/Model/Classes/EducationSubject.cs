@@ -7,7 +7,9 @@ namespace Programming.Model.Classes
         private int _educationSubjectRating;
 
         public string EducationSubjectName { get; set; }
+
         public string EducationSubjectTeacherName { get; set; }
+
         public int EducationSubjectRating
         {
             get
