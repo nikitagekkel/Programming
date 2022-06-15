@@ -14,7 +14,7 @@ namespace Programming.Model.Classes
             {
                 return _x;
             }
-            private set
+            set
             {
                 _x = value;
             }
@@ -26,7 +26,7 @@ namespace Programming.Model.Classes
             {
                 return _y;
             }
-            private set
+            set
             {
                 _y = value;
             }

@@ -48,7 +48,7 @@ namespace Programming
             this.parseButton = new System.Windows.Forms.Button();
             this.typeValueLabel = new System.Windows.Forms.Label();
             this.parsingTextBox = new System.Windows.Forms.TextBox();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.classesTabPage = new System.Windows.Forms.TabPage();
             this.moviesGroupBox = new System.Windows.Forms.GroupBox();
             this.ratingLabel = new System.Windows.Forms.Label();
             this.movieListBox = new System.Windows.Forms.ListBox();
@@ -72,33 +72,46 @@ namespace Programming
             this.coordinateXTextBox = new System.Windows.Forms.TextBox();
             this.colorLabel = new System.Windows.Forms.Label();
             this.widthLabel = new System.Windows.Forms.Label();
-            this.lengthLabel = new System.Windows.Forms.Label();
-            this.lenghtTextBox = new System.Windows.Forms.TextBox();
+            this.heigthLabel = new System.Windows.Forms.Label();
+            this.heigthTextBox = new System.Windows.Forms.TextBox();
             this.widthTextBox = new System.Windows.Forms.TextBox();
             this.colorTextBox = new System.Windows.Forms.TextBox();
             this.rectanglesListBox = new System.Windows.Forms.ListBox();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.rectanglesTabPage = new System.Windows.Forms.TabPage();
+            this.panelHeigthTextBox = new System.Windows.Forms.TextBox();
+            this.selectedHeigthLabel = new System.Windows.Forms.Label();
+            this.panelWidthTextBox = new System.Windows.Forms.TextBox();
+            this.selectedWidthLabel = new System.Windows.Forms.Label();
+            this.panelCoordinateYTextBox = new System.Windows.Forms.TextBox();
+            this.panelCoordinateXTextBox = new System.Windows.Forms.TextBox();
+            this.panelIdTextBox = new System.Windows.Forms.TextBox();
+            this.selectedYLabel = new System.Windows.Forms.Label();
+            this.selectedXLabel = new System.Windows.Forms.Label();
+            this.selectedIdLabel = new System.Windows.Forms.Label();
+            this.selectedRectangleLabel = new System.Windows.Forms.Label();
+            this.removeButtonPictureBox = new System.Windows.Forms.PictureBox();
             this.addButtonPictureBox = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.selectedRectanglesLabel = new System.Windows.Forms.Label();
+            this.canvaPanel = new System.Windows.Forms.Panel();
+            this.panelRectanglesListBox = new System.Windows.Forms.ListBox();
             this.mainTabControl.SuspendLayout();
             this.enumsTabPage.SuspendLayout();
             this.enumsGroupBox.SuspendLayout();
             this.seasonHandleGroupBox.SuspendLayout();
             this.parsingGroupBox.SuspendLayout();
-            this.tabPage1.SuspendLayout();
+            this.classesTabPage.SuspendLayout();
             this.moviesGroupBox.SuspendLayout();
             this.classesGroupBox.SuspendLayout();
-            this.tabPage2.SuspendLayout();
+            this.rectanglesTabPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.removeButtonPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.addButtonPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // mainTabControl
             // 
             this.mainTabControl.Controls.Add(this.enumsTabPage);
-            this.mainTabControl.Controls.Add(this.tabPage1);
-            this.mainTabControl.Controls.Add(this.tabPage2);
+            this.mainTabControl.Controls.Add(this.classesTabPage);
+            this.mainTabControl.Controls.Add(this.rectanglesTabPage);
             this.mainTabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainTabControl.Location = new System.Drawing.Point(0, 0);
             this.mainTabControl.Name = "mainTabControl";
@@ -278,17 +291,17 @@ namespace Programming
             this.parsingTextBox.Size = new System.Drawing.Size(214, 27);
             this.parsingTextBox.TabIndex = 1;
             // 
-            // tabPage1
+            // classesTabPage
             // 
-            this.tabPage1.Controls.Add(this.moviesGroupBox);
-            this.tabPage1.Controls.Add(this.classesGroupBox);
-            this.tabPage1.Location = new System.Drawing.Point(4, 29);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(723, 538);
-            this.tabPage1.TabIndex = 1;
-            this.tabPage1.Text = "Classes";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.classesTabPage.Controls.Add(this.moviesGroupBox);
+            this.classesTabPage.Controls.Add(this.classesGroupBox);
+            this.classesTabPage.Location = new System.Drawing.Point(4, 29);
+            this.classesTabPage.Name = "classesTabPage";
+            this.classesTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.classesTabPage.Size = new System.Drawing.Size(723, 538);
+            this.classesTabPage.TabIndex = 1;
+            this.classesTabPage.Text = "Classes";
+            this.classesTabPage.UseVisualStyleBackColor = true;
             // 
             // moviesGroupBox
             // 
@@ -388,9 +401,9 @@ namespace Programming
             this.durationLabel.AutoSize = true;
             this.durationLabel.Location = new System.Drawing.Point(187, 129);
             this.durationLabel.Name = "durationLabel";
-            this.durationLabel.Size = new System.Drawing.Size(135, 20);
+            this.durationLabel.Size = new System.Drawing.Size(132, 20);
             this.durationLabel.TabIndex = 6;
-            this.durationLabel.Text = "Duration(Seconds):";
+            this.durationLabel.Text = "Duration(Minutes):";
             // 
             // durationTextBox
             // 
@@ -427,8 +440,8 @@ namespace Programming
             this.classesGroupBox.Controls.Add(this.coordinateXTextBox);
             this.classesGroupBox.Controls.Add(this.colorLabel);
             this.classesGroupBox.Controls.Add(this.widthLabel);
-            this.classesGroupBox.Controls.Add(this.lengthLabel);
-            this.classesGroupBox.Controls.Add(this.lenghtTextBox);
+            this.classesGroupBox.Controls.Add(this.heigthLabel);
+            this.classesGroupBox.Controls.Add(this.heigthTextBox);
             this.classesGroupBox.Controls.Add(this.widthTextBox);
             this.classesGroupBox.Controls.Add(this.colorTextBox);
             this.classesGroupBox.Controls.Add(this.rectanglesListBox);
@@ -518,22 +531,22 @@ namespace Programming
             this.widthLabel.TabIndex = 5;
             this.widthLabel.Text = "Width:";
             // 
-            // lengthLabel
+            // heigthLabel
             // 
-            this.lengthLabel.AutoSize = true;
-            this.lengthLabel.Location = new System.Drawing.Point(187, 26);
-            this.lengthLabel.Name = "lengthLabel";
-            this.lengthLabel.Size = new System.Drawing.Size(57, 20);
-            this.lengthLabel.TabIndex = 4;
-            this.lengthLabel.Text = "Length:";
+            this.heigthLabel.AutoSize = true;
+            this.heigthLabel.Location = new System.Drawing.Point(187, 26);
+            this.heigthLabel.Name = "heigthLabel";
+            this.heigthLabel.Size = new System.Drawing.Size(57, 20);
+            this.heigthLabel.TabIndex = 4;
+            this.heigthLabel.Text = "Heigth:";
             // 
-            // lenghtTextBox
+            // heigthTextBox
             // 
-            this.lenghtTextBox.Location = new System.Drawing.Point(187, 49);
-            this.lenghtTextBox.Name = "lenghtTextBox";
-            this.lenghtTextBox.Size = new System.Drawing.Size(125, 27);
-            this.lenghtTextBox.TabIndex = 3;
-            this.lenghtTextBox.TextChanged += new System.EventHandler(this.LenghtTextBox_TextChanged);
+            this.heigthTextBox.Location = new System.Drawing.Point(187, 49);
+            this.heigthTextBox.Name = "heigthTextBox";
+            this.heigthTextBox.Size = new System.Drawing.Size(125, 27);
+            this.heigthTextBox.TabIndex = 3;
+            this.heigthTextBox.TextChanged += new System.EventHandler(this.HeigthTextBox_TextChanged);
             // 
             // widthTextBox
             // 
@@ -560,59 +573,181 @@ namespace Programming
             this.rectanglesListBox.TabIndex = 0;
             this.rectanglesListBox.SelectedIndexChanged += new System.EventHandler(this.RectanglesListBox_SelectedIndexChanged);
             // 
-            // tabPage2
+            // rectanglesTabPage
             // 
-            this.tabPage2.Controls.Add(this.addButtonPictureBox);
-            this.tabPage2.Controls.Add(this.label1);
-            this.tabPage2.Controls.Add(this.panel1);
-            this.tabPage2.Controls.Add(this.listBox1);
-            this.tabPage2.Location = new System.Drawing.Point(4, 29);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(723, 538);
-            this.tabPage2.TabIndex = 2;
-            this.tabPage2.Text = "Rectangles";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.rectanglesTabPage.Controls.Add(this.panelHeigthTextBox);
+            this.rectanglesTabPage.Controls.Add(this.selectedHeigthLabel);
+            this.rectanglesTabPage.Controls.Add(this.panelWidthTextBox);
+            this.rectanglesTabPage.Controls.Add(this.selectedWidthLabel);
+            this.rectanglesTabPage.Controls.Add(this.panelCoordinateYTextBox);
+            this.rectanglesTabPage.Controls.Add(this.panelCoordinateXTextBox);
+            this.rectanglesTabPage.Controls.Add(this.panelIdTextBox);
+            this.rectanglesTabPage.Controls.Add(this.selectedYLabel);
+            this.rectanglesTabPage.Controls.Add(this.selectedXLabel);
+            this.rectanglesTabPage.Controls.Add(this.selectedIdLabel);
+            this.rectanglesTabPage.Controls.Add(this.selectedRectangleLabel);
+            this.rectanglesTabPage.Controls.Add(this.removeButtonPictureBox);
+            this.rectanglesTabPage.Controls.Add(this.addButtonPictureBox);
+            this.rectanglesTabPage.Controls.Add(this.selectedRectanglesLabel);
+            this.rectanglesTabPage.Controls.Add(this.canvaPanel);
+            this.rectanglesTabPage.Controls.Add(this.panelRectanglesListBox);
+            this.rectanglesTabPage.Location = new System.Drawing.Point(4, 29);
+            this.rectanglesTabPage.Name = "rectanglesTabPage";
+            this.rectanglesTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.rectanglesTabPage.Size = new System.Drawing.Size(723, 538);
+            this.rectanglesTabPage.TabIndex = 2;
+            this.rectanglesTabPage.Text = "Rectangles";
+            this.rectanglesTabPage.UseVisualStyleBackColor = true;
+            // 
+            // panelHeigthTextBox
+            // 
+            this.panelHeigthTextBox.Location = new System.Drawing.Point(89, 423);
+            this.panelHeigthTextBox.Name = "panelHeigthTextBox";
+            this.panelHeigthTextBox.Size = new System.Drawing.Size(125, 27);
+            this.panelHeigthTextBox.TabIndex = 15;
+            this.panelHeigthTextBox.TextChanged += new System.EventHandler(this.PanelHeigthTextBox_TextChanged);
+            // 
+            // selectedHeigthLabel
+            // 
+            this.selectedHeigthLabel.AutoSize = true;
+            this.selectedHeigthLabel.Location = new System.Drawing.Point(21, 423);
+            this.selectedHeigthLabel.Name = "selectedHeigthLabel";
+            this.selectedHeigthLabel.Size = new System.Drawing.Size(57, 20);
+            this.selectedHeigthLabel.TabIndex = 10;
+            this.selectedHeigthLabel.Text = "Heigth:";
+            // 
+            // panelWidthTextBox
+            // 
+            this.panelWidthTextBox.Location = new System.Drawing.Point(89, 390);
+            this.panelWidthTextBox.Name = "panelWidthTextBox";
+            this.panelWidthTextBox.Size = new System.Drawing.Size(125, 27);
+            this.panelWidthTextBox.TabIndex = 14;
+            this.panelWidthTextBox.TextChanged += new System.EventHandler(this.PanelWidthTextBox_TextChanged);
+            // 
+            // selectedWidthLabel
+            // 
+            this.selectedWidthLabel.AutoSize = true;
+            this.selectedWidthLabel.Location = new System.Drawing.Point(26, 390);
+            this.selectedWidthLabel.Name = "selectedWidthLabel";
+            this.selectedWidthLabel.Size = new System.Drawing.Size(52, 20);
+            this.selectedWidthLabel.TabIndex = 9;
+            this.selectedWidthLabel.Text = "Width:";
+            // 
+            // panelCoordinateYTextBox
+            // 
+            this.panelCoordinateYTextBox.Location = new System.Drawing.Point(89, 357);
+            this.panelCoordinateYTextBox.Name = "panelCoordinateYTextBox";
+            this.panelCoordinateYTextBox.Size = new System.Drawing.Size(125, 27);
+            this.panelCoordinateYTextBox.TabIndex = 13;
+            this.panelCoordinateYTextBox.TextChanged += new System.EventHandler(this.PanelCoordinateYTextBox_TextChanged);
+            // 
+            // panelCoordinateXTextBox
+            // 
+            this.panelCoordinateXTextBox.Location = new System.Drawing.Point(89, 324);
+            this.panelCoordinateXTextBox.Name = "panelCoordinateXTextBox";
+            this.panelCoordinateXTextBox.Size = new System.Drawing.Size(125, 27);
+            this.panelCoordinateXTextBox.TabIndex = 12;
+            this.panelCoordinateXTextBox.TextChanged += new System.EventHandler(this.PanelCoordinateXTextBox_TextChanged);
+            // 
+            // panelIdTextBox
+            // 
+            this.panelIdTextBox.Location = new System.Drawing.Point(89, 291);
+            this.panelIdTextBox.Name = "panelIdTextBox";
+            this.panelIdTextBox.ReadOnly = true;
+            this.panelIdTextBox.Size = new System.Drawing.Size(125, 27);
+            this.panelIdTextBox.TabIndex = 11;
+            // 
+            // selectedYLabel
+            // 
+            this.selectedYLabel.AutoSize = true;
+            this.selectedYLabel.Location = new System.Drawing.Point(58, 357);
+            this.selectedYLabel.Name = "selectedYLabel";
+            this.selectedYLabel.Size = new System.Drawing.Size(20, 20);
+            this.selectedYLabel.TabIndex = 8;
+            this.selectedYLabel.Text = "Y:";
+            // 
+            // selectedXLabel
+            // 
+            this.selectedXLabel.AutoSize = true;
+            this.selectedXLabel.Location = new System.Drawing.Point(57, 324);
+            this.selectedXLabel.Name = "selectedXLabel";
+            this.selectedXLabel.Size = new System.Drawing.Size(21, 20);
+            this.selectedXLabel.TabIndex = 7;
+            this.selectedXLabel.Text = "X:";
+            // 
+            // selectedIdLabel
+            // 
+            this.selectedIdLabel.AutoSize = true;
+            this.selectedIdLabel.Location = new System.Drawing.Point(58, 291);
+            this.selectedIdLabel.Name = "selectedIdLabel";
+            this.selectedIdLabel.Size = new System.Drawing.Size(25, 20);
+            this.selectedIdLabel.TabIndex = 6;
+            this.selectedIdLabel.Text = "Id:";
+            // 
+            // selectedRectangleLabel
+            // 
+            this.selectedRectangleLabel.AutoSize = true;
+            this.selectedRectangleLabel.Location = new System.Drawing.Point(21, 268);
+            this.selectedRectangleLabel.Name = "selectedRectangleLabel";
+            this.selectedRectangleLabel.Size = new System.Drawing.Size(139, 20);
+            this.selectedRectangleLabel.TabIndex = 5;
+            this.selectedRectangleLabel.Text = "Selected Rectangle:";
+            // 
+            // removeButtonPictureBox
+            // 
+            this.removeButtonPictureBox.Image = global::Programming.Properties.Resources.rectangle_remove_24x24_uncolor;
+            this.removeButtonPictureBox.Location = new System.Drawing.Point(180, 199);
+            this.removeButtonPictureBox.Name = "removeButtonPictureBox";
+            this.removeButtonPictureBox.Size = new System.Drawing.Size(34, 34);
+            this.removeButtonPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.removeButtonPictureBox.TabIndex = 4;
+            this.removeButtonPictureBox.TabStop = false;
+            this.removeButtonPictureBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.RemoveButtonPictureBox_MouseClick);
+            this.removeButtonPictureBox.MouseEnter += new System.EventHandler(this.RemoveButtonPictureBox_MouseEnter);
+            this.removeButtonPictureBox.MouseLeave += new System.EventHandler(this.RemoveButtonPictureBox_MouseLeave);
             // 
             // addButtonPictureBox
             // 
-            this.addButtonPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("addButtonPictureBox.Image")));
-            this.addButtonPictureBox.Location = new System.Drawing.Point(21, 209);
+            this.addButtonPictureBox.Image = global::Programming.Properties.Resources.rectangle_add_24x24_uncolor;
+            this.addButtonPictureBox.Location = new System.Drawing.Point(26, 199);
             this.addButtonPictureBox.Name = "addButtonPictureBox";
             this.addButtonPictureBox.Size = new System.Drawing.Size(34, 34);
             this.addButtonPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.addButtonPictureBox.TabIndex = 3;
             this.addButtonPictureBox.TabStop = false;
-            this.addButtonPictureBox.MouseEnter += new System.EventHandler(this.addButtonPictureBox_MouseEnter);
+            this.addButtonPictureBox.Click += new System.EventHandler(this.AddButtonPictureBox_Click);
+            this.addButtonPictureBox.MouseEnter += new System.EventHandler(this.AddButtonPictureBox_MouseEnter);
+            this.addButtonPictureBox.MouseLeave += new System.EventHandler(this.AddButtonPictureBox_MouseLeave);
             // 
-            // label1
+            // selectedRectanglesLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(21, 6);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(84, 20);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Rectangles:";
+            this.selectedRectanglesLabel.AutoSize = true;
+            this.selectedRectanglesLabel.Location = new System.Drawing.Point(21, 6);
+            this.selectedRectanglesLabel.Name = "selectedRectanglesLabel";
+            this.selectedRectanglesLabel.Size = new System.Drawing.Size(84, 20);
+            this.selectedRectanglesLabel.TabIndex = 2;
+            this.selectedRectanglesLabel.Text = "Rectangles:";
             // 
-            // panel1
+            // canvaPanel
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.canvaPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Location = new System.Drawing.Point(292, 6);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(425, 524);
-            this.panel1.TabIndex = 1;
+            this.canvaPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.canvaPanel.Location = new System.Drawing.Point(292, 6);
+            this.canvaPanel.Name = "canvaPanel";
+            this.canvaPanel.Size = new System.Drawing.Size(425, 524);
+            this.canvaPanel.TabIndex = 1;
             // 
-            // listBox1
+            // panelRectanglesListBox
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 20;
-            this.listBox1.Location = new System.Drawing.Point(21, 29);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(251, 164);
-            this.listBox1.TabIndex = 0;
+            this.panelRectanglesListBox.FormattingEnabled = true;
+            this.panelRectanglesListBox.ItemHeight = 20;
+            this.panelRectanglesListBox.Location = new System.Drawing.Point(21, 29);
+            this.panelRectanglesListBox.Name = "panelRectanglesListBox";
+            this.panelRectanglesListBox.Size = new System.Drawing.Size(251, 164);
+            this.panelRectanglesListBox.TabIndex = 0;
+            this.panelRectanglesListBox.SelectedIndexChanged += new System.EventHandler(this.PanelRectanglesListBox_SelectedIndexChanged);
             // 
             // MainForm
             // 
@@ -632,13 +767,14 @@ namespace Programming
             this.seasonHandleGroupBox.PerformLayout();
             this.parsingGroupBox.ResumeLayout(false);
             this.parsingGroupBox.PerformLayout();
-            this.tabPage1.ResumeLayout(false);
+            this.classesTabPage.ResumeLayout(false);
             this.moviesGroupBox.ResumeLayout(false);
             this.moviesGroupBox.PerformLayout();
             this.classesGroupBox.ResumeLayout(false);
             this.classesGroupBox.PerformLayout();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
+            this.rectanglesTabPage.ResumeLayout(false);
+            this.rectanglesTabPage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.removeButtonPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.addButtonPictureBox)).EndInit();
             this.ResumeLayout(false);
 
@@ -664,13 +800,13 @@ namespace Programming
         private System.Windows.Forms.Button seasonHandleButton;
         private System.Windows.Forms.Label typeValueLabel;
         private System.Windows.Forms.Label chooseSeasonLabel;
-        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage classesTabPage;
         private System.Windows.Forms.GroupBox classesGroupBox;
         private System.Windows.Forms.Button findRectanglesButton;
         private System.Windows.Forms.Label colorLabel;
         private System.Windows.Forms.Label widthLabel;
-        private System.Windows.Forms.Label lengthLabel;
-        private System.Windows.Forms.TextBox lenghtTextBox;
+        private System.Windows.Forms.Label heigthLabel;
+        private System.Windows.Forms.TextBox heigthTextBox;
         private System.Windows.Forms.TextBox widthTextBox;
         private System.Windows.Forms.TextBox colorTextBox;
         private System.Windows.Forms.GroupBox moviesGroupBox;
@@ -692,12 +828,24 @@ namespace Programming
         private System.Windows.Forms.TextBox coordinateXTextBox;
         private System.Windows.Forms.Label idLabel;
         private System.Windows.Forms.TextBox idTextBox;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.TabPage rectanglesTabPage;
+        private System.Windows.Forms.ListBox panelRectanglesListBox;
         private System.Windows.Forms.ListBox rectanglesListBox;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label selectedRectanglesLabel;
+        private System.Windows.Forms.Panel canvaPanel;
         private System.Windows.Forms.PictureBox addButtonPictureBox;
+        private System.Windows.Forms.PictureBox removeButtonPictureBox;
+        private System.Windows.Forms.TextBox panelHeigthTextBox;
+        private System.Windows.Forms.TextBox panelWidthTextBox;
+        private System.Windows.Forms.TextBox panelCoordinateYTextBox;
+        private System.Windows.Forms.TextBox panelCoordinateXTextBox;
+        private System.Windows.Forms.TextBox panelIdTextBox;
+        private System.Windows.Forms.Label selectedHeigthLabel;
+        private System.Windows.Forms.Label selectedWidthLabel;
+        private System.Windows.Forms.Label selectedYLabel;
+        private System.Windows.Forms.Label selectedXLabel;
+        private System.Windows.Forms.Label selectedIdLabel;
+        private System.Windows.Forms.Label selectedRectangleLabel;
     }
 }
 

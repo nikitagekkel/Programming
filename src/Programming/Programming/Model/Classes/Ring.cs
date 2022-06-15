@@ -50,7 +50,7 @@ namespace Programming.Model.Classes
             }
         }
 
-        public Ring (double innerRadius, double outerRadius, Point2D center, double Area)
+        public Ring (double innerRadius, double outerRadius, Point2D center)
         {
             _innerRadius = innerRadius;
             _outerRadius = outerRadius;

@@ -4,7 +4,7 @@ namespace Programming.Model.Classes
 {
     public class Rectangle
     {
-        private double _length;
+        private double _heigth;
 
         private double _width;
 
@@ -14,20 +14,18 @@ namespace Programming.Model.Classes
 
         public string Color { get; set; }
 
-        public string Name { get; set; }
-
         public Point2D Center { get; set; }
 
-        public double Length
+        public double Heigth
         {
             get
             {
-                return _length;
+                return _heigth;
             }
             set
             {
-                Validator.AssertOnPositiveValue(nameof(Length), value);
-                _length = value;
+                Validator.AssertOnPositiveValue(nameof(Heigth), value);
+                _heigth = value;
             }
         }
 
@@ -45,16 +43,14 @@ namespace Programming.Model.Classes
         }
 
         public Rectangle(
-            double length,
+            double heigth,
             double width,
             string color,
-            string name,
             Point2D center)
         {
-            Length = length;
+            Heigth = heigth;
             Width = width;
             Color = color;
-            Name = name;
             Center = center;
             _allRectanglesCount++;
             Id = _allRectanglesCount;

@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Programming.Model.Classes
+﻿namespace Programming.Model.Classes
 {
     public class Flight
     {

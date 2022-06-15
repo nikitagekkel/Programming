@@ -6,7 +6,7 @@ namespace Programming.Model.Classes
     {
         public static void AssertOnPositiveValue(string nameProperty, int value)
         {
-            
+
             if (value < 0)
             {
                 throw new ArgumentException($"Error, {nameProperty} field can consist only of positive values");
