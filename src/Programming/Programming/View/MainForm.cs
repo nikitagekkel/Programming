@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Windows.Forms;
+using System.Drawing;
 using Programming.Model.Enums;
 using System.Collections.Generic;
 using Programming.Model.Classes;
+using Programming.Model.;
 
 namespace Programming
 {
@@ -260,6 +262,11 @@ namespace Programming
         private void FindRectanglesButton_Click(object sender, EventArgs e)
         {
             rectanglesListBox.SelectedIndex = FindRectangleWithMaxWidth();
+        }
+
+        private void addButtonPictureBox_MouseEnter(object sender, EventArgs e)
+        {
+            (sender as PictureBox).Image = Image.FromFile();
         }
     }
 }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Jett\\source\\repos\\Programming123\\src\\Programming\\Programming\\Programming.csproj": {}
+    "C:\\Users\\Jett\\Source\\Repos\\Programming\\src\\Programming\\Programming\\Programming.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Jett\\source\\repos\\Programming123\\src\\Programming\\Programming\\Programming.csproj": {
+    "C:\\Users\\Jett\\Source\\Repos\\Programming\\src\\Programming\\Programming\\Programming.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Jett\\source\\repos\\Programming123\\src\\Programming\\Programming\\Programming.csproj",
+        "projectUniqueName": "C:\\Users\\Jett\\Source\\Repos\\Programming\\src\\Programming\\Programming\\Programming.csproj",
         "projectName": "Programming",
-        "projectPath": "C:\\Users\\Jett\\source\\repos\\Programming123\\src\\Programming\\Programming\\Programming.csproj",
+        "projectPath": "C:\\Users\\Jett\\Source\\Repos\\Programming\\src\\Programming\\Programming\\Programming.csproj",
         "packagesPath": "C:\\Users\\Jett\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Jett\\source\\repos\\Programming123\\src\\Programming\\Programming\\obj\\",
+        "outputPath": "C:\\Users\\Jett\\Source\\Repos\\Programming\\src\\Programming\\Programming\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

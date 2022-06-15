@@ -77,6 +77,11 @@ namespace Programming
             this.widthTextBox = new System.Windows.Forms.TextBox();
             this.colorTextBox = new System.Windows.Forms.TextBox();
             this.rectanglesListBox = new System.Windows.Forms.ListBox();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.addButtonPictureBox = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.mainTabControl.SuspendLayout();
             this.enumsTabPage.SuspendLayout();
             this.enumsGroupBox.SuspendLayout();
@@ -85,16 +90,20 @@ namespace Programming
             this.tabPage1.SuspendLayout();
             this.moviesGroupBox.SuspendLayout();
             this.classesGroupBox.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.addButtonPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // mainTabControl
             // 
             this.mainTabControl.Controls.Add(this.enumsTabPage);
             this.mainTabControl.Controls.Add(this.tabPage1);
+            this.mainTabControl.Controls.Add(this.tabPage2);
+            this.mainTabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainTabControl.Location = new System.Drawing.Point(0, 0);
             this.mainTabControl.Name = "mainTabControl";
             this.mainTabControl.SelectedIndex = 0;
-            this.mainTabControl.Size = new System.Drawing.Size(719, 559);
+            this.mainTabControl.Size = new System.Drawing.Size(731, 571);
             this.mainTabControl.TabIndex = 0;
             // 
             // enumsTabPage
@@ -105,7 +114,7 @@ namespace Programming
             this.enumsTabPage.Location = new System.Drawing.Point(4, 29);
             this.enumsTabPage.Name = "enumsTabPage";
             this.enumsTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.enumsTabPage.Size = new System.Drawing.Size(711, 526);
+            this.enumsTabPage.Size = new System.Drawing.Size(723, 538);
             this.enumsTabPage.TabIndex = 0;
             this.enumsTabPage.Text = "Enums";
             this.enumsTabPage.UseVisualStyleBackColor = true;
@@ -120,7 +129,7 @@ namespace Programming
             this.enumsGroupBox.Controls.Add(this.valuesListBox);
             this.enumsGroupBox.Location = new System.Drawing.Point(7, 12);
             this.enumsGroupBox.Name = "enumsGroupBox";
-            this.enumsGroupBox.Size = new System.Drawing.Size(691, 361);
+            this.enumsGroupBox.Size = new System.Drawing.Size(699, 361);
             this.enumsGroupBox.TabIndex = 5;
             this.enumsGroupBox.TabStop = false;
             this.enumsGroupBox.Text = "Enumerations";
@@ -189,7 +198,7 @@ namespace Programming
             this.seasonHandleGroupBox.Controls.Add(this.seasonHandleButton);
             this.seasonHandleGroupBox.Location = new System.Drawing.Point(361, 379);
             this.seasonHandleGroupBox.Name = "seasonHandleGroupBox";
-            this.seasonHandleGroupBox.Size = new System.Drawing.Size(337, 145);
+            this.seasonHandleGroupBox.Size = new System.Drawing.Size(345, 145);
             this.seasonHandleGroupBox.TabIndex = 2;
             this.seasonHandleGroupBox.TabStop = false;
             this.seasonHandleGroupBox.Text = "Season Handle";
@@ -276,7 +285,7 @@ namespace Programming
             this.tabPage1.Location = new System.Drawing.Point(4, 29);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(711, 526);
+            this.tabPage1.Size = new System.Drawing.Size(723, 538);
             this.tabPage1.TabIndex = 1;
             this.tabPage1.Text = "Classes";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -425,7 +434,7 @@ namespace Programming
             this.classesGroupBox.Controls.Add(this.rectanglesListBox);
             this.classesGroupBox.Location = new System.Drawing.Point(7, 12);
             this.classesGroupBox.Name = "classesGroupBox";
-            this.classesGroupBox.Size = new System.Drawing.Size(331, 413);
+            this.classesGroupBox.Size = new System.Drawing.Size(331, 406);
             this.classesGroupBox.TabIndex = 0;
             this.classesGroupBox.TabStop = false;
             this.classesGroupBox.Text = "Rectangles";
@@ -449,9 +458,9 @@ namespace Programming
             // 
             // findRectanglesButton
             // 
-            this.findRectanglesButton.Location = new System.Drawing.Point(187, 363);
+            this.findRectanglesButton.Location = new System.Drawing.Point(187, 361);
             this.findRectanglesButton.Name = "findRectanglesButton";
-            this.findRectanglesButton.Size = new System.Drawing.Size(125, 27);
+            this.findRectanglesButton.Size = new System.Drawing.Size(125, 29);
             this.findRectanglesButton.TabIndex = 7;
             this.findRectanglesButton.Text = "Find";
             this.findRectanglesButton.UseVisualStyleBackColor = true;
@@ -551,13 +560,66 @@ namespace Programming
             this.rectanglesListBox.TabIndex = 0;
             this.rectanglesListBox.SelectedIndexChanged += new System.EventHandler(this.RectanglesListBox_SelectedIndexChanged);
             // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.addButtonPictureBox);
+            this.tabPage2.Controls.Add(this.label1);
+            this.tabPage2.Controls.Add(this.panel1);
+            this.tabPage2.Controls.Add(this.listBox1);
+            this.tabPage2.Location = new System.Drawing.Point(4, 29);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(723, 538);
+            this.tabPage2.TabIndex = 2;
+            this.tabPage2.Text = "Rectangles";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // addButtonPictureBox
+            // 
+            this.addButtonPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("addButtonPictureBox.Image")));
+            this.addButtonPictureBox.Location = new System.Drawing.Point(21, 209);
+            this.addButtonPictureBox.Name = "addButtonPictureBox";
+            this.addButtonPictureBox.Size = new System.Drawing.Size(34, 34);
+            this.addButtonPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.addButtonPictureBox.TabIndex = 3;
+            this.addButtonPictureBox.TabStop = false;
+            this.addButtonPictureBox.MouseEnter += new System.EventHandler(this.addButtonPictureBox_MouseEnter);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(21, 6);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(84, 20);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Rectangles:";
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Location = new System.Drawing.Point(292, 6);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(425, 524);
+            this.panel1.TabIndex = 1;
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 20;
+            this.listBox1.Location = new System.Drawing.Point(21, 29);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(251, 164);
+            this.listBox1.TabIndex = 0;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(731, 571);
             this.Controls.Add(this.mainTabControl);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -575,6 +637,9 @@ namespace Programming
             this.moviesGroupBox.PerformLayout();
             this.classesGroupBox.ResumeLayout(false);
             this.classesGroupBox.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.addButtonPictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -601,7 +666,6 @@ namespace Programming
         private System.Windows.Forms.Label chooseSeasonLabel;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.GroupBox classesGroupBox;
-        private System.Windows.Forms.ListBox rectanglesListBox;
         private System.Windows.Forms.Button findRectanglesButton;
         private System.Windows.Forms.Label colorLabel;
         private System.Windows.Forms.Label widthLabel;
@@ -628,6 +692,12 @@ namespace Programming
         private System.Windows.Forms.TextBox coordinateXTextBox;
         private System.Windows.Forms.Label idLabel;
         private System.Windows.Forms.TextBox idTextBox;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox rectanglesListBox;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox addButtonPictureBox;
     }
 }
 
