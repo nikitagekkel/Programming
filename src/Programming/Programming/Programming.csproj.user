@@ -4,6 +4,9 @@
     <ShowAllFiles>false</ShowAllFiles>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Update="View\Controls\RectanglesCollisionControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="View\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>

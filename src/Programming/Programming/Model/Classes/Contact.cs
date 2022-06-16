@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text.RegularExpressions;
 
-namespace Programming.Model.Classes
+namespace Programming.Model.Geometry
 {
     public class Contact
     {

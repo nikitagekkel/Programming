@@ -1,23 +1,16 @@
 ﻿using System;
+using Programming.Model.Geometry;
 
-namespace Programming.Model.Classes
+namespace Programming.Model.Geometry
 {
     public static class CollisionManager
     {
         public static bool IsCollision(Rectangle rectangle1, Rectangle rectangle2)
         {
-            int dX = Math.Abs(rectangle1.Center.X - rectangle2.Center.X);
-            int dY = Math.Abs(rectangle1.Center.Y - rectangle2.Center.Y);
-            double widthDifference = Math.Abs(rectangle1.Width + rectangle2.Width) / 2;
-            double heigthDifference = Math.Abs(rectangle1.Heigth + rectangle2.Heigth) / 2;
-            if (dX < widthDifference && dY < heigthDifference)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return rectangle1.Center.X < rectangle2.Center.X + rectangle2.Width &&
+                   rectangle1.Center.X + rectangle1.Width > rectangle2.Center.X &&
+                   rectangle1.Center.Y < rectangle2.Center.Y + rectangle2.Heigth &&
+                   rectangle1.Heigth + rectangle1.Center.Y > rectangle2.Center.Y;
         }
 
         public static bool IsCollision(Ring ring1, Ring ring2)

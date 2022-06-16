@@ -2,7 +2,7 @@
 using System.Windows.Forms;
 using Programming.Model.Enums;
 using System.Collections.Generic;
-using Programming.Model.Classes;
+using Programming.Model.Geometry;
 using Programming.Properties;
 
 namespace Programming
@@ -13,16 +13,16 @@ namespace Programming
 
         private List<Movie> _movies = new();
 
-        private List<Rectangle> _panelRectangles = new();
+        private List<Rectangle> _rectanglesP = new();
+
+        private List<Panel> _rectanglePanels = new();
 
         private Rectangle _currentRectangle;
 
-        private Rectangle _panelCurrentRectangle;
+        private Rectangle _currentPanelRectangle;
 
         private Movie _currentMovie;
 
-        private int iteration = 5;
-        
         public MainForm()
         {
             InitializeComponent();
@@ -40,19 +40,9 @@ namespace Programming
                 seasonComboBox.Items.Add(season);
             }
 
-            for (int i = 0; i < iteration; i++)
+            for (int i = 0; i < 5; i++)
             {
-                Random rnd = new();
-                double newHeight = rnd.Next(1, 10);
-                double newWidth = rnd.Next(1, 10);
-                int newX = rnd.Next(1, 10);
-                int newY = rnd.Next(1, 10);
-                Point2D newCenter = new(newX, newY);
-                Array colour = Enum.GetValues(typeof(Colour));
-                Colour randomColor = (Colour)colour.GetValue(rnd.Next(colour.Length));
-                Rectangle _generatedRectangle = new(
-                    newHeight, newWidth, randomColor.ToString(), newCenter);
-                _rectangles.Add(_generatedRectangle);
+                _rectangles.Add(RectangleFactory.Randomazie());
             }
 
             _movies.Add(new Movie("Driver", "Action", 140, 2011, 7.8));
@@ -69,18 +59,6 @@ namespace Programming
             }
         }
 
-        private void ReshuffleListBox()
-        {
-            panelRectanglesListBox.Items.Clear();
-            foreach (Rectangle rectangle in _panelRectangles)
-            {
-                string selectedRectangle = string.Format(
-                    "{0}:(X={1}; Y={2}; W={3}; H={4})", rectangle.Id, rectangle.Center.X, rectangle.Center.Y, rectangle.Width, rectangle.Heigth);
-                panelRectanglesListBox.Items.Add(selectedRectangle);
-            }
-            panelRectanglesListBox.SetSelected(_panelCurrentRectangle.Id - 6, true);
-        }
-
         private int FindRectangleWithMaxWidth()
         {
             double maxWidth = 0;
@@ -95,7 +73,7 @@ namespace Programming
             }
             return maxIndex;
         }
-        
+
         private int FindMovieWithMaxRating()
         {
             double maxRating = 0;
@@ -179,12 +157,12 @@ namespace Programming
         private void RectanglesListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             _currentRectangle = _rectangles[rectanglesListBox.SelectedIndex];
-            heigthTextBox.Text = _currentRectangle.Heigth.ToString();
-            widthTextBox.Text = _currentRectangle.Width.ToString();
-            colorTextBox.Text = _currentRectangle.Color;
-            idTextBox.Text = _currentRectangle.Id.ToString();
-            coordinateXTextBox.Text = _currentRectangle.Center.X.ToString();
-            coordinateYTextBox.Text = _currentRectangle.Center.Y.ToString();
+            heigthRectangleTextBox.Text = _currentRectangle.Heigth.ToString();
+            widthRectangleTextBox.Text = _currentRectangle.Width.ToString();
+            colorRectangleTextBox.Text = _currentRectangle.Color;
+            idRectangleTextBox.Text = _currentRectangle.Id.ToString();
+            XRectangleTextBox.Text = _currentRectangle.Center.X.ToString();
+            YRectangleTextBox.Text = _currentRectangle.Center.Y.ToString();
         }
 
         private void MovieListBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -201,12 +179,12 @@ namespace Programming
         {
             try
             {
-                _currentRectangle.Heigth = Convert.ToDouble(heigthTextBox.Text);
-                heigthTextBox.BackColor = System.Drawing.Color.White;
+                _currentRectangle.Heigth = Convert.ToDouble(heigthRectangleTextBox.Text);
+                heigthRectangleTextBox.BackColor = System.Drawing.Color.White;
             }
             catch
             {
-                heigthTextBox.BackColor = System.Drawing.Color.LightPink;
+                heigthRectangleTextBox.BackColor = System.Drawing.Color.LightPink;
             }
         }
 
@@ -214,12 +192,12 @@ namespace Programming
         {
             try
             {
-                _currentRectangle.Width = Convert.ToDouble(widthTextBox.Text);
-                widthTextBox.BackColor = System.Drawing.Color.White;
+                _currentRectangle.Width = Convert.ToDouble(widthRectangleTextBox.Text);
+                widthRectangleTextBox.BackColor = System.Drawing.Color.White;
             }
             catch
             {
-                widthTextBox.BackColor = System.Drawing.Color.LightPink;
+                widthRectangleTextBox.BackColor = System.Drawing.Color.LightPink;
             }
         }
 
@@ -301,85 +279,187 @@ namespace Programming
             (sender as PictureBox).Image = Resources.rectangle_remove_24x24_uncolor;
         }
 
-        private void AddButtonPictureBox_Click(object sender, EventArgs e)
+        private void FindCollisions()
         {
-            int count = -1;
-            count += 1;
-            Random rnd = new();
-            double newHeight = rnd.Next(1, 10);
-            double newWidth = rnd.Next(1, 10);
-            int newX = rnd.Next(1, 10);
-            int newY = rnd.Next(1, 10);
-            Point2D newCenter = new(newX, newY);
-            Array color = Enum.GetValues(typeof(Colour));
-            Colour randomColor = (Colour)color.GetValue(rnd.Next(color.Length));
-            _panelCurrentRectangle = new(
-                newHeight, newWidth, randomColor.ToString(), newCenter);
-            _panelRectangles.Add(_panelCurrentRectangle);
-            Rectangle rectangle = _panelRectangles[count];
-            panelRectanglesListBox.Items.Add(string.Format(
-                    "{0}:(X={1}; Y={2}; W={3}; H={4})", rectangle.Id, rectangle.Center.X, rectangle.Center.Y, rectangle.Width, rectangle.Heigth));
+            for (int i = 0; i < _rectanglesP.Count; i++)
+            {
+                canvasPanel.Controls[i].BackColor = System.Drawing.Color.FromArgb(127, 127, 255, 127);
+            }
+
+            for (int i = 0; i < _rectanglesP.Count - 1; i++)
+            {
+                for (int j = i + 1; j < _rectanglesP.Count; j++)
+                {
+                    if (CollisionManager.IsCollision(_rectanglesP[i], _rectanglesP[j]))
+                    {
+                        canvasPanel.Controls[i].BackColor = System.Drawing.Color.LightPink;
+                        canvasPanel.Controls[j].BackColor = System.Drawing.Color.LightPink;
+                    }
+                    else
+                    {
+                        continue;
+                    }
+                }
+            }
         }
 
-        private void PanelRectanglesListBox_SelectedIndexChanged(object sender, EventArgs e)
+        private static Panel InitPanel(Rectangle rectangle)
         {
-            int index = panelRectanglesListBox.SelectedIndex;
-            if (index >= 0)
-            {
-                _panelCurrentRectangle = _panelRectangles[index];
-                panelHeigthTextBox.Text = _panelCurrentRectangle.Heigth.ToString();
-                panelWidthTextBox.Text = _panelCurrentRectangle.Width.ToString();
-                panelIdTextBox.Text = _panelCurrentRectangle.Id.ToString();
-                panelCoordinateXTextBox.Text = _panelCurrentRectangle.Center.X.ToString();
-                panelCoordinateYTextBox.Text = _panelCurrentRectangle.Center.Y.ToString();
-            }
+            Panel rectanglePanel = new();
+            rectanglePanel.Width = (int)rectangle.Width;
+            rectanglePanel.Height = (int)rectangle.Heigth;
+            rectanglePanel.Location = new(rectangle.Center.X, rectangle.Center.Y);
+            rectanglePanel.BackColor = System.Drawing.Color.FromArgb(127, 127, 255, 127);
+            return rectanglePanel;
+        }
+
+        private void UpdateRectangleInfo(Rectangle rectangle)
+        {
+            int index = rectanglesPanelListBox.FindString(rectangle.Id.ToString());
+
+            if (index == -1) return;
+
+            rectanglesPanelListBox.Items[index] = string.Format(
+                    "{0}:(X={1}; Y={2}; W={3}; H={4})", rectangle.Id,
+                    rectangle.Center.X,
+                    rectangle.Center.Y,
+                    rectangle.Width,
+                    rectangle.Heigth);
+        }
+
+        private void ClearRectangleInfo()
+        {
+            idPanelTextBox.Clear();
+            xPanelTextBox.Clear();
+            yPanelTextBox.Clear();
+            widthPanelTextBox.Clear();
+            heigthPanelTextBox.Clear();
+        }
+
+        private void RectanglesPanelListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (rectanglesPanelListBox.SelectedItem == null) return;
+            _currentPanelRectangle = _rectanglesP[rectanglesPanelListBox.SelectedIndex];
+            idPanelTextBox.Text = _currentPanelRectangle.Id.ToString();
+            xPanelTextBox.Text = _currentPanelRectangle.Center.X.ToString();
+            yPanelTextBox.Text = _currentPanelRectangle.Center.Y.ToString();
+            widthPanelTextBox.Text = _currentPanelRectangle.Width.ToString();
+            heigthPanelTextBox.Text = _currentPanelRectangle.Heigth.ToString();
+        }
+
+        private void AddButtonPictureBox_MouseClick(object sender, MouseEventArgs e)
+        {
+            _currentPanelRectangle = RectangleFactory.Randomazie(canvasPanel.Size.Width, canvasPanel.Size.Height);
+            _rectanglesP.Add(_currentPanelRectangle);
+            rectanglesPanelListBox.Items.Add(string.Format(
+                    "{0}:(X={1}; Y={2}; W={3}; H={4})", _currentPanelRectangle.Id,
+                    _currentPanelRectangle.Center.X,
+                    _currentPanelRectangle.Center.Y,
+                    _currentPanelRectangle.Width,
+                    _currentPanelRectangle.Heigth));
+            Panel panel = InitPanel(_currentPanelRectangle);
+            _rectanglePanels.Add(panel);
+            canvasPanel.Controls.Add(panel);
+            rectanglesPanelListBox.SelectedIndex = _rectanglesP.Count - 1;
+            FindCollisions();
         }
 
         private void RemoveButtonPictureBox_MouseClick(object sender, MouseEventArgs e)
         {
-            int index = panelRectanglesListBox.SelectedIndex;
-            if (index >= 0)
-            {
-                _panelRectangles.RemoveAt(index);
-                panelRectanglesListBox.Items.RemoveAt(index);
-                panelRectanglesListBox.ClearSelected();
-            }
+            if (rectanglesPanelListBox.SelectedItem == null) return;
+            int index = rectanglesPanelListBox.SelectedIndex;
+            _rectanglesP.RemoveAt(index);
+            rectanglesPanelListBox.Items.RemoveAt(index);
+            rectanglesPanelListBox.ClearSelected();
+            ClearRectangleInfo();
+            canvasPanel.Controls.RemoveAt(index);
+            _rectanglePanels.RemoveAt(index);
+            FindCollisions();
         }
 
-        private void PanelCoordinateXTextBox_TextChanged(object sender, EventArgs e)
+        private void XPanelTextBox_TextChanged(object sender, EventArgs e)
         {
+            if (rectanglesPanelListBox.SelectedIndex == -1) return;
+
             try
             {
-                _panelCurrentRectangle.Center.X = Convert.ToInt32(panelCoordinateXTextBox.Text);
-                panelCoordinateXTextBox.BackColor = System.Drawing.Color.White;
+                _currentPanelRectangle.Center.X = Convert.ToInt32(xPanelTextBox.Text);
+                xPanelTextBox.BackColor = System.Drawing.Color.White;
+
+                canvasPanel.Controls[rectanglesPanelListBox.SelectedIndex].Location =
+                    new System.Drawing.Point(_currentPanelRectangle.Center.X, _currentPanelRectangle.Center.Y);
+
+                FindCollisions();
+                UpdateRectangleInfo(_currentPanelRectangle);
             }
             catch
             {
-                panelCoordinateXTextBox.BackColor = System.Drawing.Color.LightPink;
+                xPanelTextBox.BackColor = System.Drawing.Color.LightPink;
+                return;
             }
         }
 
-        private void PanelCoordinateYTextBox_TextChanged(object sender, EventArgs e)
+        private void YPanelTextBox_TextChanged(object sender, EventArgs e)
         {
+            if (rectanglesPanelListBox.SelectedIndex == -1) return;
             try
             {
-                _panelCurrentRectangle.Center.Y = Convert.ToInt32(panelCoordinateYTextBox.Text);
-                panelCoordinateYTextBox.BackColor = System.Drawing.Color.White;
+                _currentPanelRectangle.Center.Y = Convert.ToInt32(yPanelTextBox.Text);
+                yPanelTextBox.BackColor = System.Drawing.Color.White;
+
+                canvasPanel.Controls[rectanglesPanelListBox.SelectedIndex].Location =
+                    new System.Drawing.Point(_currentPanelRectangle.Center.X, _currentPanelRectangle.Center.Y);
+
+                FindCollisions();
+                UpdateRectangleInfo(_currentPanelRectangle);
             }
             catch
             {
-                panelCoordinateYTextBox.BackColor = System.Drawing.Color.LightPink;
+                yPanelTextBox.BackColor = System.Drawing.Color.LightPink;
+                return;
             }
         }
 
-        private void PanelWidthTextBox_TextChanged(object sender, EventArgs e)
+        private void WidthPanelTextBox_TextChanged(object sender, EventArgs e)
         {
+            if (rectanglesPanelListBox.SelectedIndex == -1) return;
+            try
+            {
+                _currentPanelRectangle.Width = Convert.ToDouble(widthPanelTextBox.Text);
+                widthPanelTextBox.BackColor = System.Drawing.Color.White;
 
+                canvasPanel.Controls[rectanglesPanelListBox.SelectedIndex].Width =
+                    (int)_currentPanelRectangle.Width;
+
+                FindCollisions();
+                UpdateRectangleInfo(_currentPanelRectangle);
+            }
+            catch
+            {
+                widthPanelTextBox.BackColor = System.Drawing.Color.LightPink;
+                return;
+            }
         }
 
-        private void PanelHeigthTextBox_TextChanged(object sender, EventArgs e)
+        private void HeigthPanelTextBox_TextChanged(object sender, EventArgs e)
         {
+            if (rectanglesPanelListBox.SelectedIndex == -1) return;
+            try
+            {
+                _currentPanelRectangle.Heigth = Convert.ToDouble(heigthPanelTextBox.Text);
+                heigthPanelTextBox.BackColor = System.Drawing.Color.White;
 
+                canvasPanel.Controls[rectanglesPanelListBox.SelectedIndex].Height =
+                    (int)_currentPanelRectangle.Heigth;
+
+                FindCollisions();
+                UpdateRectangleInfo(_currentPanelRectangle);
+            }
+            catch
+            {
+                heigthPanelTextBox.BackColor = System.Drawing.Color.LightPink;
+                return;
+            }
         }
     }
 }
