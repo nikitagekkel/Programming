@@ -605,7 +605,6 @@ namespace Programming
             this.panelHeigthTextBox.Name = "panelHeigthTextBox";
             this.panelHeigthTextBox.Size = new System.Drawing.Size(125, 27);
             this.panelHeigthTextBox.TabIndex = 15;
-            this.panelHeigthTextBox.TextChanged += new System.EventHandler(this.PanelHeigthTextBox_TextChanged);
             // 
             // selectedHeigthLabel
             // 
@@ -622,7 +621,6 @@ namespace Programming
             this.panelWidthTextBox.Name = "panelWidthTextBox";
             this.panelWidthTextBox.Size = new System.Drawing.Size(125, 27);
             this.panelWidthTextBox.TabIndex = 14;
-            this.panelWidthTextBox.TextChanged += new System.EventHandler(this.PanelWidthTextBox_TextChanged);
             // 
             // selectedWidthLabel
             // 
@@ -639,7 +637,6 @@ namespace Programming
             this.panelCoordinateYTextBox.Name = "panelCoordinateYTextBox";
             this.panelCoordinateYTextBox.Size = new System.Drawing.Size(125, 27);
             this.panelCoordinateYTextBox.TabIndex = 13;
-            this.panelCoordinateYTextBox.TextChanged += new System.EventHandler(this.PanelCoordinateYTextBox_TextChanged);
             // 
             // panelCoordinateXTextBox
             // 
@@ -647,7 +644,6 @@ namespace Programming
             this.panelCoordinateXTextBox.Name = "panelCoordinateXTextBox";
             this.panelCoordinateXTextBox.Size = new System.Drawing.Size(125, 27);
             this.panelCoordinateXTextBox.TabIndex = 12;
-            this.panelCoordinateXTextBox.TextChanged += new System.EventHandler(this.PanelCoordinateXTextBox_TextChanged);
             // 
             // panelIdTextBox
             // 
@@ -702,7 +698,6 @@ namespace Programming
             this.removeButtonPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.removeButtonPictureBox.TabIndex = 4;
             this.removeButtonPictureBox.TabStop = false;
-            this.removeButtonPictureBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.RemoveButtonPictureBox_MouseClick);
             this.removeButtonPictureBox.MouseEnter += new System.EventHandler(this.RemoveButtonPictureBox_MouseEnter);
             this.removeButtonPictureBox.MouseLeave += new System.EventHandler(this.RemoveButtonPictureBox_MouseLeave);
             // 
@@ -747,7 +742,6 @@ namespace Programming
             this.panelRectanglesListBox.Name = "panelRectanglesListBox";
             this.panelRectanglesListBox.Size = new System.Drawing.Size(251, 164);
             this.panelRectanglesListBox.TabIndex = 0;
-            this.panelRectanglesListBox.SelectedIndexChanged += new System.EventHandler(this.PanelRectanglesListBox_SelectedIndexChanged);
             // 
             // MainForm
             // 

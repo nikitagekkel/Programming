@@ -20,8 +20,6 @@ namespace Programming
         private Rectangle _panelCurrentRectangle;
 
         private Movie _currentMovie;
-
-        private int iteration = 5;
         
         public MainForm()
         {
@@ -40,7 +38,7 @@ namespace Programming
                 seasonComboBox.Items.Add(season);
             }
 
-            for (int i = 0; i < iteration; i++)
+            for (int i = 0; i < 5; i++)
             {
                 Random rnd = new();
                 double newHeight = rnd.Next(1, 10);
@@ -69,17 +67,6 @@ namespace Programming
             }
         }
 
-        private void ReshuffleListBox()
-        {
-            panelRectanglesListBox.Items.Clear();
-            foreach (Rectangle rectangle in _panelRectangles)
-            {
-                string selectedRectangle = string.Format(
-                    "{0}:(X={1}; Y={2}; W={3}; H={4})", rectangle.Id, rectangle.Center.X, rectangle.Center.Y, rectangle.Width, rectangle.Heigth);
-                panelRectanglesListBox.Items.Add(selectedRectangle);
-            }
-            panelRectanglesListBox.SetSelected(_panelCurrentRectangle.Id - 6, true);
-        }
 
         private int FindRectangleWithMaxWidth()
         {
@@ -303,8 +290,6 @@ namespace Programming
 
         private void AddButtonPictureBox_Click(object sender, EventArgs e)
         {
-            int count = -1;
-            count += 1;
             Random rnd = new();
             double newHeight = rnd.Next(1, 10);
             double newWidth = rnd.Next(1, 10);
@@ -313,12 +298,18 @@ namespace Programming
             Point2D newCenter = new(newX, newY);
             Array color = Enum.GetValues(typeof(Colour));
             Colour randomColor = (Colour)color.GetValue(rnd.Next(color.Length));
-            _panelCurrentRectangle = new(
+            Rectangle generatedRectangle = new(
                 newHeight, newWidth, randomColor.ToString(), newCenter);
-            _panelRectangles.Add(_panelCurrentRectangle);
-            Rectangle rectangle = _panelRectangles[count];
-            panelRectanglesListBox.Items.Add(string.Format(
-                    "{0}:(X={1}; Y={2}; W={3}; H={4})", rectangle.Id, rectangle.Center.X, rectangle.Center.Y, rectangle.Width, rectangle.Heigth));
+            _panelRectangles.Add(generatedRectangle);
+
+            panelRectanglesListBox.Items.Clear();
+            foreach (Rectangle rectangle in _panelRectangles)
+            {
+                string selectedRectangle = string.Format(
+                    "{0}:(X={1}; Y={2}; W={3}; H={4})", rectangle.Id, rectangle.Center.X, rectangle.Center.Y, rectangle.Width, rectangle.Heigth);
+                panelRectanglesListBox.Items.Add(selectedRectangle);
+            }
+            panelRectanglesListBox.SetSelected(_panelRectangles.Count - 1, true);
         }
 
         private void PanelRectanglesListBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -333,53 +324,6 @@ namespace Programming
                 panelCoordinateXTextBox.Text = _panelCurrentRectangle.Center.X.ToString();
                 panelCoordinateYTextBox.Text = _panelCurrentRectangle.Center.Y.ToString();
             }
-        }
-
-        private void RemoveButtonPictureBox_MouseClick(object sender, MouseEventArgs e)
-        {
-            int index = panelRectanglesListBox.SelectedIndex;
-            if (index >= 0)
-            {
-                _panelRectangles.RemoveAt(index);
-                panelRectanglesListBox.Items.RemoveAt(index);
-                panelRectanglesListBox.ClearSelected();
-            }
-        }
-
-        private void PanelCoordinateXTextBox_TextChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                _panelCurrentRectangle.Center.X = Convert.ToInt32(panelCoordinateXTextBox.Text);
-                panelCoordinateXTextBox.BackColor = System.Drawing.Color.White;
-            }
-            catch
-            {
-                panelCoordinateXTextBox.BackColor = System.Drawing.Color.LightPink;
-            }
-        }
-
-        private void PanelCoordinateYTextBox_TextChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                _panelCurrentRectangle.Center.Y = Convert.ToInt32(panelCoordinateYTextBox.Text);
-                panelCoordinateYTextBox.BackColor = System.Drawing.Color.White;
-            }
-            catch
-            {
-                panelCoordinateYTextBox.BackColor = System.Drawing.Color.LightPink;
-            }
-        }
-
-        private void PanelWidthTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void PanelHeigthTextBox_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
