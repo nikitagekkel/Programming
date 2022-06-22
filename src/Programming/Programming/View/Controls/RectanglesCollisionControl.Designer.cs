@@ -30,7 +30,7 @@ namespace Programming.View.Controls
         private void InitializeComponent()
         {
             this.heigthPanelTextBox = new System.Windows.Forms.TextBox();
-            this.selectedHeigthLabel = new System.Windows.Forms.Label();
+            this.selectedHeightLabel = new System.Windows.Forms.Label();
             this.widthPanelTextBox = new System.Windows.Forms.TextBox();
             this.selectedWidthLabel = new System.Windows.Forms.Label();
             this.yPanelTextBox = new System.Windows.Forms.TextBox();
@@ -55,15 +55,16 @@ namespace Programming.View.Controls
             this.heigthPanelTextBox.Name = "heigthPanelTextBox";
             this.heigthPanelTextBox.Size = new System.Drawing.Size(125, 27);
             this.heigthPanelTextBox.TabIndex = 31;
+            this.heigthPanelTextBox.TextChanged += new System.EventHandler(this.HeightPanelTextBox_TextChanged);
             // 
-            // selectedHeigthLabel
+            // selectedHeightLabel
             // 
-            this.selectedHeigthLabel.AutoSize = true;
-            this.selectedHeigthLabel.Location = new System.Drawing.Point(7, 424);
-            this.selectedHeigthLabel.Name = "selectedHeigthLabel";
-            this.selectedHeigthLabel.Size = new System.Drawing.Size(57, 20);
-            this.selectedHeigthLabel.TabIndex = 26;
-            this.selectedHeigthLabel.Text = "Heigth:";
+            this.selectedHeightLabel.AutoSize = true;
+            this.selectedHeightLabel.Location = new System.Drawing.Point(7, 424);
+            this.selectedHeightLabel.Name = "selectedHeightLabel";
+            this.selectedHeightLabel.Size = new System.Drawing.Size(57, 20);
+            this.selectedHeightLabel.TabIndex = 26;
+            this.selectedHeightLabel.Text = "Height:";
             // 
             // widthPanelTextBox
             // 
@@ -71,6 +72,7 @@ namespace Programming.View.Controls
             this.widthPanelTextBox.Name = "widthPanelTextBox";
             this.widthPanelTextBox.Size = new System.Drawing.Size(125, 27);
             this.widthPanelTextBox.TabIndex = 30;
+            this.widthPanelTextBox.TextChanged += new System.EventHandler(this.WidthPanelTextBox_TextChanged);
             // 
             // selectedWidthLabel
             // 
@@ -87,6 +89,7 @@ namespace Programming.View.Controls
             this.yPanelTextBox.Name = "yPanelTextBox";
             this.yPanelTextBox.Size = new System.Drawing.Size(125, 27);
             this.yPanelTextBox.TabIndex = 29;
+            this.yPanelTextBox.TextChanged += new System.EventHandler(this.YPanelTextBox_TextChanged);
             // 
             // xPanelTextBox
             // 
@@ -94,6 +97,7 @@ namespace Programming.View.Controls
             this.xPanelTextBox.Name = "xPanelTextBox";
             this.xPanelTextBox.Size = new System.Drawing.Size(125, 27);
             this.xPanelTextBox.TabIndex = 28;
+            this.xPanelTextBox.TextChanged += new System.EventHandler(this.XPanelTextBox_TextChanged);
             // 
             // idPanelTextBox
             // 
@@ -142,22 +146,28 @@ namespace Programming.View.Controls
             // removeButtonPictureBox
             // 
             this.removeButtonPictureBox.Image = global::Programming.Properties.Resources.rectangle_remove_24x24_uncolor;
-            this.removeButtonPictureBox.Location = new System.Drawing.Point(166, 200);
+            this.removeButtonPictureBox.Location = new System.Drawing.Point(224, 200);
             this.removeButtonPictureBox.Name = "removeButtonPictureBox";
             this.removeButtonPictureBox.Size = new System.Drawing.Size(34, 34);
             this.removeButtonPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.removeButtonPictureBox.TabIndex = 20;
             this.removeButtonPictureBox.TabStop = false;
+            this.removeButtonPictureBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.RemoveButtonPictureBox_MouseClick);
+            this.removeButtonPictureBox.MouseEnter += new System.EventHandler(this.RemoveButtonPictureBox_MouseEnter);
+            this.removeButtonPictureBox.MouseLeave += new System.EventHandler(this.RemoveButtonPictureBox_MouseLeave);
             // 
             // addButtonPictureBox
             // 
             this.addButtonPictureBox.Image = global::Programming.Properties.Resources.rectangle_add_24x24_uncolor;
-            this.addButtonPictureBox.Location = new System.Drawing.Point(12, 200);
+            this.addButtonPictureBox.Location = new System.Drawing.Point(7, 200);
             this.addButtonPictureBox.Name = "addButtonPictureBox";
             this.addButtonPictureBox.Size = new System.Drawing.Size(34, 34);
             this.addButtonPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.addButtonPictureBox.TabIndex = 19;
             this.addButtonPictureBox.TabStop = false;
+            this.addButtonPictureBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.AddButtonPictureBox_MouseClick);
+            this.addButtonPictureBox.MouseEnter += new System.EventHandler(this.AddButtonPictureBox_MouseEnter);
+            this.addButtonPictureBox.MouseLeave += new System.EventHandler(this.AddButtonPictureBox_MouseLeave);
             // 
             // selectedRectanglesLabel
             // 
@@ -187,13 +197,14 @@ namespace Programming.View.Controls
             this.rectanglesPanelListBox.Name = "rectanglesPanelListBox";
             this.rectanglesPanelListBox.Size = new System.Drawing.Size(251, 164);
             this.rectanglesPanelListBox.TabIndex = 16;
+            this.rectanglesPanelListBox.SelectedIndexChanged += new System.EventHandler(this.RectanglesPanelListBox_SelectedIndexChanged);
             // 
             // RectanglesCollisionControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.heigthPanelTextBox);
-            this.Controls.Add(this.selectedHeigthLabel);
+            this.Controls.Add(this.selectedHeightLabel);
             this.Controls.Add(this.widthPanelTextBox);
             this.Controls.Add(this.selectedWidthLabel);
             this.Controls.Add(this.yPanelTextBox);
@@ -220,7 +231,7 @@ namespace Programming.View.Controls
         #endregion
 
         private System.Windows.Forms.TextBox heigthPanelTextBox;
-        private System.Windows.Forms.Label selectedHeigthLabel;
+        private System.Windows.Forms.Label selectedHeightLabel;
         private System.Windows.Forms.TextBox widthPanelTextBox;
         private System.Windows.Forms.Label selectedWidthLabel;
         private System.Windows.Forms.TextBox yPanelTextBox;

@@ -1,13 +1,28 @@
-﻿namespace Programming.Model.Geometry
+﻿namespace Programming.Model.Classes
 {
+    /// <summary>
+    /// Хранит данные времени.
+    /// </summary>
     public class Time
     {
+        /// <summary>
+        /// Уникальный идентификатор часов.
+        /// </summary>
         private int _hours;
 
+        /// <summary>
+        /// Уникальный идентификатор минут.
+        /// </summary>
         private int _minutes;
 
+        /// <summary>
+        /// Уникальный идентификатор секунд.
+        /// </summary>
         private int _seconds;
 
+        /// <summary>
+        /// Возвращает и задает часы в диапазоне от 0 до 23.
+        /// </summary>
         public int Hours
         {
             get
@@ -16,11 +31,14 @@
             }
             set
             {
-                Validator.AssertValueInRange(nameof(Hours), value, 0, 23);
+                Validator.AssertValueInRange(nameof(Hours), value, 0, 24);
                 _hours = value;
             }
         }
 
+        /// <summary>
+        /// Возвращает и задает минуты в диапазоне от 0 до 59.
+        /// </summary>
         public int Minutes
         {
             get
@@ -34,6 +52,9 @@
             }
         }
 
+        /// <summary>
+        /// Возвращает и задает секунды в диапазоне от о до 59.
+        /// </summary>
         public int Seconds
         {
             get

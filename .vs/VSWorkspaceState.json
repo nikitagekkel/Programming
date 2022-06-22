@@ -4,8 +4,9 @@
     "\\src",
     "\\src\\Programming",
     "\\src\\Programming\\Programming",
-    "\\src\\Programming\\Programming\\View"
+    "\\src\\Programming\\Programming\\Model",
+    "\\src\\Programming\\Programming\\Model\\Classes"
   ],
-  "SelectedNode": "\\src\\Programming\\Programming\\View\\MainForm.cs",
+  "SelectedNode": "\\src\\Programming\\Programming\\Model\\Classes\\Contact.cs",
   "PreviewInSolutionExplorer": false
 }
