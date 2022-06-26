@@ -1,12 +1,11 @@
 {
   "ExpandedNodes": [
     "",
-    "\\src",
     "\\src\\Programming",
     "\\src\\Programming\\Programming",
     "\\src\\Programming\\Programming\\Model",
     "\\src\\Programming\\Programming\\Model\\Classes"
   ],
-  "SelectedNode": "\\src\\Programming\\Programming\\Model\\Classes\\Contact.cs",
+  "SelectedNode": "\\README.md",
   "PreviewInSolutionExplorer": false
 }

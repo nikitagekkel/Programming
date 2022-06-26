@@ -29,7 +29,7 @@ namespace Programming.View.Controls
 
             for (int i = 0; i < 5; i++)
             {
-                _rectangles.Add(RectangleFactory.Randomaize(100, 100));
+                _rectangles.Add(RectangleFactory.Randomize(100, 100));
             }
 
             foreach (Rectangle rectangle in _rectangles)
