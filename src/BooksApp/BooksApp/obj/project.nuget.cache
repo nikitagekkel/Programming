@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "v+RrtWwuquIyXPREwwDAkvU2xobxZYwcWzJx66RfUdPRFEeIQhGe4IdUdl7FNTo9nwh84aImK3YcpMjZGsdBiQ==",
+  "dgSpecHash": "eVX7TLhFCUAl2daMpzt75aiOecjdNYhKDhTjLbr1NBwfpE6U8KjQfl/5on1kMd1pSZJyE7CnDuWiQNc9M7tf7g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Jett\\source\\repos\\nikitagekkel\\Programming\\src\\BooksApp\\BooksApp\\BooksApp.csproj",
+  "projectFilePath": "C:\\Users\\Jett\\source\\repos\\Programming\\src\\BooksApp\\BooksApp\\BooksApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Jett\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\Jett\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
