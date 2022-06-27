@@ -3,26 +3,41 @@ using BooksApp.Model.Enumerations;
 using BooksApp.Properties;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace BooksApp
 {
+    /// <summary>
+    /// Предоставляет реализацию расположения элементов на форме.
+    /// </summary>
     public partial class MainForm : Form
     {
+        /// <summary>
+        /// Список книг.
+        /// </summary>
         private List<Book> _books = new();
 
+        /// <summary>
+        /// Текущая книга.
+        /// </summary>
         private Book _currentBook;
 
+        /// <summary>
+        /// Стандартный цвет фона.
+        /// </summary>
         private readonly Color _correctColor = Color.White;
 
+        /// <summary>
+        /// Цвет фона при возникновении ошибки.
+        /// </summary>
         private readonly Color _errorColor = Color.LightPink;
 
+        /// <summary>
+        /// Реализует обработку формы и создание экземпляра класса <see cref="Book"/>.
+        /// </summary>
         public MainForm()
         {
             InitializeComponent();
@@ -37,6 +52,14 @@ namespace BooksApp
             UpdateListBox(-1);
         }
 
+        /// <summary>
+        /// Создает и форматирует элемент типа string из переданного элемента
+        /// класса <see cref="Book"/>.
+        /// </summary>
+        /// <param name="book">Книга.</param>
+        /// <returns>
+        /// Возвращает созданный элемент.
+        /// </returns>
         private static string GetBookInfo(Book book)
         {
             string bookInfo = string.Format(
@@ -47,6 +70,11 @@ namespace BooksApp
             return bookInfo;
         }
 
+        /// <summary>
+        /// Форматирует переданный элемент в <see cref="GetBookInfo(Book)"/>
+        /// и обновляет информацию о нем в ListBox.
+        /// </summary>
+        /// <param name="book">Книга.</param>
         private void UpdateBookInfo(Book book)
         {
             int index = booksListBox.SelectedIndex;
@@ -55,6 +83,10 @@ namespace BooksApp
             booksListBox.Items[index] = GetBookInfo(book);
         }
 
+        /// <summary>
+        /// Очищает и заново добавляет элементы списка <see cref="_books"/> в ListBox.
+        /// </summary>
+        /// <param name="index">Индекс переданного элемента.</param>
         private void UpdateListBox(int index)
         {
             List<Book> books = _books;
@@ -70,14 +102,20 @@ namespace BooksApp
             }
         }
 
+        /// <summary>
+        /// Сортирует элементы списка <see cref="_books"/>.
+        /// </summary>
         private void SortBooks()
         {
             _books = (from book in _books
-                         orderby book.Title
-                         select book).ToList();
+                      orderby book.Title
+                      select book).ToList();
             UpdateListBox(-1);
         }
 
+        /// <summary>
+        /// Очищает информацию о выбранном элементе во всех TextBox.
+        /// </summary>
         private void ClearBookInfo()
         {
             titleBookTextBox.Clear();
@@ -96,6 +134,7 @@ namespace BooksApp
             releaseYearTextBox.Text = _currentBook.ReleaseYear.ToString();
             authorTextBox.Text = _currentBook.Author;
             pagesNumberTextBox.Text = _currentBook.PagesNumber.ToString();
+            genreComboBox.Text = _currentBook.Genre;
         }
 
         private void AddButtonPictureBox_MouseClick(object sender, MouseEventArgs e)

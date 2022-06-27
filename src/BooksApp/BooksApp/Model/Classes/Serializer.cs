@@ -1,11 +1,8 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
-using Newtonsoft.Json;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static System.Environment;
 using System.IO;
+using static System.Environment;
 
 namespace BooksApp.Model.Classes
 {
@@ -20,7 +17,7 @@ namespace BooksApp.Model.Classes
         /// Возвращает и задаёт имя файла.
         /// </summary>
         public static string FileName { get; set; }
-       
+
         /// <summary>
         /// Создаёт экземпляр класса <see cref="Serializer"/>.
         /// </summary>
@@ -39,7 +36,7 @@ namespace BooksApp.Model.Classes
         /// <summary>
         /// Проводит сериализацию данных.
         /// </summary>
-        /// <param name="products">Список, который нужно сериализовать.</param>
+        /// <param name="books">Список, который нужно сериализовать.</param>
         public static void Serialize(List<Book> books)
         {
             using StreamWriter writer = new(Path + FileName);
@@ -49,7 +46,7 @@ namespace BooksApp.Model.Classes
         /// <summary>
         /// Реализует десериализацию данных.
         /// </summary>
-        /// <returns>Возвращает коллекцию товаров.</returns>
+        /// <returns>Возвращает коллекцию книг.</returns>
         public static List<Book> Deserialize()
         {
             var books = new List<Book>();

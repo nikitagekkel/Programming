@@ -1,23 +1,41 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BooksApp.Model.Classes
 {
+    /// <summary>
+    /// Хранит книгу и ее данные.
+    /// </summary>
     public class Book
     {
+        /// <summary>
+        /// Уникальный идентификатор названия книги.
+        /// </summary>
         private string _title;
 
+        /// <summary>
+        /// Уникальный идентификатор года выпуска книги.
+        /// </summary>
         private int _releaseYear;
 
+        /// <summary>
+        /// Уникальный идентификатор количества страниц книги.
+        /// </summary>
         private int _pagesNumber;
 
+        /// <summary>
+        /// Возвращает и задает автора книги.
+        /// </summary>
         public string Author { get; set; }
 
+        /// <summary>
+        /// Возвращает и задает жанр книги. 
+        /// </summary>
         public string Genre { get; set; }
 
+        /// <summary>
+        /// Возвращает и задает название книги.
+        /// Длина названия не может быть больше 100 символов.
+        /// </summary>
         public string Title
         {
             get
@@ -34,6 +52,10 @@ namespace BooksApp.Model.Classes
             }
         }
 
+        /// <summary>
+        /// Возвращает и задает год выпуска книги.
+        /// Год выпуска не может превыщать текущий год. 
+        /// </summary>
         public int ReleaseYear
         {
             get
@@ -50,6 +72,10 @@ namespace BooksApp.Model.Classes
             }
         }
 
+        /// <summary>
+        /// Возвращает и задает количество странци книги.
+        /// Количество страниц не может быть меньше 0.
+        /// </summary>
         public int PagesNumber
         {
             get
@@ -66,6 +92,17 @@ namespace BooksApp.Model.Classes
             }
         }
 
+        /// <summary>
+        /// Создаёт экземпляр класса <see cref="Book"/>.
+        /// </summary>
+        /// <param name="title">Название.
+        /// Длина названия не должна превышать 100 символов.</param>
+        /// <param name="releaseYear">Год выпуска.
+        /// Год выпуска не должен быть больше текущего года.</param>
+        /// <param name="author">Автор.</param>
+        /// <param name="pagesNumber">Количество страниц.
+        /// Количество страниц должно быть строго положительным.</param>
+        /// <param name="genre">Жанр.</param>
         public Book(
             string title,
             int releaseYear,
