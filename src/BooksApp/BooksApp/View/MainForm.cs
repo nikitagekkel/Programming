@@ -32,6 +32,9 @@ namespace BooksApp
             {
                 genreComboBox.Items.Add(genre);
             }
+
+            _books = Serializer.Deserialize();
+            UpdateListBox(-1);
         }
 
         private static string GetBookInfo(Book book)
@@ -47,25 +50,32 @@ namespace BooksApp
         private void UpdateBookInfo(Book book)
         {
             int index = booksListBox.SelectedIndex;
-
             if (index == -1) return;
 
             booksListBox.Items[index] = GetBookInfo(book);
         }
 
-        private static List<Book> Sorting(List<Book> books)
+        private void UpdateListBox(int index)
         {
-            var sortedBooks = from book in books
-                              orderby book.Title
-                              select book;
-            books = sortedBooks.ToList();
-            return books;
+            List<Book> books = _books;
+            booksListBox.Items.Clear();
+            foreach (var book in books)
+            {
+                booksListBox.Items.Add(GetBookInfo(book));
+            }
+
+            if (-1 <= index && index < booksListBox.Items.Count)
+            {
+                booksListBox.SelectedIndex = index;
+            }
         }
 
-        private void SortAll()
+        private void SortBooks()
         {
-            booksListBox.Sorted = true;
-            _books = Sorting(_books);
+            _books = (from book in _books
+                         orderby book.Title
+                         select book).ToList();
+            UpdateListBox(-1);
         }
 
         private void ClearBookInfo()
@@ -76,9 +86,11 @@ namespace BooksApp
             pagesNumberTextBox.Clear();
             genreComboBox.ResetText();
         }
+
         private void BooksListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (booksListBox.SelectedItem == null) return;
+
             _currentBook = _books[booksListBox.SelectedIndex];
             titleBookTextBox.Text = _currentBook.Title;
             releaseYearTextBox.Text = _currentBook.ReleaseYear.ToString();
@@ -88,14 +100,28 @@ namespace BooksApp
 
         private void AddButtonPictureBox_MouseClick(object sender, MouseEventArgs e)
         {
-            string currentTitle = titleBookTextBox.Text;
-            int currentreleaseYear = Convert.ToInt32(releaseYearTextBox.Text);
-            string currentAuthor = authorTextBox.Text;
-            int currentPagesNumber = Convert.ToInt32(pagesNumberTextBox.Text);
-            string currentGenre = genreComboBox.Text;
-            _currentBook = new(currentTitle, currentreleaseYear, currentAuthor, currentPagesNumber, currentGenre);
-            _books.Add(_currentBook);
-            booksListBox.Items.Add(GetBookInfo(_currentBook));
+            try
+            {
+                string generatedBTitle = titleBookTextBox.Text;
+                int generatedBReleaseYear = Convert.ToInt32(releaseYearTextBox.Text);
+                string generatedBAuthor = authorTextBox.Text;
+                int generatedBPagesNumber = Convert.ToInt32(pagesNumberTextBox.Text);
+                string generatedBGenre = genreComboBox.Text;
+                Book _generatedBook = new(generatedBTitle,
+                    generatedBReleaseYear,
+                    generatedBAuthor,
+                    generatedBPagesNumber,
+                    generatedBGenre);
+                _books.Add(_generatedBook);
+                SortBooks();
+                UpdateListBox(_books.IndexOf(_generatedBook));
+                booksListBox.ClearSelected();
+            }
+
+            catch
+            {
+                return;
+            }
         }
 
         private void EditButtonPictureBox_MouseClick(object sender, MouseEventArgs e)
@@ -119,11 +145,13 @@ namespace BooksApp
 
             try
             {
-                _currentBook.Title = Convert.ToString(titleBookTextBox.Text);
+                _currentBook.Title = titleBookTextBox.Text;
                 titleBookTextBox.BackColor = _correctColor;
+                SortBooks();
+                UpdateListBox(_books.IndexOf(_currentBook));
                 UpdateBookInfo(_currentBook);
-                SortAll();
             }
+
             catch
             {
                 titleBookTextBox.BackColor = _errorColor;
@@ -140,6 +168,7 @@ namespace BooksApp
                 releaseYearTextBox.BackColor = _correctColor;
                 UpdateBookInfo(_currentBook);
             }
+
             catch
             {
                 releaseYearTextBox.BackColor = _errorColor;
@@ -152,10 +181,13 @@ namespace BooksApp
 
             try
             {
-                _currentBook.Author = Convert.ToString(authorTextBox.Text);
+                _currentBook.Author = authorTextBox.Text;
                 authorTextBox.BackColor = _correctColor;
+                SortBooks();
                 UpdateBookInfo(_currentBook);
+                UpdateListBox(_books.IndexOf(_currentBook));
             }
+
             catch
             {
                 authorTextBox.BackColor = _errorColor;
@@ -172,6 +204,7 @@ namespace BooksApp
                 pagesNumberTextBox.BackColor = _correctColor;
                 UpdateBookInfo(_currentBook);
             }
+
             catch
             {
                 pagesNumberTextBox.BackColor = _errorColor;
@@ -181,6 +214,7 @@ namespace BooksApp
         private void GenreComboBox_TextChanged(object sender, EventArgs e)
         {
             if (booksListBox.SelectedIndex == -1) return;
+
             _currentBook.Genre = genreComboBox.Text;
             UpdateBookInfo(_currentBook);
         }
@@ -213,6 +247,11 @@ namespace BooksApp
         private void EditButtonPictureBox_MouseLeave(object sender, EventArgs e)
         {
             (sender as PictureBox).Image = Resources.edit_24x24_uncolor;
+        }
+
+        private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Serializer.Serialize(_books);
         }
     }
 }

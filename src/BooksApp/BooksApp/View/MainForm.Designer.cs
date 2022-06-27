@@ -163,7 +163,7 @@ namespace BooksApp
             | System.Windows.Forms.AnchorStyles.Left)));
             this.pagesNumberTextBox.Location = new System.Drawing.Point(140, 125);
             this.pagesNumberTextBox.Name = "pagesNumberTextBox";
-            this.pagesNumberTextBox.Size = new System.Drawing.Size(100, 27);
+            this.pagesNumberTextBox.Size = new System.Drawing.Size(56, 27);
             this.pagesNumberTextBox.TabIndex = 4;
             this.pagesNumberTextBox.TextChanged += new System.EventHandler(this.PagesNumberTextBox_TextChanged);
             // 
@@ -195,7 +195,7 @@ namespace BooksApp
             | System.Windows.Forms.AnchorStyles.Left)));
             this.releaseYearTextBox.Location = new System.Drawing.Point(140, 59);
             this.releaseYearTextBox.Name = "releaseYearTextBox";
-            this.releaseYearTextBox.Size = new System.Drawing.Size(46, 27);
+            this.releaseYearTextBox.Size = new System.Drawing.Size(56, 27);
             this.releaseYearTextBox.TabIndex = 2;
             this.releaseYearTextBox.TextChanged += new System.EventHandler(this.ReleaseYearTextBox_TextChanged);
             // 
@@ -249,6 +249,7 @@ namespace BooksApp
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.Text = "BooksApp";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.addButtonPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.removeButtonPictureBox)).EndInit();
             this.mainGroupBox.ResumeLayout(false);

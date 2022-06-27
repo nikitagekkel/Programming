@@ -28,7 +28,7 @@ namespace BooksApp.Model.Classes
             {
                 if (value.Length > 100)
                 {
-                    throw new ArgumentException("Number of pages must be less than 100");
+                    throw new ArgumentException("Title's length must be less than 100");
                 }
                 _title = value;
             }
@@ -42,7 +42,7 @@ namespace BooksApp.Model.Classes
             }
             set
             {
-                if (value > DateTime.Now.Year)
+                if (value > DateTime.Now.Year || value < 0)
                 {
                     throw new ArgumentException("Release year must be less than today's year");
                 }
