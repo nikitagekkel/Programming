@@ -39,6 +39,18 @@ namespace Programming.View.Controls
         private readonly static System.Drawing.Color _rectanglesNotCollisionedColor =
             System.Drawing.Color.LightPink;
 
+        /// <summary>
+        /// Цвет фона без ошибок.
+        /// </summary>
+        private System.Drawing.Color _correctColor =
+            System.Drawing.Color.White;
+
+        /// <summary>
+        /// Цвет фона с ошибками.
+        /// </summary>
+        private System.Drawing.Color _errorColor =
+            System.Drawing.Color.LightPink;
+
         public RectanglesCollisionControl()
         {
             InitializeComponent();
@@ -195,7 +207,7 @@ namespace Programming.View.Controls
             try
             {
                 _currentRectangle.Center.X = Convert.ToInt32(xPanelTextBox.Text);
-                xPanelTextBox.BackColor = System.Drawing.Color.White;
+                xPanelTextBox.BackColor = _correctColor;
                 canvasPanel.Controls[rectanglesPanelListBox.SelectedIndex].Location =
                     new System.Drawing.Point(_currentRectangle.Center.X, _currentRectangle.Center.Y);
                 FindCollisions();
@@ -216,7 +228,7 @@ namespace Programming.View.Controls
             try
             {
                 _currentRectangle.Center.Y = Convert.ToInt32(yPanelTextBox.Text);
-                yPanelTextBox.BackColor = System.Drawing.Color.White;
+                yPanelTextBox.BackColor = _correctColor;
                 canvasPanel.Controls[rectanglesPanelListBox.SelectedIndex].Location =
                     new System.Drawing.Point(_currentRectangle.Center.X, _currentRectangle.Center.Y);
                 FindCollisions();
@@ -237,7 +249,7 @@ namespace Programming.View.Controls
             try
             {
                 _currentRectangle.Width = Convert.ToDouble(widthPanelTextBox.Text);
-                widthPanelTextBox.BackColor = System.Drawing.Color.White;
+                widthPanelTextBox.BackColor = _correctColor
 
                 canvasPanel.Controls[rectanglesPanelListBox.SelectedIndex].Width =
                     (int)_currentRectangle.Width;
@@ -260,7 +272,7 @@ namespace Programming.View.Controls
             try
             {
                 _currentRectangle.Height = Convert.ToDouble(heigthPanelTextBox.Text);
-                heigthPanelTextBox.BackColor = System.Drawing.Color.White;
+                heigthPanelTextBox.BackColor = _correctColor;
                 canvasPanel.Controls[rectanglesPanelListBox.SelectedIndex].Height =
                     (int)_currentRectangle.Height;
                 FindCollisions();

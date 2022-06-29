@@ -21,6 +21,18 @@ namespace Programming.View.Controls
         private Rectangle _currentRectangle;
 
         /// <summary>
+        /// Цвет фона без ошибок.
+        /// </summary>
+        private System.Drawing.Color _correctColor =
+            System.Drawing.Color.White;
+
+        /// <summary>
+        /// Цвет фона с ошибками.
+        /// </summary>
+        private System.Drawing.Color _errorColor = 
+            System.Drawing.Color.LightPink;
+
+        /// <summary>
         /// Создает прямоугольники и добавляет их в элемент ListBox.
         /// </summary>
         public RectanglesControl()
@@ -34,7 +46,7 @@ namespace Programming.View.Controls
 
             foreach (Rectangle rectangle in _rectangles)
             {
-                rectanglesListBox.Items.Add(string.Format("Rectangle {0}", rectangle.Id));
+                rectanglesListBox.Items.Add($"Rectangle {rectangle.Id}");
             }
         }
 
@@ -77,11 +89,11 @@ namespace Programming.View.Controls
             try
             {
                 _currentRectangle.Height = Convert.ToDouble(heigthRectangleTextBox.Text);
-                heigthRectangleTextBox.BackColor = System.Drawing.Color.White;
+                heigthRectangleTextBox.BackColor = _correctColor;
             }
             catch
             {
-                heigthRectangleTextBox.BackColor = System.Drawing.Color.LightPink;
+                heigthRectangleTextBox.BackColor = _errorColor;
             }
         }
 
@@ -90,11 +102,11 @@ namespace Programming.View.Controls
             try
             {
                 _currentRectangle.Width = Convert.ToDouble(widthRectangleTextBox.Text);
-                widthRectangleTextBox.BackColor = System.Drawing.Color.White;
+                widthRectangleTextBox.BackColor = _correctColor;
             }
             catch
             {
-                widthRectangleTextBox.BackColor = System.Drawing.Color.LightPink;
+                widthRectangleTextBox.BackColor = _errorColor;
             }
         }
 

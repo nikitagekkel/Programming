@@ -83,26 +83,6 @@ namespace BooksApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap edit_24x24 {
-            get {
-                object obj = ResourceManager.GetObject("edit_24x24", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap edit_24x24_uncolor {
-            get {
-                object obj = ResourceManager.GetObject("edit_24x24_uncolor", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         public static System.Drawing.Bitmap remove_24x24 {
             get {
                 object obj = ResourceManager.GetObject("remove_24x24", resourceCulture);

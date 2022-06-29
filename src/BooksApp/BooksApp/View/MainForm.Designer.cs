@@ -44,11 +44,9 @@ namespace BooksApp
             this.releaseYearTextBox = new System.Windows.Forms.TextBox();
             this.bookTitleLabel = new System.Windows.Forms.Label();
             this.titleBookTextBox = new System.Windows.Forms.TextBox();
-            this.editButtonPictureBox = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.addButtonPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.removeButtonPictureBox)).BeginInit();
             this.mainGroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.editButtonPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // booksListBox
@@ -81,7 +79,7 @@ namespace BooksApp
             // 
             this.removeButtonPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.removeButtonPictureBox.Image = global::BooksApp.Properties.Resources.remove_24x24_uncolor;
-            this.removeButtonPictureBox.Location = new System.Drawing.Point(90, 422);
+            this.removeButtonPictureBox.Location = new System.Drawing.Point(51, 422);
             this.removeButtonPictureBox.Name = "removeButtonPictureBox";
             this.removeButtonPictureBox.Size = new System.Drawing.Size(33, 35);
             this.removeButtonPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -221,27 +219,12 @@ namespace BooksApp
             this.titleBookTextBox.TabIndex = 0;
             this.titleBookTextBox.TextChanged += new System.EventHandler(this.TitleBookTextBox_TextChanged);
             // 
-            // editButtonPictureBox
-            // 
-            this.editButtonPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.editButtonPictureBox.Image = global::BooksApp.Properties.Resources.edit_24x24_uncolor;
-            this.editButtonPictureBox.Location = new System.Drawing.Point(51, 422);
-            this.editButtonPictureBox.Name = "editButtonPictureBox";
-            this.editButtonPictureBox.Size = new System.Drawing.Size(33, 35);
-            this.editButtonPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.editButtonPictureBox.TabIndex = 4;
-            this.editButtonPictureBox.TabStop = false;
-            this.editButtonPictureBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.EditButtonPictureBox_MouseClick);
-            this.editButtonPictureBox.MouseEnter += new System.EventHandler(this.EditButtonPictureBox_MouseEnter);
-            this.editButtonPictureBox.MouseLeave += new System.EventHandler(this.EditButtonPictureBox_MouseLeave);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(800, 464);
-            this.Controls.Add(this.editButtonPictureBox);
             this.Controls.Add(this.mainGroupBox);
             this.Controls.Add(this.removeButtonPictureBox);
             this.Controls.Add(this.addButtonPictureBox);
@@ -254,7 +237,6 @@ namespace BooksApp
             ((System.ComponentModel.ISupportInitialize)(this.removeButtonPictureBox)).EndInit();
             this.mainGroupBox.ResumeLayout(false);
             this.mainGroupBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.editButtonPictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -275,7 +257,6 @@ namespace BooksApp
         private System.Windows.Forms.TextBox authorTextBox;
         private System.Windows.Forms.Label yearReleaseLabel;
         private System.Windows.Forms.TextBox releaseYearTextBox;
-        private System.Windows.Forms.PictureBox editButtonPictureBox;
     }
 }
 

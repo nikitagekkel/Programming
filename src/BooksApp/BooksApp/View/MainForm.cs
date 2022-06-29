@@ -62,11 +62,7 @@ namespace BooksApp
         /// </returns>
         private static string GetBookInfo(Book book)
         {
-            string bookInfo = string.Format(
-                "{0} / {1} / {2}",
-                book.Title,
-                book.Author,
-                book.Genre);
+            string bookInfo = ($"{book.Title}/{book.Author}/{book.Genre}");
             return bookInfo;
         }
 
@@ -130,6 +126,10 @@ namespace BooksApp
             if (booksListBox.SelectedItem == null) return;
 
             _currentBook = _books[booksListBox.SelectedIndex];
+            if (_currentBook.Genre == "")
+            {
+                genreComboBox.SelectedIndex = -1;
+            }
             titleBookTextBox.Text = _currentBook.Title;
             releaseYearTextBox.Text = _currentBook.ReleaseYear.ToString();
             authorTextBox.Text = _currentBook.Author;
@@ -139,34 +139,13 @@ namespace BooksApp
 
         private void AddButtonPictureBox_MouseClick(object sender, MouseEventArgs e)
         {
-            try
-            {
-                string generatedBTitle = titleBookTextBox.Text;
-                int generatedBReleaseYear = Convert.ToInt32(releaseYearTextBox.Text);
-                string generatedBAuthor = authorTextBox.Text;
-                int generatedBPagesNumber = Convert.ToInt32(pagesNumberTextBox.Text);
-                string generatedBGenre = genreComboBox.Text;
-                Book _generatedBook = new(generatedBTitle,
-                    generatedBReleaseYear,
-                    generatedBAuthor,
-                    generatedBPagesNumber,
-                    generatedBGenre);
-                _books.Add(_generatedBook);
-                SortBooks();
-                UpdateListBox(_books.IndexOf(_generatedBook));
-                booksListBox.ClearSelected();
-            }
-
-            catch
-            {
-                return;
-            }
-        }
-
-        private void EditButtonPictureBox_MouseClick(object sender, MouseEventArgs e)
-        {
-            booksListBox.ClearSelected();
-            ClearBookInfo();
+            booksListBox.SelectedIndex = -1;
+            Book _newBook = new("", 0, "", 1, "");
+            _books.Add(_newBook);
+            SortBooks();
+            UpdateListBox(_books.IndexOf(_newBook));
+            booksListBox.SelectedIndex = _books.IndexOf(_newBook);
+            genreComboBox.SelectedIndex = -1;
         }
 
         private void RemoveButtonPictureBox_MouseClick(object sender, MouseEventArgs e)
@@ -276,16 +255,6 @@ namespace BooksApp
         private void RemoveButtonPictureBox_MouseLeave(object sender, EventArgs e)
         {
             (sender as PictureBox).Image = Resources.remove_24x24_uncolor;
-        }
-
-        private void EditButtonPictureBox_MouseEnter(object sender, EventArgs e)
-        {
-            (sender as PictureBox).Image = Resources.edit_24x24;
-        }
-
-        private void EditButtonPictureBox_MouseLeave(object sender, EventArgs e)
-        {
-            (sender as PictureBox).Image = Resources.edit_24x24_uncolor;
         }
 
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)

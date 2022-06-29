@@ -187,3 +187,9 @@ C:\Users\Jett\Source\Repos\nikitagekkel\Programming\src\Programming\Programming\
 C:\Users\Jett\Source\Repos\nikitagekkel\Programming\src\Programming\Programming\obj\Debug\net5.0-windows\Programming.View.Controls.MoviesControl.resources
 C:\Users\Jett\Source\Repos\nikitagekkel\Programming\src\Programming\Programming\obj\Debug\net5.0-windows\Programming.csproj.AssemblyReference.cache
 C:\Users\Jett\Source\Repos\nikitagekkel\Programming\src\Programming\Programming\obj\Debug\net5.0-windows\Programming.View.Controls.EnumerationsControl.resources
+C:\Users\Jett\source\repos\Programming\src\Programming\Programming\obj\Debug\net5.0-windows\Programming.View.Controls.EnumerationsControl.resources
+C:\Users\Jett\source\repos\Programming\src\Programming\Programming\obj\Debug\net5.0-windows\Programming.View.Controls.MoviesControl.resources
+C:\Users\Jett\source\repos\Programming\src\Programming\Programming\obj\Debug\net5.0-windows\Programming.View.Controls.RectanglesCollisionControl.resources
+C:\Users\Jett\source\repos\Programming\src\Programming\Programming\obj\Debug\net5.0-windows\Programming.View.Controls.RectanglesControl.resources
+C:\Users\Jett\source\repos\Programming\src\Programming\Programming\obj\Debug\net5.0-windows\Programming.View.Controls.SeansonHandleControl.resources
+C:\Users\Jett\source\repos\Programming\src\Programming\Programming\obj\Debug\net5.0-windows\Programming.View.Controls.WeekdayParsingControl.resources

@@ -21,6 +21,18 @@ namespace Programming.View.Controls
         private Movie _currentMovie;
 
         /// <summary>
+        /// Цвет фона без ошибок.
+        /// </summary>
+        private System.Drawing.Color _correctColor =
+            System.Drawing.Color.White;
+
+        /// <summary>
+        /// Цвет фона с ошибками.
+        /// </summary>
+        private System.Drawing.Color _errorColor =
+            System.Drawing.Color.LightPink;
+
+        /// <summary>
         /// Создает элементы списка фильмов и
         /// добавляет их в элемент ListBox.
         /// </summary>
@@ -85,11 +97,11 @@ namespace Programming.View.Controls
             try
             {
                 _currentMovie.Duration = Convert.ToInt32(durationTextBox.Text);
-                durationTextBox.BackColor = System.Drawing.Color.White;
+                durationTextBox.BackColor = _correctColor;
             }
             catch
             {
-                durationTextBox.BackColor = System.Drawing.Color.LightPink;
+                durationTextBox.BackColor = _errorColor;
             }
         }
 
@@ -98,11 +110,11 @@ namespace Programming.View.Controls
             try
             {
                 _currentMovie.ReleaseYear = Convert.ToInt32(releaseYearTextBox.Text);
-                releaseYearTextBox.BackColor = System.Drawing.Color.White;
+                releaseYearTextBox.BackColor = _correctColor;
             }
             catch
             {
-                releaseYearTextBox.BackColor = System.Drawing.Color.LightPink;
+                releaseYearTextBox.BackColor = _errorColor;
             }
         }
 
@@ -111,11 +123,11 @@ namespace Programming.View.Controls
             try
             {
                 _currentMovie.Rating = Convert.ToDouble(ratingTextBox.Text);
-                ratingTextBox.BackColor = System.Drawing.Color.White;
+                ratingTextBox.BackColor = _correctColor;
             }
             catch
             {
-                ratingTextBox.BackColor = System.Drawing.Color.LightPink;
+                ratingTextBox.BackColor = _errorColor;
             }
         }
 
