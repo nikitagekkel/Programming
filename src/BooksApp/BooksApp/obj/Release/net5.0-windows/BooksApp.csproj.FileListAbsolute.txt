@@ -18,3 +18,4 @@ C:\Users\Jett\source\repos\Programming\src\BooksApp\BooksApp\obj\Release\net5.0-
 C:\Users\Jett\source\repos\Programming\src\BooksApp\BooksApp\obj\Release\net5.0-windows\ref\BooksApp.dll
 C:\Users\Jett\source\repos\Programming\src\BooksApp\BooksApp\obj\Release\net5.0-windows\BooksApp.pdb
 C:\Users\Jett\source\repos\Programming\src\BooksApp\BooksApp\obj\Release\net5.0-windows\BooksApp.genruntimeconfig.cache
+C:\Users\Jett\source\repos\Programming\src\BooksApp\BooksApp\obj\Release\net5.0-windows\BooksApp.csproj.AssemblyReference.cache

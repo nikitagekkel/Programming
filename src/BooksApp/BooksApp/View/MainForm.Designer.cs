@@ -51,8 +51,9 @@ namespace BooksApp
             // 
             // booksListBox
             // 
-            this.booksListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.booksListBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.booksListBox.FormattingEnabled = true;
             this.booksListBox.ItemHeight = 20;
             this.booksListBox.Location = new System.Drawing.Point(12, 12);
@@ -91,8 +92,7 @@ namespace BooksApp
             // 
             // mainGroupBox
             // 
-            this.mainGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.mainGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.mainGroupBox.Controls.Add(this.genreLabel);
             this.mainGroupBox.Controls.Add(this.genreComboBox);
             this.mainGroupBox.Controls.Add(this.pagesNumberLabel);
