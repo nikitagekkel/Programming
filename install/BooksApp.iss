@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "BooksApp"
-#define MyAppVersion "1.1.4"
+#define MyAppVersion "1.1.5"
 #define MyAppPublisher "Gekkel Nikita"
 #define MyAppExeName "BooksApp.exe"
 #define MyAppAssocName MyAppName + " File"
@@ -22,7 +22,7 @@ ChangesAssociations=yes
 DisableProgramGroupPage=yes
 ; Remove the following line to run in administrative install mode (install for all users.)
 PrivilegesRequired=lowest
-OutputDir=..\Install
+OutputDir=..\install
 OutputBaseFilename=BooksApp
 SetupIconFile=..\src\BooksApp\BooksApp\Resources\book.ico
 Compression=lzma
