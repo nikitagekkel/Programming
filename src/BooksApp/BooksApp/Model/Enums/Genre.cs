@@ -1,4 +1,4 @@
-﻿namespace BooksApp.Model.Enumerations
+﻿namespace BooksApp.Model.Enums
 {
     /// <summary>
     /// Хранит перечисление жанров книг.

@@ -41,6 +41,9 @@ namespace Programming.View.Controls
             // 
             // enumsGroupBox
             // 
+            this.enumsGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.enumsGroupBox.Controls.Add(this.enumsListBox);
             this.enumsGroupBox.Controls.Add(this.intValueLabel);
             this.enumsGroupBox.Controls.Add(this.сhooseValueLabel);
@@ -56,6 +59,8 @@ namespace Programming.View.Controls
             // 
             // enumsListBox
             // 
+            this.enumsListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.enumsListBox.FormattingEnabled = true;
             this.enumsListBox.ItemHeight = 20;
             this.enumsListBox.Location = new System.Drawing.Point(11, 56);
@@ -94,6 +99,8 @@ namespace Programming.View.Controls
             // 
             // intValueTextBox
             // 
+            this.intValueTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.intValueTextBox.Location = new System.Drawing.Point(365, 56);
             this.intValueTextBox.Name = "intValueTextBox";
             this.intValueTextBox.ReadOnly = true;
@@ -102,6 +109,8 @@ namespace Programming.View.Controls
             // 
             // valuesListBox
             // 
+            this.valuesListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.valuesListBox.FormattingEnabled = true;
             this.valuesListBox.ItemHeight = 20;
             this.valuesListBox.Location = new System.Drawing.Point(189, 56);
@@ -111,12 +120,12 @@ namespace Programming.View.Controls
             this.valuesListBox.TabIndex = 1;
             this.valuesListBox.SelectedIndexChanged += new System.EventHandler(this.ValuesListBox_SelectedIndexChanged);
             // 
-            // EnumerationControl
+            // EnumerationsControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.enumsGroupBox);
-            this.Name = "EnumerationControl";
+            this.Name = "EnumerationsControl";
             this.Size = new System.Drawing.Size(699, 361);
             this.Load += new System.EventHandler(this.EnumerationControl_Load);
             this.enumsGroupBox.ResumeLayout(false);

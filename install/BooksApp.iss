@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "BooksApp"
-#define MyAppVersion "1.1.3"
+#define MyAppVersion "1.1.4"
 #define MyAppPublisher "Gekkel Nikita"
 #define MyAppExeName "BooksApp.exe"
 #define MyAppAssocName MyAppName + " File"

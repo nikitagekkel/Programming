@@ -87,7 +87,9 @@ namespace Programming
             // 
             // enumerationControl1
             // 
-            this.enumerationControl1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.enumerationControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.enumerationControl1.Location = new System.Drawing.Point(3, 3);
             this.enumerationControl1.Name = "enumerationControl1";
             this.enumerationControl1.Size = new System.Drawing.Size(717, 370);

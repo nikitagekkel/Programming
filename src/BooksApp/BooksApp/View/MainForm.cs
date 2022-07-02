@@ -1,5 +1,5 @@
 ﻿using BooksApp.Model.Classes;
-using BooksApp.Model.Enumerations;
+using BooksApp.Model.Enums;
 using BooksApp.Properties;
 using System;
 using System.Collections.Generic;
