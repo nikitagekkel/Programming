@@ -249,7 +249,7 @@ namespace Programming.View.Controls
             try
             {
                 _currentRectangle.Width = Convert.ToDouble(widthPanelTextBox.Text);
-                widthPanelTextBox.BackColor = _correctColor
+                widthPanelTextBox.BackColor = _correctColor;
 
                 canvasPanel.Controls[rectanglesPanelListBox.SelectedIndex].Width =
                     (int)_currentRectangle.Width;
