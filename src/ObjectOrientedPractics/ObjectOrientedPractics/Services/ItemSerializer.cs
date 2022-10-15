@@ -1,12 +1,16 @@
 ﻿using Newtonsoft.Json;
+using ObjectOrientedPractics.Model;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using ObjectOrientedPractics.Model;
 using static System.Environment;
 
 namespace ObjectOrientedPractics.Services
 {
+    /// <summary>
+    /// Реализует сериализацию и десериализацию
+    /// данных класса <see cref="Item"/>
+    /// </summary>
     public class ItemSerializer
     {
         /// <summary>
@@ -37,7 +41,7 @@ namespace ObjectOrientedPractics.Services
         /// <summary>
         /// Проводит сериализацию данных.
         /// </summary>
-        /// <param name="books">Список, который нужно сериализовать.</param>
+        /// <param name="items">Список, который нужно сериализовать</param>
         public static void Serialize(List<Item> items)
         {
             using StreamWriter writer = new(Path + FileName);
@@ -47,7 +51,8 @@ namespace ObjectOrientedPractics.Services
         /// <summary>
         /// Реализует десериализацию данных.
         /// </summary>
-        /// <returns>Возвращает коллекцию книг.</returns>
+        /// <returns>Возвращает список класса
+        /// <see cref="Item"/></returns>
         public static List<Item> Deserialize()
         {
             var items = new List<Item>();

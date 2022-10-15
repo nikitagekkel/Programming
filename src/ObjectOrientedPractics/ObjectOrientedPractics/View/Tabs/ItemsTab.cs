@@ -12,17 +12,24 @@ namespace ObjectOrientedPractics.View.Tabs
         private Item _currentItem;
 
         /// <summary>
-        /// Цвет фона строки без ошибок.
+        /// Цвет фона строки не содержащую ошибку
         /// </summary>
-        private Color _correctColor = Color.White;
+        private readonly Color _correctColor = Color.White;
 
         /// <summary>
-        /// Цвет фона строки с ошибками.
+        /// Цвет фона строки содержащую ошибки
         /// </summary>
-        private Color _errorColor = Color.LightPink;
+        private readonly Color _errorColor = Color.LightPink;
 
+        /// <summary>
+        /// Список предметов
+        /// </summary>
         public List<Item> _items = new();
 
+        /// <summary>
+        /// Реализует обработку формы, десериализацию экземпляра класса <see cref="Item"/>
+        /// и функцию <see cref="UpdateListBox(int)"/>
+        /// </summary>
         public ItemsTab()
         {
             InitializeComponent();
@@ -30,6 +37,13 @@ namespace ObjectOrientedPractics.View.Tabs
             UpdateListBox(-1);
         }
 
+        /// <summary>
+        /// Добавляет все поля <see cref="Item.Name"/>
+        /// списка <see cref="_items"/>
+        /// в <see cref="itemsListBox"/>
+        /// и фокусирует элемент индекса <see cref="Index"/>
+        /// </summary>
+        /// <param name="index">Индекс фокусируемого элемента</param>
         private void UpdateListBox(int index)
         {
             List<Item> items = _items;
@@ -44,6 +58,12 @@ namespace ObjectOrientedPractics.View.Tabs
             }
         }
 
+        /// <summary>
+        /// Обновляет все элементы типа <see cref="TextBox"/>,
+        /// добавляя в них текст из полей переданного элемента
+        /// <see cref="Item"/>
+        /// </summary>
+        /// <param name="item">Элемент класса <see cref="Item"/></param>
         private void UpdateTextBoxesInfo(Item item)
         {
             idTextBox.Text = item.Id.ToString();
@@ -52,6 +72,10 @@ namespace ObjectOrientedPractics.View.Tabs
             infoTextBox.Text = item.Info;
         }
 
+        /// <summary>
+        /// Удаляет текст из всех элементов формы
+        /// типа <see cref="TextBox"/>
+        /// </summary>
         private void ClearTextBoxes()
         {
             if (itemsListBox.SelectedIndex == -1)
@@ -104,7 +128,7 @@ namespace ObjectOrientedPractics.View.Tabs
                 _currentItem.Cost = Convert.ToDouble(costTextBox.Text);
                 costTextBox.BackColor = _correctColor;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 costTextBox.BackColor = _errorColor;
                 costToolTip.SetToolTip(costTextBox, ex.Message);

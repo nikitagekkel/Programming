@@ -1,18 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ObjectOrientedPractics.Services;
 using System.Windows.Forms;
-using ObjectOrientedPractics.Services;
 
 namespace ObjectOrientedPractics
 {
     public partial class MainForm : Form
     {
+        /// <summary>
+        /// Реализует обработку главной формы
+        /// </summary>
         public MainForm()
         {
             InitializeComponent();

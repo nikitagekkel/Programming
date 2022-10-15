@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using ObjectOrientedPractics.Model;
+﻿using ObjectOrientedPractics.Model;
 using ObjectOrientedPractics.Services;
+using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace ObjectOrientedPractics.View.Tabs
 {
@@ -17,16 +12,24 @@ namespace ObjectOrientedPractics.View.Tabs
         private Customer _currentCustomer;
 
         /// <summary>
-        /// Цвет фона строки без ошибок.
+        /// Цвет фона строки не содержащую ошибку
         /// </summary>
-        private Color _correctColor = Color.White;
+        private readonly Color _correctColor = Color.White;
 
         /// <summary>
-        /// Цвет фона строки с ошибками.
+        /// Цвет фона строки содержащую ошибку
         /// </summary>
-        private Color _errorColor = Color.LightPink;
+        private readonly Color _errorColor = Color.LightPink;
 
+        /// <summary>
+        /// Список покупателей
+        /// </summary>
         public List<Customer> _customers = new();
+
+        /// <summary>
+        /// Реализует обработку формы, десериализацию экземпляра класса <see cref="Customer"/>
+        /// и функцию <see cref="UpdateListBox(int)"/>
+        /// </summary>
         public CustomersTab()
         {
             InitializeComponent();
@@ -34,6 +37,13 @@ namespace ObjectOrientedPractics.View.Tabs
             UpdateListBox(-1);
         }
 
+        /// <summary>
+        /// Добавляет все поля <see cref="Customer.FullName"/>
+        /// элемента списка <see cref="_customers"/>
+        /// в <see cref="customersListBox"/>
+        /// и фокусирует элемент индекса <see cref="Index"/>
+        /// </summary>
+        /// <param name="index">Индекс фокусируемого элемента</param>
         private void UpdateListBox(int index)
         {
             List<Customer> customers = _customers;
@@ -48,6 +58,12 @@ namespace ObjectOrientedPractics.View.Tabs
             }
         }
 
+        /// <summary>
+        /// Обновляет все элементы типа <see cref="TextBox"/>,
+        /// добавляя в них текст из полей переданного элемента
+        /// <see cref="Customer"/>
+        /// </summary>
+        /// <param name="customer">Элемент класса <see cref="Customer"/></param>
         private void UpdateTextBoxesInfo(Customer customer)
         {
             idTextBox.Text = customer.Id.ToString();
@@ -55,6 +71,10 @@ namespace ObjectOrientedPractics.View.Tabs
             adressTextBox.Text = customer.Adress;
         }
 
+        /// <summary>
+        /// Удаляет текст из всех элементов формы
+        /// типа <see cref="TextBox"/>
+        /// </summary>
         private void ClearTextBoxes()
         {
             if (customersListBox.SelectedIndex == -1)
