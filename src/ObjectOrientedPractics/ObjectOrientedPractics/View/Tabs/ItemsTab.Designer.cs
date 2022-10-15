@@ -1,4 +1,5 @@
-﻿namespace ObjectOrientedPractics.View.Tabs
+﻿using System.Windows.Forms;
+namespace ObjectOrientedPractics.View.Tabs
 {
     partial class ItemsTab
     {
@@ -28,164 +29,184 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.itemsListBox = new System.Windows.Forms.ListBox();
             this.itemsLabel = new System.Windows.Forms.Label();
             this.addButton = new System.Windows.Forms.Button();
             this.removeButton = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.selectedItemLabel = new System.Windows.Forms.Label();
             this.idLabel = new System.Windows.Forms.Label();
             this.costLabel = new System.Windows.Forms.Label();
             this.idTextBox = new System.Windows.Forms.TextBox();
-            this.coastTextBox = new System.Windows.Forms.TextBox();
+            this.costTextBox = new System.Windows.Forms.TextBox();
             this.nameLabel = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.descriptionLabel = new System.Windows.Forms.Label();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
-            this.panel1.SuspendLayout();
+            this.nameTextBox = new System.Windows.Forms.TextBox();
+            this.descpitionLabel = new System.Windows.Forms.Label();
+            this.infoTextBox = new System.Windows.Forms.TextBox();
+            this.costToolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.nameToolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.descriptionToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // itemsListBox
             // 
+            this.itemsListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.itemsListBox.FormattingEnabled = true;
             this.itemsListBox.ItemHeight = 20;
-            this.itemsListBox.Location = new System.Drawing.Point(3, 28);
+            this.itemsListBox.Location = new System.Drawing.Point(3, 23);
             this.itemsListBox.Name = "itemsListBox";
-            this.itemsListBox.Size = new System.Drawing.Size(324, 484);
+            this.itemsListBox.Size = new System.Drawing.Size(294, 424);
             this.itemsListBox.TabIndex = 0;
+            this.itemsListBox.SelectedIndexChanged += new System.EventHandler(this.ItemsListBox_SelectedIndexChanged);
             // 
             // itemsLabel
             // 
+            this.itemsLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.itemsLabel.AutoSize = true;
-            this.itemsLabel.Location = new System.Drawing.Point(3, 5);
+            this.itemsLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.itemsLabel.Location = new System.Drawing.Point(3, 0);
             this.itemsLabel.Name = "itemsLabel";
-            this.itemsLabel.Size = new System.Drawing.Size(45, 20);
+            this.itemsLabel.Size = new System.Drawing.Size(49, 20);
             this.itemsLabel.TabIndex = 1;
             this.itemsLabel.Text = "Items";
             // 
             // addButton
             // 
-            this.addButton.Location = new System.Drawing.Point(3, 518);
+            this.addButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.addButton.Location = new System.Drawing.Point(3, 452);
             this.addButton.Name = "addButton";
-            this.addButton.Size = new System.Drawing.Size(94, 48);
+            this.addButton.Size = new System.Drawing.Size(94, 40);
             this.addButton.TabIndex = 2;
             this.addButton.Text = "Add";
             this.addButton.UseVisualStyleBackColor = true;
+            this.addButton.Click += new System.EventHandler(this.AddButton_Click);
             // 
             // removeButton
             // 
-            this.removeButton.Location = new System.Drawing.Point(103, 518);
+            this.removeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.removeButton.Location = new System.Drawing.Point(103, 452);
             this.removeButton.Name = "removeButton";
-            this.removeButton.Size = new System.Drawing.Size(94, 48);
+            this.removeButton.Size = new System.Drawing.Size(94, 40);
             this.removeButton.TabIndex = 3;
             this.removeButton.Text = "Remove";
             this.removeButton.UseVisualStyleBackColor = true;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.SystemColors.Window;
-            this.panel1.Controls.Add(this.richTextBox2);
-            this.panel1.Controls.Add(this.descriptionLabel);
-            this.panel1.Controls.Add(this.richTextBox1);
-            this.panel1.Controls.Add(this.nameLabel);
-            this.panel1.Controls.Add(this.coastTextBox);
-            this.panel1.Controls.Add(this.idTextBox);
-            this.panel1.Controls.Add(this.costLabel);
-            this.panel1.Controls.Add(this.idLabel);
-            this.panel1.Controls.Add(this.selectedItemLabel);
-            this.panel1.Location = new System.Drawing.Point(333, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(448, 569);
-            this.panel1.TabIndex = 4;
+            this.removeButton.Click += new System.EventHandler(this.RemoveButton_Click);
             // 
             // selectedItemLabel
             // 
             this.selectedItemLabel.AutoSize = true;
-            this.selectedItemLabel.Location = new System.Drawing.Point(3, 5);
+            this.selectedItemLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.selectedItemLabel.Location = new System.Drawing.Point(303, 0);
             this.selectedItemLabel.Name = "selectedItemLabel";
-            this.selectedItemLabel.Size = new System.Drawing.Size(100, 20);
-            this.selectedItemLabel.TabIndex = 0;
+            this.selectedItemLabel.Size = new System.Drawing.Size(104, 20);
+            this.selectedItemLabel.TabIndex = 4;
             this.selectedItemLabel.Text = "Selected Item";
             // 
             // idLabel
             // 
             this.idLabel.AutoSize = true;
-            this.idLabel.Location = new System.Drawing.Point(4, 32);
+            this.idLabel.Location = new System.Drawing.Point(303, 29);
             this.idLabel.Name = "idLabel";
             this.idLabel.Size = new System.Drawing.Size(27, 20);
-            this.idLabel.TabIndex = 1;
+            this.idLabel.TabIndex = 5;
             this.idLabel.Text = "ID:";
             // 
             // costLabel
             // 
             this.costLabel.AutoSize = true;
-            this.costLabel.Location = new System.Drawing.Point(4, 65);
+            this.costLabel.Location = new System.Drawing.Point(303, 62);
             this.costLabel.Name = "costLabel";
             this.costLabel.Size = new System.Drawing.Size(41, 20);
-            this.costLabel.TabIndex = 2;
+            this.costLabel.TabIndex = 6;
             this.costLabel.Text = "Cost:";
             // 
             // idTextBox
             // 
-            this.idTextBox.Location = new System.Drawing.Point(51, 29);
+            this.idTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.idTextBox.Location = new System.Drawing.Point(361, 26);
             this.idTextBox.Name = "idTextBox";
+            this.idTextBox.ReadOnly = true;
             this.idTextBox.Size = new System.Drawing.Size(125, 27);
-            this.idTextBox.TabIndex = 3;
+            this.idTextBox.TabIndex = 7;
             // 
-            // coastTextBox
+            // costTextBox
             // 
-            this.coastTextBox.Location = new System.Drawing.Point(51, 62);
-            this.coastTextBox.Name = "coastTextBox";
-            this.coastTextBox.Size = new System.Drawing.Size(125, 27);
-            this.coastTextBox.TabIndex = 4;
+            this.costTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.costTextBox.Location = new System.Drawing.Point(361, 59);
+            this.costTextBox.Name = "costTextBox";
+            this.costTextBox.Size = new System.Drawing.Size(125, 27);
+            this.costTextBox.TabIndex = 8;
+            this.costTextBox.TextChanged += new System.EventHandler(this.CostTextBox_TextChanged);
             // 
             // nameLabel
             // 
+            this.nameLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.nameLabel.AutoSize = true;
-            this.nameLabel.Location = new System.Drawing.Point(4, 102);
+            this.nameLabel.Location = new System.Drawing.Point(303, 98);
             this.nameLabel.Name = "nameLabel";
             this.nameLabel.Size = new System.Drawing.Size(52, 20);
-            this.nameLabel.TabIndex = 0;
+            this.nameLabel.TabIndex = 9;
             this.nameLabel.Text = "Name:";
             // 
-            // richTextBox1
+            // nameTextBox
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(4, 125);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(441, 87);
-            this.richTextBox1.TabIndex = 5;
-            this.richTextBox1.Text = "";
+            this.nameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.nameTextBox.Location = new System.Drawing.Point(303, 121);
+            this.nameTextBox.Multiline = true;
+            this.nameTextBox.Name = "nameTextBox";
+            this.nameTextBox.Size = new System.Drawing.Size(452, 95);
+            this.nameTextBox.TabIndex = 10;
+            this.nameTextBox.TextChanged += new System.EventHandler(this.NameTextBox_TextChanged);
             // 
-            // descriptionLabel
+            // descpitionLabel
             // 
-            this.descriptionLabel.AutoSize = true;
-            this.descriptionLabel.Location = new System.Drawing.Point(4, 224);
-            this.descriptionLabel.Name = "descriptionLabel";
-            this.descriptionLabel.Size = new System.Drawing.Size(88, 20);
-            this.descriptionLabel.TabIndex = 6;
-            this.descriptionLabel.Text = "Description:";
+            this.descpitionLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.descpitionLabel.AutoSize = true;
+            this.descpitionLabel.Location = new System.Drawing.Point(303, 219);
+            this.descpitionLabel.Name = "descpitionLabel";
+            this.descpitionLabel.Size = new System.Drawing.Size(88, 20);
+            this.descpitionLabel.TabIndex = 11;
+            this.descpitionLabel.Text = "Description:";
             // 
-            // richTextBox2
+            // infoTextBox
             // 
-            this.richTextBox2.Location = new System.Drawing.Point(4, 247);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(441, 181);
-            this.richTextBox2.TabIndex = 7;
-            this.richTextBox2.Text = "";
+            this.infoTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.infoTextBox.Location = new System.Drawing.Point(303, 242);
+            this.infoTextBox.Multiline = true;
+            this.infoTextBox.Name = "infoTextBox";
+            this.infoTextBox.Size = new System.Drawing.Size(452, 158);
+            this.infoTextBox.TabIndex = 12;
+            this.infoTextBox.TextChanged += new System.EventHandler(this.InfoTextBox_TextChanged);
             // 
             // ItemsTab
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.infoTextBox);
+            this.Controls.Add(this.descpitionLabel);
+            this.Controls.Add(this.nameTextBox);
+            this.Controls.Add(this.nameLabel);
+            this.Controls.Add(this.costTextBox);
+            this.Controls.Add(this.idTextBox);
+            this.Controls.Add(this.costLabel);
+            this.Controls.Add(this.idLabel);
+            this.Controls.Add(this.selectedItemLabel);
             this.Controls.Add(this.removeButton);
             this.Controls.Add(this.addButton);
             this.Controls.Add(this.itemsLabel);
             this.Controls.Add(this.itemsListBox);
             this.Name = "ItemsTab";
-            this.Size = new System.Drawing.Size(781, 569);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.Size = new System.Drawing.Size(758, 498);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -193,19 +214,21 @@
 
         #endregion
 
-        private System.Windows.Forms.ListBox itemsListBox;
-        private System.Windows.Forms.Label itemsLabel;
-        private System.Windows.Forms.Button addButton;
-        private System.Windows.Forms.Button removeButton;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label selectedItemLabel;
-        private System.Windows.Forms.RichTextBox richTextBox2;
-        private System.Windows.Forms.Label descriptionLabel;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.Label nameLabel;
-        private System.Windows.Forms.TextBox coastTextBox;
-        private System.Windows.Forms.TextBox idTextBox;
-        private System.Windows.Forms.Label costLabel;
-        private System.Windows.Forms.Label idLabel;
+        private ListBox itemsListBox;
+        private Label itemsLabel;
+        private Button addButton;
+        private Button removeButton;
+        private Label selectedItemLabel;
+        private Label idLabel;
+        private Label costLabel;
+        private TextBox idTextBox;
+        private TextBox costTextBox;
+        private Label nameLabel;
+        private TextBox nameTextBox;
+        private Label descpitionLabel;
+        private TextBox infoTextBox;
+        private ToolTip costToolTip;
+        private ToolTip nameToolTip;
+        private ToolTip descriptionToolTip;
     }
 }

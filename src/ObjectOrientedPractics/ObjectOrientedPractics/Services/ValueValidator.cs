@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ObjectOrientedPractics.Model
+namespace ObjectOrientedPractics.Services
 {
     class ValueValidator
     {
@@ -12,11 +12,19 @@ namespace ObjectOrientedPractics.Model
             }
         }
 
-        public static void AssertFloatInInterval(float value, int minLength, int maxLength, string propertyName)
+        public static void AssertFloatInInterval(double value, int minLength, int maxLength, string propertyName)
         {
             if (value < minLength | value > maxLength)
             {
                 throw new ArgumentException($"{propertyName} must be from {minLength} to {maxLength}");
+            }
+        }
+
+        public static void AssertEmptyValue(string value, string propertyName)
+        {
+            if (value == "")
+            {
+                throw new ArgumentException($"Field must be not empty {propertyName}");
             }
         }
     }

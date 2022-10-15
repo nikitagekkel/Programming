@@ -1,11 +1,9 @@
-﻿namespace ObjectOrientedPractics.Model
+﻿using ObjectOrientedPractics.Services;
+
+namespace ObjectOrientedPractics.Model
 {
     public class Item
     {
-        /// <summary>
-        /// Возвращает и задает жанр книги. 
-        /// </summary>
-        private int _id;
 
         /// <summary>
         /// Уникальный идентификатор названия книги.
@@ -20,24 +18,12 @@
         /// <summary>
         /// Уникальный идентификатор количества страниц книги.
         /// </summary>
-        private float _coast;
+        private double _cost;
 
         /// <summary>
-        /// Возвращает и задает название книги.
-        /// Длина названия не может быть больше 100 символов.
+        /// Возвращает и задает жанр книги. 
         /// </summary>
-        public int Id
-        {
-            get
-            {
-                return _id;
-            }
-            set
-            {
-                value = IdGenerator.GetNextId();
-                _id = value;
-            }
-        }
+        public int Id { get; set; }
 
         /// <summary>
         /// Возвращает и задает название книги.
@@ -52,6 +38,7 @@
             set
             {
                 ValueValidator.AssertStringOnLength(value, 200, nameof(Name));
+                ValueValidator.AssertEmptyValue(value, Name);
                 _name = value;
             }
         }
@@ -69,6 +56,7 @@
             set
             {
                 ValueValidator.AssertStringOnLength(value, 1000, nameof(Info));
+                ValueValidator.AssertEmptyValue(value, Info);
                 _info = value;
             }
         }
@@ -77,27 +65,28 @@
         /// Возвращает и задает название книги.
         /// Длина названия не может быть больше 100 символов.
         /// </summary>
-        public float Coast
+        public double Cost
         {
             get
             {
-                return _coast;
+                return _cost;
             }
             set
             {
-                ValueValidator.AssertFloatInInterval(value, 0, 100000, nameof(Coast));
-                _coast = value;
+                ValueValidator.AssertFloatInInterval(value, 0, 100000, nameof(Cost));
+                _cost = value;
             }
         }
 
         public Item(
             string name,
             string info,
-            float coast)
+            float cost)
         {
             Name = name;
             Info = info;
-            Coast = coast;
+            Cost = cost;
+            Id = IdGenerator.GetNextId();
         }
     }
 }

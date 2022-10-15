@@ -142,7 +142,6 @@ C:\Users\Jett\Source\Repos\Programming123\src\Programming\Programming\obj\Debug\
 C:\Users\Jett\Source\Repos\Programming123\src\Programming\Programming\obj\Debug\net5.0-windows\Programming.pdb
 C:\Users\Jett\Source\Repos\Programming123\src\Programming\Programming\obj\Debug\net5.0-windows\Programming.genruntimeconfig.cache
 C:\Users\Jett\Source\Repos\Programming\src\Programming\Programming\obj\Debug\net5.0-windows\Programming.Properties.Resources.resources
-C:\Users\Jett\Source\Repos\Programming\src\Programming\Programming\obj\Debug\net5.0-windows\Programming.csproj.AssemblyReference.cache
 C:\Users\Jett\Source\Repos\Programming1\src\Programming\Programming\bin\Debug\net5.0-windows\Programming.exe
 C:\Users\Jett\Source\Repos\Programming1\src\Programming\Programming\bin\Debug\net5.0-windows\Programming.deps.json
 C:\Users\Jett\Source\Repos\Programming1\src\Programming\Programming\bin\Debug\net5.0-windows\Programming.runtimeconfig.json

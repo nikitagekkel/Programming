@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ObjectOrientedPractics.Services;
 
 namespace ObjectOrientedPractics
 {
@@ -17,5 +18,10 @@ namespace ObjectOrientedPractics
             InitializeComponent();
         }
 
+        private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            ItemSerializer.Serialize(itemsTab._items);
+            CustomerSerializer.Serialize(customersTab._customers);
+        }
     }
 }

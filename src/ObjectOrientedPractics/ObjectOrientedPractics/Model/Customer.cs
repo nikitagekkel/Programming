@@ -1,23 +1,12 @@
-﻿namespace ObjectOrientedPractics.Model
+﻿using ObjectOrientedPractics.Services;
+
+namespace ObjectOrientedPractics.Model
 {
-    class Customer
+    public class Customer
     {
-        private int _id;
         private string _fullName;
         private string _adress;
-
-        public int Id
-        {
-            get
-            {
-                return _id;
-            }
-            set
-            {
-                value = IdGenerator.GetNextId();
-                _id = value;
-            }
-        }
+        public int Id { get; set; }
 
         public string FullName
         {
@@ -28,6 +17,7 @@
             set
             {
                 ValueValidator.AssertStringOnLength(value, 200, nameof(FullName));
+                ValueValidator.AssertEmptyValue(value, nameof(FullName));
                 _fullName = value;
             }
         }
@@ -40,6 +30,7 @@
             set
             {
                 ValueValidator.AssertStringOnLength(value, 500, nameof(Adress));
+                ValueValidator.AssertEmptyValue(value, nameof(Adress));
                 _adress = value;
             }
         }
@@ -50,6 +41,7 @@
         {
             FullName = fullName;
             Adress = adress;
+            Id = IdGenerator.GetNextId();
         }
     }
 }
