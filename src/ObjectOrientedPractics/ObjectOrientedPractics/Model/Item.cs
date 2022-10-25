@@ -29,6 +29,11 @@ namespace ObjectOrientedPractics.Model
         public int Id { get; set; }
 
         /// <summary>
+        /// Возвращает и задает категорию товара
+        /// </summary>
+        public Category Category { get; set; }
+
+        /// <summary>
         /// Возвращает и задает название товара.
         /// Длина названия не может превышать 200 символов
         /// или быть пустой
@@ -89,14 +94,17 @@ namespace ObjectOrientedPractics.Model
         /// <param name="name">Название товара</param>
         /// <param name="info">Информация о товаре</param>
         /// <param name="cost">Цена товара</param>
+        /// <param name="category">Категория товара</param>
         public Item(
             string name,
             string info,
-            float cost)
+            float cost,
+            Category category)
         {
             Name = name;
             Info = info;
             Cost = cost;
+            Category = category;
             Id = IdGenerator.GetNextId();
         }
     }

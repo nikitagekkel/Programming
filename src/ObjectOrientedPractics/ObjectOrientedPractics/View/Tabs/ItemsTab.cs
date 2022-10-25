@@ -33,6 +33,12 @@ namespace ObjectOrientedPractics.View.Tabs
         public ItemsTab()
         {
             InitializeComponent();
+            var categories = Enum.GetValues(typeof(Category));
+            foreach(var category in categories)
+            {
+                categoryComboBox.Items.Add(category);
+            }
+            categoryComboBox.SelectedItem = null;
             _items = ItemSerializer.Deserialize();
             UpdateListBox(-1);
         }
@@ -64,12 +70,13 @@ namespace ObjectOrientedPractics.View.Tabs
         /// <see cref="Item"/>
         /// </summary>
         /// <param name="item">Элемент класса <see cref="Item"/></param>
-        private void UpdateTextBoxesInfo(Item item)
+        private void UpdateBoxesInfo(Item item)
         {
             idTextBox.Text = item.Id.ToString();
             costTextBox.Text = item.Cost.ToString();
             nameTextBox.Text = item.Name;
             infoTextBox.Text = item.Info;
+            categoryComboBox.SelectedItem = item.Category;
         }
 
         /// <summary>
@@ -84,15 +91,16 @@ namespace ObjectOrientedPractics.View.Tabs
                 costTextBox.Clear();
                 nameTextBox.Clear();
                 infoTextBox.Clear();
+                categoryComboBox.SelectedItem = Category.None;
             }
         }
 
         private void AddButton_Click(object sender, EventArgs e)
         {
-            _currentItem = new Item("none", "none", 0);
+            _currentItem = new Item("none", "none", 0, Category.None);
             _items.Add(_currentItem);
             UpdateListBox(_items.IndexOf(_currentItem));
-            UpdateTextBoxesInfo(_currentItem);
+            UpdateBoxesInfo(_currentItem);
         }
 
         private void ItemsListBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -103,7 +111,7 @@ namespace ObjectOrientedPractics.View.Tabs
             }
 
             _currentItem = _items[itemsListBox.SelectedIndex];
-            UpdateTextBoxesInfo(_currentItem);
+            UpdateBoxesInfo(_currentItem);
         }
 
         private void RemoveButton_Click(object sender, EventArgs e)
@@ -128,14 +136,9 @@ namespace ObjectOrientedPractics.View.Tabs
                 _currentItem.Cost = Convert.ToDouble(costTextBox.Text);
                 costTextBox.BackColor = _correctColor;
             }
-            catch (Exception ex)
+            catch
             {
-                costTextBox.BackColor = _errorColor;
-                costToolTip.SetToolTip(costTextBox, ex.Message);
-                if (_items.Count == 0)
-                {
-                    costTextBox.BackColor = _correctColor;
-                }
+                nameTextBox.BackColor = _errorColor;
             }
         }
 
@@ -164,6 +167,11 @@ namespace ObjectOrientedPractics.View.Tabs
             {
                 infoTextBox.BackColor = _errorColor;
             }
+        }
+
+        private void CategoryComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            _currentItem.Category = (Category)categoryComboBox.SelectedItem;
         }
     }
 }
