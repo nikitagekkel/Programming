@@ -10,6 +10,11 @@ namespace ObjectOrientedPractics
         private readonly List<Item> _items = new();
         private readonly List<Customer> _customers = new();
         public Store _store;
+        /// <summary>
+        /// Реализует загрузку главной формы и
+        /// десериализацию обьектов в класс
+        /// <see cref="Store"/>
+        /// </summary>
         public MainForm()
         {
             InitializeComponent();
