@@ -1,5 +1,4 @@
 ﻿using ObjectOrientedPractics.Model;
-using ObjectOrientedPractics.Services;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -37,13 +36,11 @@ namespace ObjectOrientedPractics.View.Tabs
         {
             InitializeComponent();
             var categories = Enum.GetValues(typeof(Category));
-            foreach(var category in categories)
+            foreach (var category in categories)
             {
                 categoryComboBox.Items.Add(category);
             }
             categoryComboBox.SelectedItem = null;
-            _items = ItemSerializer.Deserialize();
-            UpdateListBox(-1);
         }
 
         /// <summary>
@@ -53,7 +50,7 @@ namespace ObjectOrientedPractics.View.Tabs
         /// и фокусирует элемент индекса <see cref="Index"/>
         /// </summary>
         /// <param name="index">Индекс фокусируемого элемента</param>
-        private void UpdateListBox(int index)
+        public void UpdateListBox(int index)
         {
             List<Item> items = _items;
             itemsListBox.Items.Clear();

@@ -31,7 +31,7 @@ namespace ObjectOrientedPractics.Services
         /// <param name="maxLength">Максимальная допустимая длина</param>
         /// <param name="propertyName">Переданное название элемента</param>
         public static void AssertFloatInInterval(
-            double value, int minLength, int maxLength,string propertyName)
+            double value, int minLength, int maxLength, string propertyName)
         {
             if (value < minLength | value > maxLength)
             {

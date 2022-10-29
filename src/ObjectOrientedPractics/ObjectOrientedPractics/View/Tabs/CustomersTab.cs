@@ -1,6 +1,4 @@
 ﻿using ObjectOrientedPractics.Model;
-using ObjectOrientedPractics.Services;
-using ObjectOrientedPractics.View.Controls;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -26,16 +24,13 @@ namespace ObjectOrientedPractics.View.Tabs
         /// Список покупателей
         /// </summary>
         public List<Customer> _customers = new();
-        
+
         /// <summary>
-        /// Реализует обработку формы, десериализацию экземпляра класса <see cref="Customer"/>
-        /// и функцию <see cref="UpdateListBox(int)"/>
+        /// Реализует обработку элемента Control
         /// </summary>
         public CustomersTab()
         {
             InitializeComponent();
-            _customers = CustomerSerializer.Deserialize();
-            UpdateListBox(-1);
         }
 
         /// <summary>
@@ -45,7 +40,7 @@ namespace ObjectOrientedPractics.View.Tabs
         /// и фокусирует элемент индекса <see cref="Index"/>
         /// </summary>
         /// <param name="index">Индекс фокусируемого элемента</param>
-        private void UpdateListBox(int index)
+        public void UpdateListBox(int index)
         {
             List<Customer> customers = _customers;
             customersListBox.Items.Clear();

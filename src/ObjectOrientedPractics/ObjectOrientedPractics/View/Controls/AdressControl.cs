@@ -1,14 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using ObjectOrientedPractics.Model;
+using System;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using ObjectOrientedPractics.Model;
-using ObjectOrientedPractics.Services;
 
 namespace ObjectOrientedPractics.View.Controls
 {
@@ -24,8 +17,17 @@ namespace ObjectOrientedPractics.View.Controls
         /// </summary>
         private readonly Color _errorColor = Color.LightPink;
 
+        /// <summary>
+        /// Список адресов
+        /// </summary>
         private Adress _adress;
 
+        /// <summary>
+        /// Реализует свойства класса
+        /// <see cref="Adress"/>
+        /// для поля
+        /// <see cref="_adress"/>
+        /// </summary>
         public Adress Adress
         {
             get
@@ -37,11 +39,18 @@ namespace ObjectOrientedPractics.View.Controls
                 _adress = value;
             }
         }
-
+        /// <summary>
+        /// Реализует обработку элемента Control
+        /// </summary>
         public AdressControl()
         {
             InitializeComponent();
         }
+        /// <summary>
+        /// Обновляет все элементы типа <see cref="TextBox"/>,
+        /// добавляя в них текст из поля
+        /// <see cref="_adress"/>
+        /// </summary>
         public void UpdateAdressTextBoxesInfo()
         {
             postIndexTextBox.Text = _adress.Index.ToString();
@@ -52,6 +61,10 @@ namespace ObjectOrientedPractics.View.Controls
             apartmentTextBox.Text = _adress.Apartment;
         }
 
+        /// <summary>
+        /// Удаляет текст из всех элементов формы
+        /// типа <see cref="TextBox"/>
+        /// </summary>
         public void ClearTextBoxes()
         {
             postIndexTextBox.Clear();
@@ -62,6 +75,10 @@ namespace ObjectOrientedPractics.View.Controls
             apartmentTextBox.Clear();
         }
 
+        /// <summary>
+        /// Устанавливает цвет фона всех обьектов
+        /// <see cref="TextBox"/>
+        /// </summary>
         public void SetCorrectColor()
         {
             postIndexTextBox.BackColor = _correctColor;
@@ -71,6 +88,7 @@ namespace ObjectOrientedPractics.View.Controls
             buildingTextBox.BackColor = _correctColor;
             apartmentTextBox.BackColor = _correctColor;
         }
+
         private void PostIndexTextBox_TextChanged(object sender, EventArgs e)
         {
             try
