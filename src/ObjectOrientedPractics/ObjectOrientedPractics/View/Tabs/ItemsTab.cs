@@ -9,8 +9,6 @@ namespace ObjectOrientedPractics.View.Tabs
 {
     public partial class ItemsTab : UserControl
     {
-        private Item _currentItem;
-
         /// <summary>
         /// Цвет фона строки не содержащую ошибку
         /// </summary>
@@ -20,6 +18,11 @@ namespace ObjectOrientedPractics.View.Tabs
         /// Цвет фона строки содержащую ошибки
         /// </summary>
         private readonly Color _errorColor = Color.LightPink;
+
+        /// <summary>
+        /// Текущий выбранный товар
+        /// </summary>
+        private Item _currentItem;
 
         /// <summary>
         /// Список предметов
@@ -97,7 +100,7 @@ namespace ObjectOrientedPractics.View.Tabs
 
         private void AddButton_Click(object sender, EventArgs e)
         {
-            _currentItem = new Item("none", "none", 0, Category.None);
+            _currentItem = new Item("None", "None", 0, Category.None);
             _items.Add(_currentItem);
             UpdateListBox(_items.IndexOf(_currentItem));
             UpdateBoxesInfo(_currentItem);

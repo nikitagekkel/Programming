@@ -1,5 +1,6 @@
 ﻿using ObjectOrientedPractics.Model;
 using ObjectOrientedPractics.Services;
+using ObjectOrientedPractics.View.Controls;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -25,7 +26,7 @@ namespace ObjectOrientedPractics.View.Tabs
         /// Список покупателей
         /// </summary>
         public List<Customer> _customers = new();
-
+        
         /// <summary>
         /// Реализует обработку формы, десериализацию экземпляра класса <see cref="Customer"/>
         /// и функцию <see cref="UpdateListBox(int)"/>
@@ -68,7 +69,8 @@ namespace ObjectOrientedPractics.View.Tabs
         {
             idTextBox.Text = customer.Id.ToString();
             fullNameTextBox.Text = customer.FullName;
-            adressTextBox.Text = customer.Adress;
+            adressControl.Adress = customer.Adress;
+            adressControl.UpdateAdressTextBoxesInfo();
         }
 
         /// <summary>
@@ -81,17 +83,19 @@ namespace ObjectOrientedPractics.View.Tabs
             {
                 idTextBox.Clear();
                 fullNameTextBox.Clear();
-                adressTextBox.Clear();
-                adressTextBox.Clear();
+                adressControl.ClearTextBoxes();
             }
         }
 
         private void AddButton_Click(object sender, EventArgs e)
         {
-            _currentCustomer = new Customer("none", "none");
+            Adress _newAdress = new(0, "None", "None", "None", "None", "None");
+            adressControl.Adress = _newAdress;
+            _currentCustomer = new Customer("none", adressControl.Adress);
             _customers.Add(_currentCustomer);
             UpdateListBox(_customers.IndexOf(_currentCustomer));
             UpdateTextBoxesInfo(_currentCustomer);
+            adressControl.UpdateAdressTextBoxesInfo();
         }
 
         private void CustomersListBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -102,7 +106,9 @@ namespace ObjectOrientedPractics.View.Tabs
             }
 
             _currentCustomer = _customers[customersListBox.SelectedIndex];
+            adressControl.Adress = _currentCustomer.Adress;
             UpdateTextBoxesInfo(_currentCustomer);
+            adressControl.UpdateAdressTextBoxesInfo();
         }
 
         private void RemoveButton_Click(object sender, EventArgs e)
@@ -115,8 +121,9 @@ namespace ObjectOrientedPractics.View.Tabs
             _customers.RemoveAt(index);
             customersListBox.Items.RemoveAt(index);
             ClearTextBoxes();
+            adressControl.ClearTextBoxes();
             fullNameTextBox.BackColor = _correctColor;
-            adressTextBox.BackColor = _correctColor;
+            adressControl.SetCorrectColor();
         }
 
         private void FullNameTextBox_TextChanged(object sender, EventArgs e)
@@ -130,19 +137,6 @@ namespace ObjectOrientedPractics.View.Tabs
             catch
             {
                 fullNameTextBox.BackColor = _errorColor;
-            }
-        }
-
-        private void AdressTextBox_TextChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                _currentCustomer.Adress = adressTextBox.Text;
-                adressTextBox.BackColor = _correctColor;
-            }
-            catch
-            {
-                adressTextBox.BackColor = _errorColor;
             }
         }
     }

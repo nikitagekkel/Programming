@@ -19,4 +19,5 @@ C:\Users\Jett\source\repos\Programming\src\ObjectOrientedPractics\ObjectOriented
 C:\Users\Jett\source\repos\Programming\src\ObjectOrientedPractics\ObjectOrientedPractics\obj\Debug\net5.0-windows\ObjectOrientedPractics.View.Tabs.CustomersTab.resources
 C:\Users\Jett\source\repos\Programming\src\ObjectOrientedPractics\ObjectOrientedPractics\bin\Debug\net5.0-windows\Newtonsoft.Json.dll
 C:\Users\Jett\source\repos\Programming\src\ObjectOrientedPractics\ObjectOrientedPractics\obj\Debug\net5.0-windows\ObjectOrientedPractics.csproj.CopyComplete
+C:\Users\Jett\source\repos\Programming\src\ObjectOrientedPractics\ObjectOrientedPractics\obj\Debug\net5.0-windows\ObjectOrientedPractics.View.Controls.AdressControl.resources
 C:\Users\Jett\source\repos\Programming\src\ObjectOrientedPractics\ObjectOrientedPractics\obj\Debug\net5.0-windows\ObjectOrientedPractics.csproj.AssemblyReference.cache

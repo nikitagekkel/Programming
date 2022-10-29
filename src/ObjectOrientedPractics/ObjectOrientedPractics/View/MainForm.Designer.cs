@@ -50,7 +50,7 @@ namespace ObjectOrientedPractics
             this.tabControl.Location = new System.Drawing.Point(3, 2);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(772, 537);
+            this.tabControl.Size = new System.Drawing.Size(911, 537);
             this.tabControl.TabIndex = 0;
             // 
             // itemsPage
@@ -59,7 +59,7 @@ namespace ObjectOrientedPractics
             this.itemsPage.Location = new System.Drawing.Point(4, 29);
             this.itemsPage.Name = "itemsPage";
             this.itemsPage.Padding = new System.Windows.Forms.Padding(3);
-            this.itemsPage.Size = new System.Drawing.Size(764, 504);
+            this.itemsPage.Size = new System.Drawing.Size(890, 504);
             this.itemsPage.TabIndex = 0;
             this.itemsPage.Text = "Items";
             this.itemsPage.UseVisualStyleBackColor = true;
@@ -69,7 +69,7 @@ namespace ObjectOrientedPractics
             this.itemsTab.Dock = System.Windows.Forms.DockStyle.Fill;
             this.itemsTab.Location = new System.Drawing.Point(3, 3);
             this.itemsTab.Name = "itemsTab";
-            this.itemsTab.Size = new System.Drawing.Size(758, 498);
+            this.itemsTab.Size = new System.Drawing.Size(884, 498);
             this.itemsTab.TabIndex = 0;
             // 
             // customerPage
@@ -78,26 +78,24 @@ namespace ObjectOrientedPractics
             this.customerPage.Location = new System.Drawing.Point(4, 29);
             this.customerPage.Name = "customerPage";
             this.customerPage.Padding = new System.Windows.Forms.Padding(3);
-            this.customerPage.Size = new System.Drawing.Size(764, 504);
+            this.customerPage.Size = new System.Drawing.Size(903, 504);
             this.customerPage.TabIndex = 1;
             this.customerPage.Text = "Customers";
             this.customerPage.UseVisualStyleBackColor = true;
             // 
             // customersTab
             // 
-            this.customersTab.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.customersTab.Dock = System.Windows.Forms.DockStyle.Fill;
             this.customersTab.Location = new System.Drawing.Point(3, 3);
             this.customersTab.Name = "customersTab";
-            this.customersTab.Size = new System.Drawing.Size(758, 498);
+            this.customersTab.Size = new System.Drawing.Size(897, 498);
             this.customersTab.TabIndex = 0;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(776, 540);
+            this.ClientSize = new System.Drawing.Size(915, 540);
             this.Controls.Add(this.tabControl);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";

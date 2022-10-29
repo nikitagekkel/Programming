@@ -41,6 +41,24 @@ namespace ObjectOrientedPractics.Services
         }
 
         /// <summary>
+        /// Реализует валидацию данных типа <see cref="int"/>
+        /// по минимальной и максимальной длине
+        /// </summary>
+        /// <param name="value">Переданный элемент</param>
+        /// <param name="minLength">Минимальная допустимая длина</param>
+        /// <param name="maxLength">Максимальная допустимая длина</param>
+        /// <param name="propertyName">Переданное название элемента</param>
+        public static void AssertIntInInterval(
+            int value, int minLength, int maxLength, string propertyName)
+        {
+            if (value < minLength | value > maxLength)
+            {
+                throw new ArgumentException(
+                    $"{propertyName} must be from {minLength} to {maxLength}");
+            }
+        }
+
+        /// <summary>
         /// Реализует валидацию элемента типа <see cref="string"/>
         /// по тому, является ли элемент пустым
         /// </summary>
