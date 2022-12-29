@@ -1,4 +1,5 @@
 ﻿using ObjectOrientedPractics.Services;
+using System.Collections.Generic;
 
 namespace ObjectOrientedPractics.Model
 {
@@ -11,16 +12,19 @@ namespace ObjectOrientedPractics.Model
         /// Уникальный идентификатор полного имени покупателя
         /// </summary>
         private string _fullName;
+        public List<Item> Items { get; set; }
+        public List<Order> Orders { get; set; }
+        public Cart Cart { get; }
 
         /// <summary>
         /// Уникальный идентификатор адреса покупателя
         /// </summary>
-        private string _adress;
+        public Adress Adress { get; set; }
 
         /// <summary>
         /// Возвращает и задает уникальный Id покупателя
         /// </summary>
-        public int Id { get; set; }
+        public int Id { get; }
 
         /// <summary>
         /// Возвращает и задает полное имя покупателя.
@@ -41,35 +45,25 @@ namespace ObjectOrientedPractics.Model
         }
 
         /// <summary>
-        /// Возвращает и задает адрес покупателя.
-        /// Адрес не может превышать 500 символов или быть пустым
-        /// </summary>
-        public string Adress
-        {
-            get
-            {
-                return _adress;
-            }
-            set
-            {
-                ValueValidator.AssertStringOnLength(value, 500, nameof(Adress));
-                ValueValidator.AssertEmptyValue(value, nameof(Adress));
-                _adress = value;
-            }
-        }
-
-        /// <summary>
         /// Создает экземпляр класса <see cref="Customer"/>
         /// </summary>
         /// <param name="fullName">Полное имя покупателя</param>
         /// <param name="adress">Адрес покупателя</param>
         public Customer(
+            List<Item> items,
+            List <Order> orders,
             string fullName,
-            string adress)
+            Adress adress)
         {
+            Items = items;
+            Orders = orders;
+            Cart = new Cart(Items)
+            {
+                Items = Items
+            };
             FullName = fullName;
             Adress = adress;
-            Id = IdGenerator.GetNextId();
+            Id = CustomerIdGenerator.GetNextId();
         }
     }
 }

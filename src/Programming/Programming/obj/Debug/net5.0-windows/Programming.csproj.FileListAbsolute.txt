@@ -192,3 +192,4 @@ C:\Users\Jett\source\repos\Programming\src\Programming\Programming\obj\Debug\net
 C:\Users\Jett\source\repos\Programming\src\Programming\Programming\obj\Debug\net5.0-windows\Programming.View.Controls.RectanglesControl.resources
 C:\Users\Jett\source\repos\Programming\src\Programming\Programming\obj\Debug\net5.0-windows\Programming.View.Controls.SeansonHandleControl.resources
 C:\Users\Jett\source\repos\Programming\src\Programming\Programming\obj\Debug\net5.0-windows\Programming.View.Controls.WeekdayParsingControl.resources
+C:\Users\Jett\source\repos\Programming\src\Programming\Programming\obj\Debug\net5.0-windows\Programming.csproj.AssemblyReference.cache

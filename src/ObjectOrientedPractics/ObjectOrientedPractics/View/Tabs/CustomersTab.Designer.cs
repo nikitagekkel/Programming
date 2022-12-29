@@ -37,9 +37,8 @@ namespace ObjectOrientedPractics.View.Tabs
             this.idLabel = new System.Windows.Forms.Label();
             this.fullNameTextBox = new System.Windows.Forms.TextBox();
             this.idTextBox = new System.Windows.Forms.TextBox();
-            this.adressLabel = new System.Windows.Forms.Label();
             this.selectedCustomerLabel = new System.Windows.Forms.Label();
-            this.adressTextBox = new System.Windows.Forms.TextBox();
+            this.adressControl = new ObjectOrientedPractics.View.Controls.AdressControl();
             this.SuspendLayout();
             // 
             // removeButton
@@ -93,7 +92,7 @@ namespace ObjectOrientedPractics.View.Tabs
             // 
             this.fullNameLabel.AutoSize = true;
             this.fullNameLabel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.fullNameLabel.Location = new System.Drawing.Point(303, 59);
+            this.fullNameLabel.Location = new System.Drawing.Point(308, 59);
             this.fullNameLabel.Name = "fullNameLabel";
             this.fullNameLabel.Size = new System.Drawing.Size(79, 20);
             this.fullNameLabel.TabIndex = 12;
@@ -114,7 +113,7 @@ namespace ObjectOrientedPractics.View.Tabs
             | System.Windows.Forms.AnchorStyles.Right)));
             this.fullNameTextBox.Location = new System.Drawing.Point(393, 56);
             this.fullNameTextBox.Name = "fullNameTextBox";
-            this.fullNameTextBox.Size = new System.Drawing.Size(125, 27);
+            this.fullNameTextBox.Size = new System.Drawing.Size(275, 27);
             this.fullNameTextBox.TabIndex = 14;
             this.fullNameTextBox.TextChanged += new System.EventHandler(this.FullNameTextBox_TextChanged);
             // 
@@ -125,18 +124,8 @@ namespace ObjectOrientedPractics.View.Tabs
             this.idTextBox.Location = new System.Drawing.Point(393, 23);
             this.idTextBox.Name = "idTextBox";
             this.idTextBox.ReadOnly = true;
-            this.idTextBox.Size = new System.Drawing.Size(125, 27);
+            this.idTextBox.Size = new System.Drawing.Size(275, 27);
             this.idTextBox.TabIndex = 13;
-            // 
-            // adressLabel
-            // 
-            this.adressLabel.AutoSize = true;
-            this.adressLabel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.adressLabel.Location = new System.Drawing.Point(308, 98);
-            this.adressLabel.Name = "adressLabel";
-            this.adressLabel.Size = new System.Drawing.Size(56, 20);
-            this.adressLabel.TabIndex = 15;
-            this.adressLabel.Text = "Adress:";
             // 
             // selectedCustomerLabel
             // 
@@ -148,25 +137,23 @@ namespace ObjectOrientedPractics.View.Tabs
             this.selectedCustomerLabel.TabIndex = 0;
             this.selectedCustomerLabel.Text = "Selected Customer";
             // 
-            // adressTextBox
+            // adressControl
             // 
-            this.adressTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.adressControl.Adress = null;
+            this.adressControl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.adressTextBox.Location = new System.Drawing.Point(393, 95);
-            this.adressTextBox.Multiline = true;
-            this.adressTextBox.Name = "adressTextBox";
-            this.adressTextBox.Size = new System.Drawing.Size(362, 190);
-            this.adressTextBox.TabIndex = 16;
-            this.adressTextBox.TextChanged += new System.EventHandler(this.AdressTextBox_TextChanged);
+            this.adressControl.Location = new System.Drawing.Point(303, 89);
+            this.adressControl.Name = "adressControl";
+            this.adressControl.Size = new System.Drawing.Size(600, 249);
+            this.adressControl.TabIndex = 16;
             // 
             // CustomersTab
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.adressTextBox);
+            this.Controls.Add(this.adressControl);
             this.Controls.Add(this.selectedCustomerLabel);
             this.Controls.Add(this.removeButton);
-            this.Controls.Add(this.adressLabel);
             this.Controls.Add(this.idTextBox);
             this.Controls.Add(this.addButton);
             this.Controls.Add(this.fullNameTextBox);
@@ -175,7 +162,7 @@ namespace ObjectOrientedPractics.View.Tabs
             this.Controls.Add(this.customersListBox);
             this.Controls.Add(this.fullNameLabel);
             this.Name = "CustomersTab";
-            this.Size = new System.Drawing.Size(758, 498);
+            this.Size = new System.Drawing.Size(908, 498);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -191,8 +178,7 @@ namespace ObjectOrientedPractics.View.Tabs
         private System.Windows.Forms.Label idLabel;
         private System.Windows.Forms.TextBox fullNameTextBox;
         private System.Windows.Forms.TextBox idTextBox;
-        private System.Windows.Forms.Label adressLabel;
         private System.Windows.Forms.Label selectedCustomerLabel;
-        private System.Windows.Forms.TextBox adressTextBox;
+        private Controls.AdressControl adressControl;
     }
 }
