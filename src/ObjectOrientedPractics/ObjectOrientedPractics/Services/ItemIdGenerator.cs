@@ -3,12 +3,12 @@
     /// <summary>
     /// Реализует генерацию уникального Id
     /// </summary>
-    public class IdGenerator
+    public class ItemIdGenerator
     {
         /// <summary>
         /// Уникальный Id типа int
         /// </summary>
-        private static int _id = 0;
+        private static int _id;
 
         /// <summary>
         /// Добавляет 1 к полю <see cref="_id"/>

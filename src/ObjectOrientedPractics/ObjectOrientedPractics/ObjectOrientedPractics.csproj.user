@@ -7,10 +7,16 @@
     <Compile Update="View\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="View\Tabs\CartsTab.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="View\Tabs\CustomersTab.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="View\Tabs\ItemsTab.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="View\Tabs\UserControl1.cs">
       <SubType>UserControl</SubType>
     </Compile>
   </ItemGroup>

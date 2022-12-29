@@ -26,7 +26,7 @@ namespace ObjectOrientedPractics.Model
         /// <summary>
         /// Возвращает и задает уникальный Id товара
         /// </summary>
-        public int Id { get; set; }
+        public int Id { get; }
 
         /// <summary>
         /// Возвращает и задает категорию товара
@@ -105,7 +105,7 @@ namespace ObjectOrientedPractics.Model
             Info = info;
             Cost = cost;
             Category = category;
-            Id = IdGenerator.GetNextId();
+            Id = ItemIdGenerator.GetNextId();
         }
     }
 }

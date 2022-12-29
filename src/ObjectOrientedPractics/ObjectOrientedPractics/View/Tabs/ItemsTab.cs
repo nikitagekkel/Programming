@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
+using ObjectOrientedPractics.View.Tabs;
 
 namespace ObjectOrientedPractics.View.Tabs
 {
@@ -101,6 +102,7 @@ namespace ObjectOrientedPractics.View.Tabs
             _items.Add(_currentItem);
             UpdateListBox(_items.IndexOf(_currentItem));
             UpdateBoxesInfo(_currentItem);
+            
         }
 
         private void ItemsListBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -138,7 +140,7 @@ namespace ObjectOrientedPractics.View.Tabs
             }
             catch
             {
-                nameTextBox.BackColor = _errorColor;
+                costTextBox.BackColor = _errorColor;
             }
         }
 

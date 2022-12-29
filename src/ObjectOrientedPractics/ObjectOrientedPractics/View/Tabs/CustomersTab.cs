@@ -25,6 +25,8 @@ namespace ObjectOrientedPractics.View.Tabs
         /// </summary>
         public List<Customer> _customers = new();
 
+        
+
         /// <summary>
         /// Реализует обработку элемента Control
         /// </summary>
@@ -86,7 +88,9 @@ namespace ObjectOrientedPractics.View.Tabs
         {
             Adress _newAdress = new(0, "None", "None", "None", "None", "None");
             adressControl.Adress = _newAdress;
-            _currentCustomer = new Customer("none", adressControl.Adress);
+            List<Item> _items = new();
+            List<Order> _orders = new();
+            _currentCustomer = new Customer(_items, _orders, "none",_newAdress);
             _customers.Add(_currentCustomer);
             UpdateListBox(_customers.IndexOf(_currentCustomer));
             UpdateTextBoxesInfo(_currentCustomer);
