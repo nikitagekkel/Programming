@@ -25,8 +25,6 @@ namespace ObjectOrientedPractics.View.Tabs
         /// </summary>
         public List<Customer> _customers = new();
 
-        
-
         /// <summary>
         /// Реализует обработку элемента Control
         /// </summary>

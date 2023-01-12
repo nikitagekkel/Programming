@@ -16,6 +16,7 @@ namespace ObjectOrientedPractics.View.Tabs
         public List<Item> _items = new();
         public List<Customer> _customers = new();
         public Customer _curentCustomer;
+        public Order _newOrder;
 
         public CartsTab()
         {
@@ -90,11 +91,17 @@ namespace ObjectOrientedPractics.View.Tabs
             if (_curentCustomer != null &&
                 _curentCustomer.Cart.Items != null)
             {
-                Order _newOrder = new(_curentCustomer);
+                _newOrder = new(
+                    _curentCustomer.Cart.Ammount,
+                    _curentCustomer.Adress,
+                    _curentCustomer.Items,
+                    DateTime.UtcNow,
+                    _curentCustomer.FullName);
                 _curentCustomer.Orders.Add(_newOrder);
-                _curentCustomer.Items.Clear();
+                //_curentCustomer.Items.Clear();
                 cartListBox.Items.Clear();
             }
+            priceLabel.Text = "0";
         }
 
         public void RefreshData()

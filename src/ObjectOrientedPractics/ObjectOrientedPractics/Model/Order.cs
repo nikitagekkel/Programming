@@ -1,30 +1,32 @@
 ﻿using ObjectOrientedPractics.Services;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ObjectOrientedPractics.Model
 {
     public class Order
     {
-        public Customer Customer { get; set; }
         public int Id { get; }
         public double Ammount { get; }
         public Adress Adress { get; set; }
         public List<Item> Items { get; set; }
-        public DateTime CreationDate { get; }
-
+        public DateTime CreationDate { get; set; }
+        public OrderStatus Status { get; set; }
+        public string FullName { get; }
         public Order(
-            Customer customer)
+            double ammount,
+            Adress adress,
+            List<Item> items,
+            DateTime creationDate,
+            string fullName)
         {
-            Customer = customer;
-            Id = Customer.Id;
-            Ammount = Customer.Cart.Ammount;
-            Adress = Customer.Adress;
-            Items = Customer.Items;
-            CreationDate = DateTime.UtcNow;
+            Id = OrderIdGenerator.GetNextId();
+            Ammount = ammount;
+            Adress = adress;
+            Items = items;
+            CreationDate = creationDate;
+            Status = OrderStatus.New;
+            FullName = fullName;
         }
     }
 }
