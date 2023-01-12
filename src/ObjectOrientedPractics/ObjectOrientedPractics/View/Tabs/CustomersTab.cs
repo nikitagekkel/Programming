@@ -88,7 +88,13 @@ namespace ObjectOrientedPractics.View.Tabs
             adressControl.Adress = _newAdress;
             List<Item> _items = new();
             List<Order> _orders = new();
-            _currentCustomer = new Customer(_items, _orders, "none",_newAdress);
+            bool isPriority = false;
+            if (isPriorityCheckBox.Checked)
+            {
+                isPriority = true;
+            }
+            _currentCustomer = new Customer(_items, _orders, "none", 
+                _newAdress, isPriority);
             _customers.Add(_currentCustomer);
             UpdateListBox(_customers.IndexOf(_currentCustomer));
             UpdateTextBoxesInfo(_currentCustomer);
@@ -104,6 +110,14 @@ namespace ObjectOrientedPractics.View.Tabs
 
             _currentCustomer = _customers[customersListBox.SelectedIndex];
             adressControl.Adress = _currentCustomer.Adress;
+            if (_currentCustomer.IsPriority)
+            {
+                isPriorityCheckBox.Checked = true;
+            }
+            else
+            {
+                isPriorityCheckBox.Checked = false;
+            }
             UpdateTextBoxesInfo(_currentCustomer);
             adressControl.UpdateAdressTextBoxesInfo();
         }
@@ -135,6 +149,22 @@ namespace ObjectOrientedPractics.View.Tabs
             {
                 fullNameTextBox.BackColor = _errorColor;
             }
+        }
+
+        private void IsPriorityCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (_currentCustomer != null)
+            {
+                if (isPriorityCheckBox.Checked == true)
+                {
+                    _currentCustomer.IsPriority = true;
+                }
+                else
+                {
+                    _currentCustomer.IsPriority = false;
+                }
+            }
+            
         }
     }
 }

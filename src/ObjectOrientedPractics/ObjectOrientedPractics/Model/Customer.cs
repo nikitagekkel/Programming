@@ -25,6 +25,7 @@ namespace ObjectOrientedPractics.Model
         /// Возвращает и задает уникальный Id покупателя
         /// </summary>
         public int Id { get; }
+        public bool IsPriority { get; set; }
 
         /// <summary>
         /// Возвращает и задает полное имя покупателя.
@@ -53,7 +54,8 @@ namespace ObjectOrientedPractics.Model
             List<Item> items,
             List <Order> orders,
             string fullName,
-            Adress adress)
+            Adress adress,
+            bool isPriority)
         {
             Items = items;
             Orders = orders;
@@ -64,6 +66,7 @@ namespace ObjectOrientedPractics.Model
             FullName = fullName;
             Adress = adress;
             Id = CustomerIdGenerator.GetNextId();
+            IsPriority = isPriority;
         }
     }
 }

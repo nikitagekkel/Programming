@@ -39,11 +39,14 @@ namespace ObjectOrientedPractics
             this.cartsTab = new ObjectOrientedPractics.View.Tabs.CartsTab();
             this.orderTab = new System.Windows.Forms.TabPage();
             this.ordersTab = new ObjectOrientedPractics.View.Tabs.OrdersTab();
+            this.priorityOrderTab = new System.Windows.Forms.TabPage();
+            this.priorityOrdersTab = new ObjectOrientedPractics.View.Tabs.PriorityOrdersTab();
             this.tabControl.SuspendLayout();
             this.itemsPage.SuspendLayout();
             this.customerPage.SuspendLayout();
             this.cartTab.SuspendLayout();
             this.orderTab.SuspendLayout();
+            this.priorityOrderTab.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl
@@ -55,6 +58,7 @@ namespace ObjectOrientedPractics
             this.tabControl.Controls.Add(this.customerPage);
             this.tabControl.Controls.Add(this.cartTab);
             this.tabControl.Controls.Add(this.orderTab);
+            this.tabControl.Controls.Add(this.priorityOrderTab);
             this.tabControl.Location = new System.Drawing.Point(3, 2);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
@@ -137,6 +141,25 @@ namespace ObjectOrientedPractics
             this.ordersTab.Size = new System.Drawing.Size(1152, 519);
             this.ordersTab.TabIndex = 0;
             // 
+            // priorityOrderTab
+            // 
+            this.priorityOrderTab.Controls.Add(this.priorityOrdersTab);
+            this.priorityOrderTab.Location = new System.Drawing.Point(4, 29);
+            this.priorityOrderTab.Name = "priorityOrderTab";
+            this.priorityOrderTab.Padding = new System.Windows.Forms.Padding(3);
+            this.priorityOrderTab.Size = new System.Drawing.Size(1158, 525);
+            this.priorityOrderTab.TabIndex = 3;
+            this.priorityOrderTab.Text = "Priority Orders";
+            this.priorityOrderTab.UseVisualStyleBackColor = true;
+            // 
+            // priorityOrdersTab
+            // 
+            this.priorityOrdersTab.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.priorityOrdersTab.Location = new System.Drawing.Point(3, 3);
+            this.priorityOrdersTab.Name = "priorityOrdersTab";
+            this.priorityOrdersTab.Size = new System.Drawing.Size(1152, 519);
+            this.priorityOrdersTab.TabIndex = 0;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -152,6 +175,7 @@ namespace ObjectOrientedPractics
             this.customerPage.ResumeLayout(false);
             this.cartTab.ResumeLayout(false);
             this.orderTab.ResumeLayout(false);
+            this.priorityOrderTab.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -167,6 +191,8 @@ namespace ObjectOrientedPractics
         private System.Windows.Forms.TabPage orderTab;
         private View.Tabs.OrdersTab ordersTab;
         private View.Tabs.ItemsTab itemsTab;
+        private System.Windows.Forms.TabPage priorityOrderTab;
+        private View.Tabs.PriorityOrdersTab priorityOrdersTab;
     }
 }
 

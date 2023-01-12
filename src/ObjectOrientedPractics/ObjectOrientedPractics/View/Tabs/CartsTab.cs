@@ -17,6 +17,7 @@ namespace ObjectOrientedPractics.View.Tabs
         public List<Customer> _customers = new();
         public Customer _curentCustomer;
         public Order _newOrder;
+        public PriorityOrder _newPriorityOrder;
 
         public CartsTab()
         {
@@ -91,14 +92,28 @@ namespace ObjectOrientedPractics.View.Tabs
             if (_curentCustomer != null &&
                 _curentCustomer.Cart.Items != null)
             {
-                _newOrder = new(
-                    _curentCustomer.Cart.Ammount,
-                    _curentCustomer.Adress,
-                    _curentCustomer.Items,
-                    DateTime.UtcNow,
-                    _curentCustomer.FullName);
-                _curentCustomer.Orders.Add(_newOrder);
-                //_curentCustomer.Items.Clear();
+                if (_curentCustomer.IsPriority == true)
+                {
+                    _newPriorityOrder = new(
+                        _curentCustomer.Cart.Ammount,
+                        _curentCustomer.Adress,
+                        _curentCustomer.Items,
+                        DateTime.UtcNow,
+                        _curentCustomer.FullName,
+                        "");
+                    _curentCustomer.Orders.Add(_newPriorityOrder);
+                }    
+                else
+                {
+                    _newOrder = new(
+                        _curentCustomer.Cart.Ammount,
+                        _curentCustomer.Adress,
+                        _curentCustomer.Items,
+                        DateTime.UtcNow,
+                        _curentCustomer.FullName);
+                    _curentCustomer.Orders.Add(_newOrder);
+                    
+                }
                 cartListBox.Items.Clear();
             }
             priceLabel.Text = "0";
@@ -108,6 +123,13 @@ namespace ObjectOrientedPractics.View.Tabs
         {
             UpdateCustomersComboBox();
             UpdateItemsListBox(-1);
+        }
+
+        private void ClearCartItem_Click(object sender, EventArgs e)
+        {
+            priceLabel.Text = "0";
+            cartListBox.Items.Clear();
+            itemsListBox.SelectedIndex = -1;
         }
     }
 }

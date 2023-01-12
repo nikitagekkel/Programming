@@ -39,6 +39,7 @@ namespace ObjectOrientedPractics.View.Tabs
             this.idTextBox = new System.Windows.Forms.TextBox();
             this.selectedCustomerLabel = new System.Windows.Forms.Label();
             this.adressControl = new ObjectOrientedPractics.View.Controls.AdressControl();
+            this.isPriorityCheckBox = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // removeButton
@@ -142,15 +143,27 @@ namespace ObjectOrientedPractics.View.Tabs
             this.adressControl.Adress = null;
             this.adressControl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.adressControl.Location = new System.Drawing.Point(303, 89);
+            this.adressControl.Location = new System.Drawing.Point(308, 120);
             this.adressControl.Name = "adressControl";
             this.adressControl.Size = new System.Drawing.Size(600, 249);
             this.adressControl.TabIndex = 16;
+            // 
+            // isPriorityCheckBox
+            // 
+            this.isPriorityCheckBox.AutoSize = true;
+            this.isPriorityCheckBox.Location = new System.Drawing.Point(308, 89);
+            this.isPriorityCheckBox.Name = "isPriorityCheckBox";
+            this.isPriorityCheckBox.Size = new System.Drawing.Size(92, 24);
+            this.isPriorityCheckBox.TabIndex = 17;
+            this.isPriorityCheckBox.Text = "Is Priority";
+            this.isPriorityCheckBox.UseVisualStyleBackColor = true;
+            this.isPriorityCheckBox.CheckedChanged += new System.EventHandler(this.IsPriorityCheckBox_CheckedChanged);
             // 
             // CustomersTab
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.isPriorityCheckBox);
             this.Controls.Add(this.adressControl);
             this.Controls.Add(this.selectedCustomerLabel);
             this.Controls.Add(this.removeButton);
@@ -180,5 +193,6 @@ namespace ObjectOrientedPractics.View.Tabs
         private System.Windows.Forms.TextBox idTextBox;
         private System.Windows.Forms.Label selectedCustomerLabel;
         private Controls.AdressControl adressControl;
+        private System.Windows.Forms.CheckBox isPriorityCheckBox;
     }
 }

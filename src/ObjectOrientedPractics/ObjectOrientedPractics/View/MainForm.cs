@@ -35,6 +35,7 @@ namespace ObjectOrientedPractics
             cartsTab._customers = _store.Customers;
             cartsTab._items = _store.Items;
             ordersTab._customers = _store.Customers;
+            priorityOrdersTab._customers = _store.Customers;
 
             customersTab.UpdateListBox(-1);
             itemsTab.UpdateListBox(-1);

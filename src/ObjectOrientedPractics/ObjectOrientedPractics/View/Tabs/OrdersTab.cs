@@ -1,12 +1,6 @@
 ﻿using ObjectOrientedPractics.Model;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ObjectOrientedPractics.View.Tabs
@@ -16,7 +10,16 @@ namespace ObjectOrientedPractics.View.Tabs
         public List<Customer> _customers = new();
         public List<Order> _orders = new();
         public Order _curentOrder;
-
+        PriorityOrder _selectedPriorityOrder;
+        private readonly string[] _deliveryTime =
+{
+            "9:00 - 11:00",
+            "11:00 - 13:00",
+            "13:00 - 15:00",
+            "15:00 - 17:00",
+            "17:00 - 19:00",
+            "19:00 - 21:00"
+        };
         public OrdersTab()
         {
             InitializeComponent();
@@ -25,7 +28,11 @@ namespace ObjectOrientedPractics.View.Tabs
             foreach (var status in statuses)
             {
                 statusComboBox.Items.Add(status);
-            }    
+            }
+            foreach (var time in _deliveryTime)
+            {
+                deliveryTimeComboBox.Items.Add(time);
+            }
         }
 
         public void UpdateOrders()
@@ -67,15 +74,31 @@ namespace ObjectOrientedPractics.View.Tabs
                 {
                     itemsListBox.Items.Add(item.Name);
                 }
+
+                if (_curentOrder is PriorityOrder)
+                {
+                    _selectedPriorityOrder = (PriorityOrder)_curentOrder;
+                    priorityOrderPanel.Visible= true;
+                    deliveryTimeComboBox.SelectedItem = _selectedPriorityOrder.DeliveryTime;
+                }
+                else
+                {
+                    priorityOrderPanel.Visible = false;
+                }
             }
         }
 
-        private void statusComboBox_DropDownClosed(object sender, EventArgs e)
+        private void StatusComboBox_DropDownClosed(object sender, EventArgs e)
         {
             _curentOrder.Status = (OrderStatus)statusComboBox.SelectedItem;
             int index = ordersDataGridView.SelectedRows[0].Index;
             UpdateOrders();
             ordersDataGridView.Rows[index].Selected = true;
+        }
+
+        private void DeliveryTimeComboBox_DropDownClosed(object sender, EventArgs e)
+        {
+            _selectedPriorityOrder.DeliveryTime = (string)deliveryTimeComboBox.SelectedItem;
         }
     }
 }

@@ -148,6 +148,7 @@ namespace ObjectOrientedPractics.View.Tabs
             this.clearCartItem.TabIndex = 10;
             this.clearCartItem.Text = "Clear Cart";
             this.clearCartItem.UseVisualStyleBackColor = true;
+            this.clearCartItem.Click += new System.EventHandler(this.ClearCartItem_Click);
             // 
             // priceLabel
             // 
