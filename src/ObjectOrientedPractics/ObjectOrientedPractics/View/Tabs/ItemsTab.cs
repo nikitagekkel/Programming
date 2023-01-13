@@ -10,6 +10,11 @@ namespace ObjectOrientedPractics.View.Tabs
     public partial class ItemsTab : UserControl
     {
         /// <summary>
+        /// Событие, возникающее при смене товаров
+        /// </summary>
+        public event EventHandler<EventArgs> ItemsChanged;
+
+        /// <summary>
         /// Цвет фона строки не содержащую ошибку
         /// </summary>
         private readonly Color _correctColor = Color.White;
@@ -102,7 +107,7 @@ namespace ObjectOrientedPractics.View.Tabs
             _items.Add(_currentItem);
             UpdateListBox(_items.IndexOf(_currentItem));
             UpdateBoxesInfo(_currentItem);
-            
+            ItemsChanged?.Invoke(this, EventArgs.Empty);
         }
 
         private void ItemsListBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -129,6 +134,7 @@ namespace ObjectOrientedPractics.View.Tabs
             costTextBox.BackColor = _correctColor;
             nameTextBox.BackColor = _correctColor;
             infoTextBox.BackColor = _correctColor;
+            ItemsChanged?.Invoke(this, EventArgs.Empty);
         }
 
         private void CostTextBox_TextChanged(object sender, EventArgs e)
@@ -137,6 +143,7 @@ namespace ObjectOrientedPractics.View.Tabs
             {
                 _currentItem.Cost = Convert.ToDouble(costTextBox.Text);
                 costTextBox.BackColor = _correctColor;
+                ItemsChanged?.Invoke(this, EventArgs.Empty);
             }
             catch
             {
@@ -151,6 +158,7 @@ namespace ObjectOrientedPractics.View.Tabs
                 _currentItem.Name = nameTextBox.Text;
                 nameTextBox.BackColor = _correctColor;
                 UpdateListBox(_items.IndexOf(_currentItem));
+                ItemsChanged?.Invoke(this, EventArgs.Empty);
             }
             catch
             {
@@ -164,6 +172,7 @@ namespace ObjectOrientedPractics.View.Tabs
             {
                 _currentItem.Info = infoTextBox.Text;
                 infoTextBox.BackColor = _correctColor;
+                ItemsChanged?.Invoke(this, EventArgs.Empty);
             }
             catch
             {
@@ -174,6 +183,7 @@ namespace ObjectOrientedPractics.View.Tabs
         private void CategoryComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             _currentItem.Category = (Category)categoryComboBox.SelectedItem;
+            ItemsChanged?.Invoke(this, EventArgs.Empty);
         }
     }
 }

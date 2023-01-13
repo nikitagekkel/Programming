@@ -84,6 +84,7 @@ namespace ObjectOrientedPractics
             this.itemsTab.Name = "itemsTab";
             this.itemsTab.Size = new System.Drawing.Size(1152, 519);
             this.itemsTab.TabIndex = 0;
+            this.itemsTab.ItemsChanged += new System.EventHandler<System.EventArgs>(this.ItemsTab_ItemsChanged);
             // 
             // customerPage
             // 

@@ -1,16 +1,7 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\src",
-    "\\src\\ObjectOrientedPractics",
-    "\\src\\ObjectOrientedPractics\\ObjectOrientedPractics",
-    "\\src\\ObjectOrientedPractics\\ObjectOrientedPractics\\Model",
-    "\\src\\ObjectOrientedPractics\\ObjectOrientedPractics\\Services",
-    "\\src\\ObjectOrientedPractics\\ObjectOrientedPractics\\View",
-    "\\src\\ObjectOrientedPractics\\ObjectOrientedPractics\\View\\Controls",
-    "\\src\\ObjectOrientedPractics\\ObjectOrientedPractics\\View\\Tabs",
-    "\\src\\Programming"
+    ""
   ],
-  "SelectedNode": "\\src\\ObjectOrientedPractics\\ObjectOrientedPractics\\View\\Controls\\AdressControl.cs",
+  "SelectedNode": "\\ObjectOrientedPractics.sln",
   "PreviewInSolutionExplorer": false
 }

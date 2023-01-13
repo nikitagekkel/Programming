@@ -1,5 +1,6 @@
 ﻿using ObjectOrientedPractics.Model.Enums;
 using ObjectOrientedPractics.Services;
+using System;
 
 namespace ObjectOrientedPractics.Model
 {
@@ -8,7 +9,21 @@ namespace ObjectOrientedPractics.Model
     /// </summary>
     public class Item
     {
+        /// <summary>
+        /// Событие смены имени заказа
+        /// </summary>
+        public event EventHandler<EventArgs> NameChanged;
+        /// <summary>
+        /// Событие смены информации о заказе
+        /// </summary>
 
+        public event EventHandler<EventArgs> InfoChanged;
+        
+        /// <summary>
+        /// Событие смены имени стоимости заказа
+        /// </summary>
+        public event EventHandler<EventArgs> CostChanged;
+        
         /// <summary>
         /// Уникальный идентификатор названия товара
         /// </summary>
@@ -50,6 +65,7 @@ namespace ObjectOrientedPractics.Model
                 ValueValidator.AssertStringOnLength(value, 200, nameof(Name));
                 ValueValidator.AssertEmptyValue(value, Name);
                 _name = value;
+                NameChanged?.Invoke(this, EventArgs.Empty);
             }
         }
 
@@ -69,6 +85,7 @@ namespace ObjectOrientedPractics.Model
                 ValueValidator.AssertStringOnLength(value, 1000, nameof(Info));
                 ValueValidator.AssertEmptyValue(value, Info);
                 _info = value;
+                InfoChanged?.Invoke(this, EventArgs.Empty);
             }
         }
 
@@ -86,6 +103,7 @@ namespace ObjectOrientedPractics.Model
             {
                 ValueValidator.AssertFloatInInterval(value, 0, 100000, nameof(Cost));
                 _cost = value;
+                CostChanged?.Invoke(this, EventArgs.Empty);
             }
         }
 

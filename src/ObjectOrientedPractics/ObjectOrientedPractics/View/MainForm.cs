@@ -53,9 +53,15 @@ namespace ObjectOrientedPractics
         {
             if (tabControl.SelectedIndex != -1)
             {
-                cartsTab.RefreshData();
-                ordersTab.UpdateOrders();
+                //cartsTab.RefreshData();
+                //ordersTab.UpdateOrders();
             }
+        }
+
+        private void ItemsTab_ItemsChanged(object sender, System.EventArgs e)
+        {
+            cartsTab.RefreshData();
+            ordersTab.UpdateOrders();
         }
     }
 }
