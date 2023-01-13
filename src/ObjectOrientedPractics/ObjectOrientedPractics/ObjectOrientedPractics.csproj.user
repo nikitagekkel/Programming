@@ -4,6 +4,9 @@
     <Compile Update="View\Controls\AdressControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="View\Forms\AddDiscountForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="View\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>

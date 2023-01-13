@@ -1,4 +1,7 @@
 ﻿using ObjectOrientedPractics.Model;
+using ObjectOrientedPractics.Model.Discounts;
+using ObjectOrientedPractics.Model.Orders;
+using ObjectOrientedPractics.View.Forms;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -69,6 +72,19 @@ namespace ObjectOrientedPractics.View.Tabs
         }
 
         /// <summary>
+        /// Обновляет элемент DiscountsListBox
+        /// </summary>
+        private void UpdateDiscountsListBox()
+        {
+            discountsListBox.Items.Clear();
+
+            foreach (var discount in _currentCustomer.Discounts)
+            {
+                discountsListBox.Items.Add(discount.Info);
+            }
+        }
+
+        /// <summary>
         /// Удаляет текст из всех элементов формы
         /// типа <see cref="TextBox"/>
         /// </summary>
@@ -120,6 +136,7 @@ namespace ObjectOrientedPractics.View.Tabs
             }
             UpdateTextBoxesInfo(_currentCustomer);
             adressControl.UpdateAdressTextBoxesInfo();
+            UpdateDiscountsListBox();
         }
 
         private void RemoveButton_Click(object sender, EventArgs e)
@@ -165,6 +182,31 @@ namespace ObjectOrientedPractics.View.Tabs
                 }
             }
             
+        }
+
+        private void AddDiscountButton_Click(object sender, EventArgs e)
+        {
+            AddDiscountForm addDiscountForm = new();
+            if (addDiscountForm.ShowDialog() == DialogResult.OK)
+            {
+                foreach (var discount in _currentCustomer.Discounts)
+                {
+                    if (discount is PointsDiscount) continue;
+                    if (((PercentDiscount)discount).Category ==
+                        addDiscountForm.PercentDiscount.Category) return;
+                }
+                _currentCustomer.Discounts.Add(addDiscountForm.PercentDiscount);
+                UpdateDiscountsListBox();
+            }
+        }
+
+        private void RemoveDiscountButton_Click(object sender, EventArgs e)
+        {
+            int index = discountsListBox.SelectedIndex;
+            if (index == -1) return;
+            if (index == 0) return;
+            _currentCustomer.Discounts.RemoveAt(index);
+            UpdateDiscountsListBox();
         }
     }
 }

@@ -1,4 +1,6 @@
 ﻿using ObjectOrientedPractics.Model;
+using ObjectOrientedPractics.Model.Enums;
+using ObjectOrientedPractics.Model.Orders;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -7,10 +9,29 @@ namespace ObjectOrientedPractics.View.Tabs
 {
     public partial class OrdersTab : UserControl
     {
+        /// <summary>
+        /// Хранит список покупателей
+        /// </summary>
         public List<Customer> _customers = new();
+
+        /// <summary>
+        /// Хранит список заказов
+        /// </summary>
         public List<Order> _orders = new();
+
+        /// <summary>
+        /// Хранит данные о выбранном текущем заказе
+        /// </summary>
         public Order _curentOrder;
+
+        /// <summary>
+        /// Хранит данные о выбранном приоритетном заказе
+        /// </summary>
         PriorityOrder _selectedPriorityOrder;
+
+        /// <summary>
+        /// Хранит время доставки заказа
+        /// </summary>
         private readonly string[] _deliveryTime =
 {
             "9:00 - 11:00",
@@ -35,6 +56,9 @@ namespace ObjectOrientedPractics.View.Tabs
             }
         }
 
+        /// <summary>
+        /// Обновляет данные о заказах и добавляет их в табилицу
+        /// </summary>
         public void UpdateOrders()
         {
             _orders.Clear();
@@ -69,6 +93,7 @@ namespace ObjectOrientedPractics.View.Tabs
                 statusComboBox.SelectedItem = _curentOrder.Status;
                 adressControl.Adress = _curentOrder.Adress;
                 adressControl.UpdateAdressTextBoxesInfo();
+                priceLabel.Text = _curentOrder.Ammount.ToString();
                 itemsListBox.Items.Clear();
                 foreach(Item item in _curentOrder.Items)
                 {

@@ -40,6 +40,10 @@ namespace ObjectOrientedPractics.View.Tabs
             this.selectedCustomerLabel = new System.Windows.Forms.Label();
             this.adressControl = new ObjectOrientedPractics.View.Controls.AdressControl();
             this.isPriorityCheckBox = new System.Windows.Forms.CheckBox();
+            this.discountsLabel = new System.Windows.Forms.Label();
+            this.discountsListBox = new System.Windows.Forms.ListBox();
+            this.addDiscountButton = new System.Windows.Forms.Button();
+            this.removeDiscountButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // removeButton
@@ -145,7 +149,7 @@ namespace ObjectOrientedPractics.View.Tabs
             | System.Windows.Forms.AnchorStyles.Right)));
             this.adressControl.Location = new System.Drawing.Point(308, 120);
             this.adressControl.Name = "adressControl";
-            this.adressControl.Size = new System.Drawing.Size(600, 249);
+            this.adressControl.Size = new System.Drawing.Size(600, 159);
             this.adressControl.TabIndex = 16;
             // 
             // isPriorityCheckBox
@@ -159,10 +163,55 @@ namespace ObjectOrientedPractics.View.Tabs
             this.isPriorityCheckBox.UseVisualStyleBackColor = true;
             this.isPriorityCheckBox.CheckedChanged += new System.EventHandler(this.IsPriorityCheckBox_CheckedChanged);
             // 
+            // discountsLabel
+            // 
+            this.discountsLabel.AutoSize = true;
+            this.discountsLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.discountsLabel.Location = new System.Drawing.Point(308, 282);
+            this.discountsLabel.Name = "discountsLabel";
+            this.discountsLabel.Size = new System.Drawing.Size(78, 20);
+            this.discountsLabel.TabIndex = 18;
+            this.discountsLabel.Text = "Discounts";
+            // 
+            // discountsListBox
+            // 
+            this.discountsListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.discountsListBox.FormattingEnabled = true;
+            this.discountsListBox.ItemHeight = 20;
+            this.discountsListBox.Location = new System.Drawing.Point(308, 305);
+            this.discountsListBox.Name = "discountsListBox";
+            this.discountsListBox.Size = new System.Drawing.Size(360, 104);
+            this.discountsListBox.TabIndex = 19;
+            // 
+            // addDiscountButton
+            // 
+            this.addDiscountButton.Location = new System.Drawing.Point(308, 412);
+            this.addDiscountButton.Name = "addDiscountButton";
+            this.addDiscountButton.Size = new System.Drawing.Size(94, 35);
+            this.addDiscountButton.TabIndex = 20;
+            this.addDiscountButton.Text = "Add";
+            this.addDiscountButton.UseVisualStyleBackColor = true;
+            this.addDiscountButton.Click += new System.EventHandler(this.AddDiscountButton_Click);
+            // 
+            // removeDiscountButton
+            // 
+            this.removeDiscountButton.Location = new System.Drawing.Point(408, 412);
+            this.removeDiscountButton.Name = "removeDiscountButton";
+            this.removeDiscountButton.Size = new System.Drawing.Size(94, 35);
+            this.removeDiscountButton.TabIndex = 21;
+            this.removeDiscountButton.Text = "Remove";
+            this.removeDiscountButton.UseVisualStyleBackColor = true;
+            this.removeDiscountButton.Click += new System.EventHandler(this.RemoveDiscountButton_Click);
+            // 
             // CustomersTab
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.removeDiscountButton);
+            this.Controls.Add(this.addDiscountButton);
+            this.Controls.Add(this.discountsListBox);
+            this.Controls.Add(this.discountsLabel);
             this.Controls.Add(this.isPriorityCheckBox);
             this.Controls.Add(this.adressControl);
             this.Controls.Add(this.selectedCustomerLabel);
@@ -194,5 +243,9 @@ namespace ObjectOrientedPractics.View.Tabs
         private System.Windows.Forms.Label selectedCustomerLabel;
         private Controls.AdressControl adressControl;
         private System.Windows.Forms.CheckBox isPriorityCheckBox;
+        private System.Windows.Forms.Label discountsLabel;
+        private System.Windows.Forms.ListBox discountsListBox;
+        private System.Windows.Forms.Button addDiscountButton;
+        private System.Windows.Forms.Button removeDiscountButton;
     }
 }
