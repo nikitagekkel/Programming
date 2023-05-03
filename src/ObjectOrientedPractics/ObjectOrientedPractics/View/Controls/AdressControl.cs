@@ -91,15 +91,19 @@ namespace ObjectOrientedPractics.View.Controls
 
         private void PostIndexTextBox_TextChanged(object sender, EventArgs e)
         {
-            try
+            if (_adress != null)
             {
-                _adress.Index = Convert.ToInt32(postIndexTextBox.Text);
-                postIndexTextBox.BackColor = _correctColor;
+                try
+                {
+                    _adress.Index = Convert.ToInt32(postIndexTextBox.Text);
+                    postIndexTextBox.BackColor = _correctColor;
+                }
+                catch
+                {
+                    postIndexTextBox.BackColor = _errorColor;
+                }
             }
-            catch
-            {
-                postIndexTextBox.BackColor = _errorColor;
-            }
+          
         }
 
         private void CountyTextBox_TextChanged(object sender, EventArgs e)

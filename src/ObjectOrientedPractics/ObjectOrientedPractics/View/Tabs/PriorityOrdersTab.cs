@@ -142,10 +142,14 @@ namespace ObjectOrientedPractics.View.Tabs
 
         private void StatusComboBox_DropDownClosed(object sender, EventArgs e)
         {
-            if (_curentOrder != null)
+            if (itemsListBox != null)
             {
-                _curentOrder.Status = (OrderStatus)statusComboBox.SelectedItem;
-            }    
+                if (_curentOrder != null)
+                {
+                    _curentOrder.Status = (OrderStatus)statusComboBox.SelectedItem;
+                }
+            }
+
         }
     }
 }
