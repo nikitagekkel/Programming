@@ -186,7 +186,7 @@ namespace ObjectOrientedPractics.View.Tabs
             this.infoTextBox.Location = new System.Drawing.Point(303, 288);
             this.infoTextBox.Multiline = true;
             this.infoTextBox.Name = "infoTextBox";
-            this.infoTextBox.Size = new System.Drawing.Size(452, 158);
+            this.infoTextBox.Size = new System.Drawing.Size(452, 159);
             this.infoTextBox.TabIndex = 12;
             this.infoTextBox.TextChanged += new System.EventHandler(this.InfoTextBox_TextChanged);
             // 

@@ -4,6 +4,9 @@
     <Compile Update="View\Controls\AdressControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="View\Forms\AddDiscountForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="View\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -16,7 +19,10 @@
     <Compile Update="View\Tabs\ItemsTab.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="View\Tabs\UserControl1.cs">
+    <Compile Update="View\Tabs\OrdersTab.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="View\Tabs\PriorityOrdersTab.cs">
       <SubType>UserControl</SubType>
     </Compile>
   </ItemGroup>

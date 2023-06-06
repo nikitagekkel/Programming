@@ -1,4 +1,5 @@
 ﻿using ObjectOrientedPractics.Services;
+using System;
 
 namespace ObjectOrientedPractics.Model
 {
@@ -7,6 +8,11 @@ namespace ObjectOrientedPractics.Model
     /// </summary>
     public class Adress
     {
+        /// <summary>
+        /// Событие возникающее при смене адреса
+        /// </summary>
+        public EventHandler<EventArgs> AddressChanged;
+
         /// <summary>
         /// Уникальный идентификатор индекса в адресе
         /// </summary>
@@ -51,6 +57,7 @@ namespace ObjectOrientedPractics.Model
             {
                 ValueValidator.AssertIntInInterval(value, 0, 6, nameof(Index));
                 _index = value;
+                AddressChanged?.Invoke(this, EventArgs.Empty);
             }
         }
 
@@ -70,6 +77,7 @@ namespace ObjectOrientedPractics.Model
                 ValueValidator.AssertStringOnLength(value, 50, nameof(Country));
                 ValueValidator.AssertEmptyValue(value, nameof(Country));
                 _country = value;
+                AddressChanged?.Invoke(this, EventArgs.Empty);
             }
         }
 
@@ -90,6 +98,7 @@ namespace ObjectOrientedPractics.Model
                 ValueValidator.AssertStringOnLength(value, 50, nameof(City));
                 ValueValidator.AssertEmptyValue(value, nameof(City));
                 _city = value;
+                AddressChanged?.Invoke(this, EventArgs.Empty);
             }
         }
 
@@ -110,6 +119,7 @@ namespace ObjectOrientedPractics.Model
                 ValueValidator.AssertStringOnLength(value, 100, nameof(Street));
                 ValueValidator.AssertEmptyValue(value, nameof(Street));
                 _street = value;
+                AddressChanged?.Invoke(this, EventArgs.Empty);
             }
         }
 
@@ -130,6 +140,7 @@ namespace ObjectOrientedPractics.Model
                 ValueValidator.AssertStringOnLength(value, 10, nameof(Building));
                 ValueValidator.AssertEmptyValue(value, nameof(Building));
                 _building = value;
+                AddressChanged?.Invoke(this, EventArgs.Empty);
             }
         }
 
@@ -150,6 +161,7 @@ namespace ObjectOrientedPractics.Model
                 ValueValidator.AssertStringOnLength(value, 10, nameof(Apartment));
                 ValueValidator.AssertEmptyValue(value, nameof(Apartment));
                 _apartment = value;
+                AddressChanged?.Invoke(this, EventArgs.Empty);
             }
         }
 

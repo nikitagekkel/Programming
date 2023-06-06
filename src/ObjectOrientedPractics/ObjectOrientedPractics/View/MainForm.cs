@@ -34,7 +34,9 @@ namespace ObjectOrientedPractics
             itemsTab._items = _store.Items;
             cartsTab._customers = _store.Customers;
             cartsTab._items = _store.Items;
-            
+            ordersTab._customers = _store.Customers;
+            priorityOrdersTab._customers = _store.Customers;
+
             customersTab.UpdateListBox(-1);
             itemsTab.UpdateListBox(-1);
             cartsTab.UpdateItemsListBox(-1);
@@ -51,8 +53,15 @@ namespace ObjectOrientedPractics
         {
             if (tabControl.SelectedIndex != -1)
             {
-                cartsTab.RefreshData();
+                //cartsTab.RefreshData();
+                //ordersTab.UpdateOrders();
             }
+        }
+
+        private void ItemsTab_ItemsChanged(object sender, System.EventArgs e)
+        {
+            cartsTab.RefreshData();
+            ordersTab.UpdateOrders();
         }
     }
 }
