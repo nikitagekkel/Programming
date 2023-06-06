@@ -22,6 +22,10 @@ C:\Users\Jett\source\repos\Programming\src\Contacts\View\bin\Debug\net7.0-window
 C:\Users\Jett\source\repos\Programming\src\Contacts\View\bin\Debug\net7.0-windows\ru\Xceed.Wpf.AvalonDock.NET5.resources.dll
 C:\Users\Jett\source\repos\Programming\src\Contacts\View\bin\Debug\net7.0-windows\sv\Xceed.Wpf.AvalonDock.NET5.resources.dll
 C:\Users\Jett\source\repos\Programming\src\Contacts\View\bin\Debug\net7.0-windows\zh-Hans\Xceed.Wpf.AvalonDock.NET5.resources.dll
+C:\Users\Jett\source\repos\Programming\src\Contacts\View\bin\Debug\net7.0-windows\Model.dll
+C:\Users\Jett\source\repos\Programming\src\Contacts\View\bin\Debug\net7.0-windows\ViewModel.dll
+C:\Users\Jett\source\repos\Programming\src\Contacts\View\bin\Debug\net7.0-windows\ViewModel.pdb
+C:\Users\Jett\source\repos\Programming\src\Contacts\View\bin\Debug\net7.0-windows\Model.pdb
 C:\Users\Jett\source\repos\Programming\src\Contacts\View\obj\Debug\net7.0-windows\View.csproj.AssemblyReference.cache
 C:\Users\Jett\source\repos\Programming\src\Contacts\View\obj\Debug\net7.0-windows\Controls\ContactControl.baml
 C:\Users\Jett\source\repos\Programming\src\Contacts\View\obj\Debug\net7.0-windows\Controls\ContactControl.g.cs
