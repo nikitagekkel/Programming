@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "OgUf7kRTcG8px3krwhcHo+xcFlKf7W6l8RWgiquf6LACjvw3/WTGXBZlNslzQPnW8BOr77+urP6TKs904Z44wg==",
+  "dgSpecHash": "NTtRzFMng70JlA77cWz493VHfetRN9R+hmaGCRX7yXIFFkJ465wP/XATJ8gdftyKgqajwfi1gqgwz/V+jqVPKw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Jett\\source\\repos\\Programming\\src\\Contacts\\View\\View.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Jett\\.nuget\\packages\\communitytoolkit.mvvm\\8.1.0\\communitytoolkit.mvvm.8.1.0.nupkg.sha512",
+    "C:\\Users\\Jett\\.nuget\\packages\\extended.wpf.toolkit\\4.5.0\\extended.wpf.toolkit.4.5.0.nupkg.sha512",
     "C:\\Users\\Jett\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
   ],
   "logs": []

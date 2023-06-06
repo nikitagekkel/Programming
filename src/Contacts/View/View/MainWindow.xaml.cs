@@ -8,18 +8,18 @@ namespace View
     /// </summary>
     public partial class MainWindow : Window
     {
-        private MainVM _mainVM = new MainVM();
+        MainVM mainVM = new MainVM();
 
         public MainWindow()
         {
             InitializeComponent();
 
-            DataContext = _mainVM;
+            DataContext = mainVM;
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            _mainVM.SaveContacts();
+            mainVM.SaveContacts();
         }
     }
 }

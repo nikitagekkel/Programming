@@ -6,12 +6,23 @@ using System.Windows.Data;
 namespace View
 {
     /// <summary>
-    /// Представляет реализацию для конвертирования <see cref="bool" /> значений.
+    /// Представляет реализацию по вызову двух конвертеров: <see cref="InverseBooleanConverter" /> и
+    /// <see cref="VisibilityConverter" />.
     /// </summary>
-    public class VisibleConverter : IValueConverter
+    public class CombiningConverter : IValueConverter
     {
         /// <summary>
-        /// Конвертирует <see cref="bool" /> значение в <see cref="object" />.
+        /// Возвращает и задаёт конвертер для инверсии <see cref="bool" /> значения.
+        /// </summary>
+        public IValueConverter InverseConverter { get; set; }
+
+        /// <summary>
+        /// Возвращает и задаёт конвертер <see cref="bool" /> в <see cref="Visibility" />.
+        /// </summary>
+        public IValueConverter VisibleConverter { get; set; }
+
+        /// <summary>
+        /// Вызывает два конвертера.
         /// </summary>
         /// <param name="value">Значение, которое необходимо преобразовать.</param>
         /// <param name="targetType">Тип, в который необходимо преобразовать.</param>
@@ -20,7 +31,8 @@ namespace View
         /// <returns>Возвращает значение видимости элемента.</returns>
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            return (bool)value ? Visibility.Visible : Visibility.Collapsed;
+            var convertedValue = InverseConverter.Convert(value, targetType, parameter, culture);
+            return VisibleConverter.Convert(convertedValue, targetType, parameter, culture);
         }
 
         /// <summary>
